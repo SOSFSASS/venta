@@ -11,6 +11,12 @@
     <meta name="author" content="" />
     <!-- BEGIN: Page Title-->
     <title>Sistema | Venta</title>
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/dataTable/datatables.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/dataTable/extensions/dataTables.jqueryui.min.css') }}">
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.css') }}">
+
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <!-- END: Custom CSS-->
     <!-- BEGIN: Favicon-->
@@ -116,6 +122,12 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/adata-init.js') }}"></script>
     <!-- END: Global JS-->
+    <script src="{{ asset('assets/plugins/dataTable/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/dataTable/responsive/dataTables.responsive.js') }}"></script>
+    <script src="{{ asset('assets/plugins/dataTable/extensions/dataTables.jqueryui.min.js') }}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
+    <script src=".{{ asset('assets/plugins/sweetalert2/sweetalert2-active.js') }}"></script>
 </body>
 
 </html>
