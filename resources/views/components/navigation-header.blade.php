@@ -2,7 +2,7 @@
     <ul class="accordion-menu">
         <li class="menu-label">Dashboard</li>
         <li>
-            <a href="">
+            <a href="/">
                 <svg class="adata-svg-icon">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
@@ -12,17 +12,12 @@
                         <circle fill="#000000" opacity="0.3" cx="12" cy="10" r="6" />
                     </g>
                 </svg>
-                <span>Analytics</span><i class="accordion-icon fa fa-angle-left"></i>
-            </a>
-            <ul class="sub-menu">
-                <li><a href="../analytic/analytic-index.html">Dashboard</a></li>
-                <li><a href="../analytic/analytic-audience.html">Audience</a></li>
-                <li><a href="../analytic/analytic-acquisition.html">Acquisition</a></li>
-                <li><a href="../analytic/analytic-realtime.html">Realtime</a></li>
-            </ul>
-        </li>
+                <span>Dashboard</span>
+            </a>           
+        </li>       
+        <li class="menu-label">Mantenimiento</li>
         <li>
-            <a href="">
+            <a href="{{ route('categoria.index') }}">
                 <svg class="adata-svg-icon">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
@@ -37,48 +32,22 @@
                             fill="#000000" />
                     </g>
                 </svg>
-                <span>Cryptocurrency</span><i class="accordion-icon fa fa-angle-left"></i>
-            </a>
-            <ul class="sub-menu">
-                <li><a href="../cryptocurrency/cryptocurrency-index.html">Dashboard</a></li>
-                <li><a href="../cryptocurrency/cryptocurrency-exchange.html">Exchange</a></li>
-                <li><a href="../cryptocurrency/cryptocurrency-buy-sell.html">Buy Sell</a></li>
-                <li><a href="../cryptocurrency/cryptocurrency-wallet.html">Wallet</a></li>
-                <li><a href="../cryptocurrency/cryptocurrency-marketcap.html">Marketcap</a></li>
-                <li><a href="../cryptocurrency/cryptocurrency-news.html">News</a></li>
-            </ul>
-        </li>
-        <li class="menu-label">Web Apps</li>
-        <li>
-            <a href="../apps/app-mail.html">
-                <svg class="adata-svg-icon">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <rect x="0" y="0" width="24" height="24" />
-                        <path
-                            d="M6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 Z M7.5,5 C7.22385763,5 7,5.22385763 7,5.5 C7,5.77614237 7.22385763,6 7.5,6 L13.5,6 C13.7761424,6 14,5.77614237 14,5.5 C14,5.22385763 13.7761424,5 13.5,5 L7.5,5 Z M7.5,7 C7.22385763,7 7,7.22385763 7,7.5 C7,7.77614237 7.22385763,8 7.5,8 L10.5,8 C10.7761424,8 11,7.77614237 11,7.5 C11,7.22385763 10.7761424,7 10.5,7 L7.5,7 Z"
-                            fill="#000000" opacity="0.3" />
-                        <path
-                            d="M3.79274528,6.57253826 L12,12.5 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 Z"
-                            fill="#000000" />
-                    </g>
-                </svg>
-                <span>Email<span class="badge badge-primary sidebar-badge">10+</span></span>
+                <span>CATEGORIAS</span>
             </a>
         </li>
         <li>
-            <a href="../apps/app-calendar.html">
-                <svg class="adata-svg-icon">
+            <a href="">
+                 <svg class="adata-svg-icon">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
+                        <rect fill="#000000" opacity="0.3" x="4" y="4" width="4"
+                            height="4" rx="1" />
                         <path
-                            d="M5.5,4 L9.5,4 C10.3284271,4 11,4.67157288 11,5.5 L11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M14.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,17.5 C13,16.6715729 13.6715729,16 14.5,16 Z"
+                            d="M5,10 L7,10 C7.55228475,10 8,10.4477153 8,11 L8,13 C8,13.5522847 7.55228475,14 7,14 L5,14 C4.44771525,14 4,13.5522847 4,13 L4,11 C4,10.4477153 4.44771525,10 5,10 Z M11,4 L13,4 C13.5522847,4 14,4.44771525 14,5 L14,7 C14,7.55228475 13.5522847,8 13,8 L11,8 C10.4477153,8 10,7.55228475 10,7 L10,5 C10,4.44771525 10.4477153,4 11,4 Z M11,10 L13,10 C13.5522847,10 14,10.4477153 14,11 L14,13 C14,13.5522847 13.5522847,14 13,14 L11,14 C10.4477153,14 10,13.5522847 10,13 L10,11 C10,10.4477153 10.4477153,10 11,10 Z M17,4 L19,4 C19.5522847,4 20,4.44771525 20,5 L20,7 C20,7.55228475 19.5522847,8 19,8 L17,8 C16.4477153,8 16,7.55228475 16,7 L16,5 C16,4.44771525 16.4477153,4 17,4 Z M17,10 L19,10 C19.5522847,10 20,10.4477153 20,11 L20,13 C20,13.5522847 19.5522847,14 19,14 L17,14 C16.4477153,14 16,13.5522847 16,13 L16,11 C16,10.4477153 16.4477153,10 17,10 Z M5,16 L7,16 C7.55228475,16 8,16.4477153 8,17 L8,19 C8,19.5522847 7.55228475,20 7,20 L5,20 C4.44771525,20 4,19.5522847 4,19 L4,17 C4,16.4477153 4.44771525,16 5,16 Z M11,16 L13,16 C13.5522847,16 14,16.4477153 14,17 L14,19 C14,19.5522847 13.5522847,20 13,20 L11,20 C10.4477153,20 10,19.5522847 10,19 L10,17 C10,16.4477153 10.4477153,16 11,16 Z M17,16 L19,16 C19.5522847,16 20,16.4477153 20,17 L20,19 C20,19.5522847 19.5522847,20 19,20 L17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,16.4477153 16.4477153,16 17,16 Z"
                             fill="#000000" />
-                        <path
-                            d="M5.5,10 L9.5,10 C10.3284271,10 11,10.6715729 11,11.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,12.5 C20,13.3284271 19.3284271,14 18.5,14 L14.5,14 C13.6715729,14 13,13.3284271 13,12.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z"
-                            fill="#000000" opacity="0.3" />
                     </g>
                 </svg>
-                <span>Calendar</span>
+                <span>PRODUCTOS</span>
             </a>
         </li>
         <li>
@@ -118,32 +87,7 @@
                 </svg>
                 <span>UI Elements</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../ui-element/uie-accordion.html">Accordion</a></li>
-                <li><a href="../ui-element/uie-alert.html">Alerts</a></li>
-                <li><a href="../ui-element/uie-avatar.html">Avatar</a></li>
-                <li><a href="../ui-element/uie-badge.html">Badges</a></li>
-                <li><a href="../ui-element/uie-breadcrumbs.html">Breadcrumbs</a></li>
-                <li><a href="../ui-element/uie-buttons.html">Buttons</a></li>
-                <li><a href="../ui-element/uie-button-groups.html">Button Groups</a></li>
-                <li><a href="../ui-element/uie-cards.html">Cards</a></li>
-                <li><a href="../ui-element/uie-carousel.html">Carousel</a></li>
-                <li><a href="../ui-element/uie-collapse.html">Collapse</a></li>
-                <li><a href="../ui-element/uie-dropdown.html">Dropdown</a></li>
-                <li><a href="../ui-element/uie-images.html">Images</a></li>
-                <li><a href="../ui-element/uie-list-group.html">List Group</a></li>
-                <li><a href="../ui-element/uie-modal.html">Modal</a></li>
-                <li><a href="../ui-element/uie-navs.html">Navs</a></li>
-                <li><a href="../ui-element/uie-navbar.html">Navbar</a></li>
-                <li><a href="../ui-element/uie-pagination.html">Pagination</a></li>
-                <li><a href="../ui-element/uie-placeholder.html">Placeholder</a></li>
-                <li><a href="../ui-element/uie-popovers.html">Popovers</a></li>
-                <li><a href="../ui-element/uie-progress.html">Progress</a></li>
-                <li><a href="../ui-element/uie-scrollbar.html">Scrollbar</a></li>
-                <li><a href="../ui-element/uie-scrollspy.html">Scrollspy</a></li>
-                <li><a href="../ui-element/uie-spinners.html">Spinners</a></li>
-                <li><a href="../ui-element/uie-tooltips.html">Tooltips</a></li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -160,24 +104,7 @@
                 </svg>
                 <span>UI Utilities</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../ui-utilitie/uiu-background.html">Background</a></li>
-                <li><a href="../ui-utilitie/uiu-borders.html">Borders</a></li>
-                <li><a href="../ui-utilitie/uiu-colors.html">Colors</a></li>
-                <li><a href="../ui-utilitie/uiu-display.html">Display </a></li>
-                <li><a href="../ui-utilitie/uiu-embeds.html">Embeds</a></li>
-                <li><a href="../ui-utilitie/uiu-flex.html">Flex</a></li>
-                <li><a href="../ui-utilitie/uiu-margin.html">Margin</a></li>
-                <li><a href="../ui-utilitie/uiu-padding.html">Padding</a></li>
-                <li><a href="../ui-utilitie/uiu-float.html">Float</a></li>
-                <li><a href="../ui-utilitie/uiu-position.html">Position</a></li>
-                <li><a href="../ui-utilitie/uiu-screenreaders.html">Screenreaders</a></li>
-                <li><a href="../ui-utilitie/uiu-sizing.html">Sizing</a></li>
-                <li><a href="../ui-utilitie/uiu-spacing.html">Spacing</a></li>
-                <li><a href="../ui-utilitie/uiu-text.html">Text</a></li>
-                <li><a href="../ui-utilitie/uiu-vertical-alignment.html">Vertical Alignment</a></li>
-                <li><a href="../ui-utilitie/uiu-width.html">Width</a></li>
-            </ul>
+           
         </li>
         <li>
             <a href="">
@@ -193,14 +120,7 @@
                 </svg>
                 <span>Grid</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../grid/grid-utilities-layout.html">Utilities for Layout</a></li>
-                <li><a href="../grid/grid-auto-layout-columns.html">Auto-layout Columns</a></li>
-                <li><a href="../grid/grid-responsive-classes.html">Responsive Classes</a></li>
-                <li><a href="../grid/grid-alignment.html">Alignment</a></li>
-                <li><a href="../grid/grid-reordering.html">Reordering</a></li>
-                <li><a href="../grid/grid-customizing-grid.html">Customizing Grid</a></li>
-            </ul>
+         
         </li>
         <li>
             <a href="">
@@ -217,17 +137,7 @@
                 </svg>
                 <span>Icons</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../icon/icon-font-awesome.html">Font Awesome</a></li>
-                <li><a href="../icon/icon-feather.html">Feather Icons</a></li>
-                <li><a href="../icon/icon-mdi.html">Mdi icons</a></li>
-                <li><a href="../icon/icon-flag.html">Flag icons</a></li>
-                <li><a href="../icon/icon-simple-line.html">Simple line icons</a></li>
-                <li><a href="../icon/icon-themify.html">Themify icons</a></li>
-                <li><a href="../icon/icon-weather.html">Weather Icons</a></li>
-                <li><a href="../icon/icon-svg.html">SVG Icons<span
-                            class="badge badge-success sidebar-badge">PRO</span></a></li>
-            </ul>
+           
         </li>
         <li>
             <a href="">
@@ -244,18 +154,7 @@
                 </svg>
                 <span>Forms</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../form/form-element.html">Form Elements</a></li>
-                <li><a href="../form/form-formatter.html">Form Formatter </a></li>
-                <li><a href="../form/form-input-group.html">Input Group</a></li>
-                <li><a href="../form/form-input-tag.html">Input Tags</a></li>
-                <li><a href="../form/form-input-masks.html">Input Masks</a></li>
-                <li><a href="../form/form-layout.html">Form Layouts</a></li>
-                <li><a href="../form/form-validation.html">Form Validation</a></li>
-                <li><a href="../form/form-wizard.html">Form Wizard</a></li>
-                <li><a href="../form/form-range-slider.html">Range Slider</a></li>
-                <li><a href="../form/form-date-pickers.html">Date Pickers</a></li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -275,12 +174,7 @@
                 </svg>
                 <span>Tables</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../table/table-static.html">Static</a></li>
-                <li><a href="../table/table-responsive.html">Responsive</a></li>
-                <li><a href="../table/table-datatable.html">Data Tables</a></li>
-                <li><a href="../table/table-footable.html">Foo Tables</a></li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -299,15 +193,7 @@
                 </svg>
                 <span>Charts</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../chart/chart-apex.html">Apex</a></li>
-                <li><a href="../chart/chart-google.html">Google</a></li>
-                <li><a href="../chart/chart-morris.html">Morris</a></li>
-                <li><a href="../chart/chart-chartjs.html">ChartJS</a></li>
-                <li><a href="../chart/chart-flot.html">Flot</a></li>
-                <li><a href="../chart/chart-chartlist.html">Chartlist</a></li>
-                <li><a href="../chart/chart-sparkline.html">Sparkline</a></li>
-            </ul>
+            
         </li>
         <li>
             <a href="">
@@ -347,21 +233,7 @@
                 </svg>
                 <span>Bootstrap</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../bootstrap/bootbox.html">Bootbox</a></li>
-                <li><a href="../bootstrap/block-ui.html">BlockUI</a></li>
-                <li><a href="../bootstrap/daterangepicker.html">Daterangepicker</a></li>
-                <li><a href="../bootstrap/dateTimePicker.html">DateTimePicker</a></li>
-                <li><a href="../bootstrap/dual-listbox.html">Dual Listbox</a></li>
-                <li><a href="../bootstrap/slider.html">Slider</a></li>
-                <li><a href="../bootstrap/markdown.html">Markdown</a></li>
-                <li><a href="../bootstrap/maxlength.html">Maxlength</a></li>
-                <li><a href="../bootstrap/multiselect.html">Multiselect</a></li>
-                <li><a href="../bootstrap/pwstrength.html">Pwstrength</a></li>
-                <li><a href="../bootstrap/select.html">Select</a></li>
-                <li><a href="../bootstrap/sortable.html">Sortable</a></li>
-                <li><a href="../bootstrap/tagsinput.html">Tagsinput</a></li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -381,15 +253,7 @@
                 </svg>
                 <span>Utilities</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../utilities/flatpickr.html">Flatpickr</a></li>
-                <li><a href="../utilities/growl.html">Growl</a></li>
-                <li><a href="../utilities/idle-timer.html">IdleTimer</a></li>
-                <li><a href="../utilities/knob.html">Knob</a></li>
-                <li><a href="../utilities/ladda.html">Ladda</a></li>
-                <li><a href="../utilities/masonry.html">Masonry</a></li>
-                <li><a href="../utilities/nestable.html">Nestable</a></li>
-            </ul>
+         
         </li>
         <li>
             <a href="">
@@ -407,16 +271,7 @@
                 </svg>
                 <span>Extended</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../extended/cropper.html">Cropper</a></li>
-                <li><a href="../extended/clipboard.html">Clipboard</a></li>
-                <li><a href="../extended/flow-js.html">Flow.js</a></li>
-                <li><a href="../extended/typeahead.html">Typeahead</a></li>
-                <li><a href="../extended/toastr.html">Toastr</a></li>
-                <li><a href="../extended/spinkit.html">Spinkit</a></li>
-                <li><a href="../extended/select2.html">Select2</a></li>
-                <li><a href="../extended/sweet-alert2.html">SweetAlert2</a></li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -432,13 +287,7 @@
                 </svg>
                 <span>Media</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../media/photoswipe.html">Photoswipe</a></li>
-                <li><a href="../media/plyr.html">Plyr</a></li>
-                <li><a href="../media/dropzone.html">Dropzone</a></li>
-                <li><a href="../media/dragula.html">Dragula</a></li>
-                <li><a href="../media/swiper.html">Swiper</a></li>
-            </ul>
+           
         </li>
         <li>
             <a href="">
@@ -455,16 +304,7 @@
                 </svg>
                 <span>Miscellaneous</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../miscellaneous/numeral.html">Numeral</a></li>
-                <li><a href="../miscellaneous/no-ui-slider.html">noUiSlider</a></li>
-                <li><a href="../miscellaneous/sortable-js.html">Sortable.js</a></li>
-                <li><a href="../miscellaneous/SmartWizard.html">SmartWizard</a></li>
-                <li><a href="../miscellaneous/jstree.html">Tree</a></li>
-                <li><a href="../miscellaneous/vanilla-text-mask.html">Vanilla Text Mask</a></li>
-                <li><a href="../miscellaneous/codeeditor.html">Code Editor</a></li>
-                <li><a href="../miscellaneous/wysiwyg.html">WYSIWYG Editor</a></li>
-            </ul>
+           
         </li>
         <li class="menu-label">System Pages</li>
         <li class="open active">
@@ -482,17 +322,7 @@
                 </svg>
                 <span>Pages</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu" style="display: block;">
-                <!-- Active Page -->
-                <li class="active"><a href="../pages/pages-starter.html">Starter Page</a></li>
-                <li><a href="../pages/pages-profile.html">User Profile</a></li>
-                <li><a href="../pages/pages-settings.html">Account Settings</a></li>
-                <li><a href="../pages/pages-search.html">Search Page</a></li>
-                <li><a href="../pages/pages-pricing.html">Pricing Tables</a></li>
-                <li><a href="../pages/pages-help-center.html">Help Center</a></li>
-                <li><a href="../pages/pages-faq.html">FAQ's</a></li>
-                <li><a href="../pages/pages-contact.html">Contact Us</a></li>
-            </ul>
+        
         </li>
         <li>
             <a href="">
@@ -507,21 +337,7 @@
                 </svg>
                 <span>Authentication</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="../authentication/aut-error404.html">404 Page</a></li>
-                <li><a href="../authentication/aut-error403.html">403 Page</a></li>
-                <li><a href="../authentication/aut-error500.html">500 Page</a></li>
-                <li><a href="../authentication/aut-error503.html">503 Page</a></li>
-                <li><a href="../authentication/aut-error505.html">505 Page</a></li>
-                <li><a href="../authentication/aut-signin.html">Login</a></li>
-                <li><a href="../authentication/aut-signup.html">Register</a></li>
-                <li><a href="../authentication/aut-unlock.html">Lockscreen</a></li>
-                <li><a href="../authentication/aut-password.html">Password Reset</a></li>
-                <li><a href="../authentication/aut-coming-soon.html" target="_blank">Coming Soon</a>
-                </li>
-                <li><a href="../authentication/aut-maintenance.html" target="_blank">Maintenance</a>
-                </li>
-            </ul>
+          
         </li>
         <li>
             <a href="">
@@ -537,49 +353,7 @@
                 </svg>
                 <span>Email Template</span><i class="accordion-icon fa fa-angle-left"></i>
             </a>
-            <ul class="sub-menu">
-                <li class="sub-menu-label">Account</li>
-                <li><a href="../email-templates/account/new-account/new-account.html"
-                        target="_blank">New
-                        Account</a></li>
-                <li><a href="../email-templates/account/account-update/account-update.html"
-                        target="_blank">Account Update</a></li>
-                <li><a href="../email-templates/account/password-reset/password-reset.html"
-                        target="_blank">Password Reset</a></li>
-                <li><a href="../email-templates/account/expired-card/expired-card.html"
-                        target="_blank">Expired
-                        Card</a></li>
-                <li><a href="../email-templates/account/closed-account/closed-account.html"
-                        target="_blank">Closed Account</a></li>
-                <li class="divider-border"></li>
-                <li class="sub-menu-label">Launch</li>
-                <li><a href="../email-templates/launch/announcement/announcement.html"
-                        target="_blank">Announcement</a></li>
-                <li><a href="../email-templates/launch/user-welcome/user-welcome.html"
-                        target="_blank">User
-                        Welcome</a></li>
-                <li><a href="../email-templates/launch/coming-soon/coming-soon.html"
-                        target="_blank">Coming
-                        Soon</a></li>
-                <li><a href="../email-templates/launch/event/event.html" target="_blank">Event</a>
-                </li>
-                <li><a href="../email-templates/launch/update/update.html" target="_blank">Update</a>
-                </li>
-                <li class="divider-border"></li>
-                <li class="sub-menu-label">Marketing</li>
-                <li><a href="../email-templates/marketing/blog-post/blog-post.html"
-                        target="_blank">Blog
-                        Post</a></li>
-                <li><a href="../email-templates/marketing/coupon-sale/coupon-sale.html"
-                        target="_blank">Coupon
-                        Sale</a></li>
-                <li><a href="../email-templates/marketing/event-invitation/event-invitation.html"
-                        target="_blank">Event Invitation</a></li>
-                <li><a href="../email-templates/marketing/newsletter/newsletter.html"
-                        target="_blank">Newsletter</a></li>
-                <li><a href="../email-templates/marketing/product-announcement/product-announcement.html"
-                        target="_blank">Product Announcement</a></li>
-            </ul>
+           
         </li>
         <li class="menu-label">Others</li>
         <li>
