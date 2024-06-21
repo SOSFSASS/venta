@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('template');
@@ -64,3 +65,20 @@ Route::controller(ProductoController::class)->group(function () {
     Route::post('/generar-codigo-unico', 'generarCodigoUnico')->name('generarCodigoUnico');
     Route::get('/generar-etiqueta-producto', 'generarEtiquetaProducto')->name('generar-etiqueta-producto');
 });
+
+
+Route::controller(ClienteController::class)->group(function () {
+    Route::get('/cliente', 'index')->name('cliente.index');
+    Route::get('/cliente/create', 'create')->name('cliente.create');
+    Route::post('/cliente', 'store')->name('cliente.store');
+    Route::get('/cliente/{id}/edit', 'edit')->name('cliente.edit');
+    Route::put('/cliente/{id}', 'update')->name('cliente.update');
+    Route::delete('/cliente/{id}', 'destroy')->name('cliente.destroy');
+});
+
+// Route::get('/clientes', [ClienteController::class, 'index'])->name('cliente.index');
+// Route::get('/clientes/create', [ClienteController::class, 'create'])->name('cliente.create');
+// Route::post('/clientes', [ClienteController::class, 'store'])->name('cliente.store');
+// Route::get('/clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
+// Route::put('/clientes/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');
+// Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');

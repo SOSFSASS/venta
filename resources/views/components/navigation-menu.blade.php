@@ -16,15 +16,17 @@
                 <ul>
                     <li><a class="{{ setActive('Categoria') }}" href="{{ route('categoria.index') }}"><i
                                 data-feather="codepen"></i><span>Categoria</span></a></li>
-                    
+
                     <li><a class="{{ setActive('Producto') }}" href="{{ route('producto.index') }}"><i
                                 data-feather="box"></i><span>Productos</span></a></li>
                 </ul>
             </li>
             <li class="submenu-open">
-                <h6 class="submenu-hdr">Stock</h6>
+                <h6 class="submenu-hdr">Clientes</h6>
                 <ul>
-                    <li><a href=""><i data-feather="package"></i><span>Mantenimiento de stock</span></a></li>
+                    <li>
+                        <a class="{{ setActive('Cliente') }}" href="{{ route('cliente.index') }}"><i data-feather="users"></i><span>Registro de Clientes</span></a>
+                    </li>
                 </ul>
             </li>
             <li class="submenu-open">
@@ -46,11 +48,11 @@
             <li class="submenu-open">
                 <h6 class="submenu-hdr">Clientes</h6>
                 <ul>
-                    <a href=""><i data-feather="users"></i><span>Clientes</span></a>
+                    <a href=""><i data-feather="users"></i><span>Registro de Clientes</span></a>
             </li>
 
         </ul>
-        </li>
+       
         <li class="submenu-open">
             <h6 class="submenu-hdr">Compras</h6>
             <ul>
