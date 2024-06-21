@@ -1,16 +1,25 @@
 <?php
 
-use App\Models\Categoria;
+
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
+// Route::get('/', function () {
+//     return view('template');
+// });
+
+Route::view('panel', 'panel.index')->name('panel');
+Route::view('pos', 'pos.index')->name('pos');
 
 // Route::get('/', function () {
 //     return view('panel.index');
 // });
-Route::view('/', 'panel.index')->name('panel');
-Route::view('/login', 'panel.login')->name('login');
-Route::view('categoria', 'categoria.index')->name('categoria');
+// Route::view('/', 'panel.index')->name('panel');
+// Route::view('/login', 'panel.login')->name('login');
+// Route::view('categoria', 'categoria.index')->name('categoria');
+
+// Route::view('panel', 'panel.index')->name('panel');
+// Route::view('pos', 'pos.index')->name('pos');
 
 // Route::controller(CategoriaController::class)->group(function (){
 //     Route::post('/categoria', 'all');

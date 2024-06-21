@@ -1,64 +1,88 @@
 @extends('template')
 
-@section('title', 'Crear Categoria')
-{{-- aca se añade las demas rutas de css --}}
+@section('title', 'Editar Categoria - ' . $categoria->nombre)
+
+
 @push('css')
 @endpush
+
 @section('content')
-    <!-- Page Inner Content Start -->
-    <!--================================-->
-    <div class="page-inner-content">
-        <div class="row no-gutters">
-            <!--================================-->
-            <!-- Page Content Area Start -->
-            <!--================================-->
-            <div class="col-lg-12 page-content-area">
-                <div class="inner-content">
-                    <!--/ Page Sidebar Area End -->
-                    <div class="container mt-5">
-                        <h1>Editar Categoría</h1>
-                        <div class="custom-fieldset-style mg-b-30">
-                            <div class="row">
-                                <div class="container mt-5 mx-8">
-                                    <form action="{{ route('categoria.update', $categoria->id) }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="form-group">
-                                            <label class="form-control-label active" for="nombre">Nombre: <span class="tx-danger">*</span></label>
-                                            <input type="text" class="form-control {{ $errors->has('nombre') ? 'parsley-error' : '' }}" id="nombre" name="nombre" value="{{ old('nombre', $categoria->nombre) }}">
-                                            @if ($errors->has('nombre'))
-                                                <ul class="parsley-errors-list filled">
-                                                    <li class="parsley-required">{{ $errors->first('nombre') }}</li>
-                                                </ul>
-                                            @endif
+
+    <div class="content">
+        <div class="page-header justify-content-between">
+            <div class="page-title">
+                <h4>EDITAR CATEGORIA</h4>
+            </div>
+
+        </div>
+
+        <div class="card mb-0">
+            <div class="card-body add-product pb-0  ">
+                <form action="{{ route('categoria.update', $categoria->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="accordion-card-one accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="headingOne">
+                                <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-controls="collapseOne">
+                                    <div class="addproduct-icon">
+                                        <h5><i data-feather="info" class="add-info"></i><span>Actualizar informacion de
+                                                categoria</span></h5>
+                                        <a href="javascript:void(0);"><i data-feather="chevron-down"
+                                                class="chevron-down-add"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-5 col-sm-6 col-12">
+                                            <div class="mb-3 add-product">
+                                                <label class="form-label">Nombre de la CATEGORIA</label>
+                                                <input type="text" name="nombre"
+                                                    class="form-control @error('nombre') is-invalid @enderror"
+                                                    value="{{ old('nombre', $categoria->nombre) }}">
+                                                @error('nombre')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="descripcion">Descripción: <span class="tx-danger">*</span></label>
-                                            <input type="text" class="form-control {{ $errors->has('descripcion') ? 'parsley-error' : '' }}" id="descripcion" name="descripcion" value="{{ old('descripcion', $categoria->descripcion) }}">
-                                            @if ($errors->has('descripcion'))
-                                                <ul class="parsley-errors-list filled">
-                                                    <li class="parsley-required">{{ $errors->first('descripcion') }}</li>
-                                                </ul>
-                                            @endif
+
+                                        <div class="col-lg-12 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Descripción</label>
+                                                <textarea name="descripcion" class="form-control @error('descripcion') is-invalid @enderror">{{ old('descripcion', $categoria->descripcion) }}</textarea>
+                                                @error('descripcion')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
-                                        <div class="form-layout-footer mg-t-10">
-                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar</button>
-                                            <a href="{{ route('categoria.index') }}" class="btn btn-secondary waves-effect">Volver</a>
-                                        </div>
-                                    </form>
+                                    </div>
+                                    <br>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="btn-addproduct mb-4">
+                        <a href="{{ route('categoria.index') }}" class="btn btn-cancel">Regresar</a>
+                        <button type="submit" class="btn btn-submit me-2">Actualizar</button>
+                    </div>
+                </form>
+
             </div>
         </div>
+
     </div>
 
-    <!--/ Page Inner Content End -->
 
 @endsection
 
 @push('js')
-    
 @endpush

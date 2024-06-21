@@ -25,7 +25,7 @@ class ProductoRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:255',           
             'descripcion' => 'required|string',
-            'precio_compra' => 'required|numeric',
+            'precio_compra' => 'required|numeric|min:0',
             'costo_venta' => 'required|numeric|min:0',
             'stock' => 'required|integer',
             'fechaven' => 'nullable|date',

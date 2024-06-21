@@ -223,7 +223,7 @@ class ProductoController extends Controller
         $producto->update($request->except(['codigo', 'imagen']));
 
         // Redireccionar con un mensaje de éxito
-        return redirect()->route('productos.index')->with('success', 'El producto se ha actualizado correctamente.');
+        return redirect()->route('producto.index')->with('success', 'El producto se ha actualizado correctamente.');
     }
 
 
