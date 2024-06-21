@@ -15,7 +15,12 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/dataTable/datatables.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/dataTable/extensions/dataTables.jqueryui.min.css') }}">
 
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.css') }}">
+    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.css') }}">
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.css') }}"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <!-- END: Custom CSS-->
@@ -126,8 +131,16 @@
     <script src="{{ asset('assets/plugins/dataTable/responsive/dataTables.responsive.js') }}"></script>
     <script src="{{ asset('assets/plugins/dataTable/extensions/dataTables.jqueryui.min.js') }}"></script>
     <!-- BEGIN: Page Vendor JS-->
+    {{-- <script src="{{ asset('assets/plugins/select2/js/select2..js') }}"></script>
+    <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
-    <script src=".{{ asset('assets/plugins/sweetalert2/sweetalert2-active.js') }}"></script>
+    <script src=".{{ asset('assets/plugins/sweetalert2/sweetalert2-active.js') }}"></script> --}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </body>
 
 </html>

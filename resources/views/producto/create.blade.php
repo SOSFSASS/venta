@@ -3,6 +3,7 @@
 @section('title', 'Crear producto')
 {{-- aca se añade las demas rutas de css --}}
 @push('css')
+
 @endpush
 @section('content')
     <!-- Page Inner Content Start -->
@@ -38,12 +39,12 @@
                                                 <div class="form-group">
                                                     <label class="form-label">Código</label>
                                                     <input type="text" name="codigo" id="codigo"
-                                                           class="form-control @error('codigo') is-invalid @enderror"
-                                                           value="{{ old('codigo') }}" placeholder="Código Barras">
+                                                        class="form-control @error('codigo') is-invalid @enderror"
+                                                        value="{{ old('codigo') }}" placeholder="Código Barras">
                                                     @error('codigo')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -52,12 +53,12 @@
                                                 <div class="form-group mg-md-l--1">
                                                     <label class="form-label">Nombre del Producto</label>
                                                     <input type="text" name="nombre"
-                                                           class="form-control  @error('nombre') is-invalid @enderror"
-                                                           value="{{ old('nombre') }}">
+                                                        class="form-control  @error('nombre') is-invalid @enderror"
+                                                        value="{{ old('nombre') }}">
                                                     @error('nombre')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -65,8 +66,8 @@
                                             <div class="col-md-4 mg-t--1 mg-md-t-0">
                                                 <div class="form-group mg-md-l--1">
                                                     <label class="form-label">Categoría</label>
-                                                    <select name="id_categoria"
-                                                            class="form-control select @error('id_categoria') is-invalid @enderror">
+                                                    <select id="selecCategoria" name="id_categoria"
+                                                        class="form-control select @error('id_categoria') is-invalid @enderror">
                                                         <option value="">Elige Categoría</option>
                                                         @foreach ($categorias as $categoria)
                                                             <option value="{{ $categoria->id }}"
@@ -75,27 +76,27 @@
                                                         @endforeach
                                                     </select>
                                                     @error('id_categoria')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
                                             <!-- col-4 -->
-                                            
+
                                             <!-- col-4 -->
-                                           
+
                                             <!-- col-4 -->
                                             <div class="col-md-4 mg-t--1 mg-md-t-0">
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <label class="form-label">Stock</label>
                                                     <input type="number" name="stock"
-                                                           class="form-control @error('stock') is-invalid @enderror"
-                                                           value="{{ old('stock') }}">
+                                                        class="form-control @error('stock') is-invalid @enderror"
+                                                        value="{{ old('stock') }}">
                                                     @error('stock')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -104,12 +105,12 @@
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <label class="form-label">Precio de Venta</label>
                                                     <input type="number" name="costo_venta"
-                                                           class="form-control  @error('costo_venta') is-invalid @enderror"
-                                                           value="{{ old('costo_venta') }}">
+                                                        class="form-control  @error('costo_venta') is-invalid @enderror"
+                                                        value="{{ old('costo_venta') }}">
                                                     @error('costo_venta')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -118,12 +119,12 @@
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <label class="form-label">Precio de Compra</label>
                                                     <input type="number" name="precio_compra"
-                                                           class="form-control @error('precio_compra') is-invalid @enderror"
-                                                           value="{{ old('precio_compra') }}">
+                                                        class="form-control @error('precio_compra') is-invalid @enderror"
+                                                        value="{{ old('precio_compra') }}">
                                                     @error('precio_compra')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -134,13 +135,13 @@
                                                     <div class="input-groupicon calender-input">
                                                         <i data-feather="calendar" class="info-img"></i>
                                                         <input type="text" name="fechaven"
-                                                               class="datetimepicker @error('fechaven') is-invalid @enderror"
-                                                               value="{{ old('fechaven') }}" placeholder="Fecha de Vencimiento"
-                                                               id="fechaven">
+                                                            class="datetimepicker @error('fechaven') is-invalid @enderror"
+                                                            value="{{ old('fechaven') }}"
+                                                            placeholder="Fecha de Vencimiento" id="fechaven">
                                                         @error('fechaven')
-                                                        <span class="tx-danger" >
-                                                            {{ $message }}
-                                                        </span>
+                                                            <span class="tx-danger">
+                                                                {{ $message }}
+                                                            </span>
                                                         @enderror
                                                     </div>
                                                 </div>
@@ -150,18 +151,20 @@
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <label class="form-label">Estado</label>
                                                     <select name="estado"
-                                                            class="form-control select  @error('estado') is-invalid @enderror">
-                                                        <option value="1" {{ old('estado') == '1' ? 'selected' : '' }}>
+                                                        class="form-control select  @error('estado') is-invalid @enderror">
+                                                        <option value="1"
+                                                            {{ old('estado') == '1' ? 'selected' : '' }}>
                                                             Activo
                                                         </option>
-                                                        <option value="0" {{ old('estado') == '0' ? 'selected' : '' }}>
+                                                        <option value="0"
+                                                            {{ old('estado') == '0' ? 'selected' : '' }}>
                                                             Inactivo
                                                         </option>
                                                     </select>
                                                     @error('estado')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -170,11 +173,11 @@
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <label class="form-label">Descripción</label>
                                                     <textarea name="descripcion" class="form-control  @error('descripcion') is-invalid @enderror"
-                                                              value="{{ old('descripcion') }}"></textarea>
+                                                        value="{{ old('descripcion') }}"></textarea>
                                                     @error('descripcion')
-                                                    <span class="tx-danger" >
-                                                        {{ $message }}
-                                                    </span>
+                                                        <span class="tx-danger">
+                                                            {{ $message }}
+                                                        </span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -182,21 +185,25 @@
                                             <div class="col-md-12 mg-t--1 mg-md-t-0">
                                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                                     <div class="addproduct-icon list">
-                                                        <h5><i data-feather="image" class="add-info"></i><span>Cargar Imagen</span></h5>
+                                                        <h5><i data-feather="image" class="add-info"></i><span>Cargar
+                                                                Imagen</span></h5>
                                                     </div>
                                                     <div class="add-choosen">
                                                         <div class="input-blocks">
                                                             <div class="image-upload">
-                                                                <input type="file" name="imagen" id="imagen" id="imagenInput"
-                                                                       onchange="previewImage(event)">
+                                                                <input type="file" name="imagen" id="imagen"
+                                                                    id="imagenInput" onchange="previewImage(event)">
                                                                 <div class="image-uploads">
-                                                                    <i data-feather="plus-circle" class="plus-down-add me-0"></i>
+                                                                    <i data-feather="plus-circle"
+                                                                        class="plus-down-add me-0"></i>
                                                                     <h4>Agregar Imagen</h4>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="phone-img">
-                                                            <img id="imagenPrevisualizada" src="{{ asset('css/img/product/noimage.png') }}" alt="image">
+                                                            <img id="imagenPrevisualizada"
+                                                                src="{{ asset('css/img/product/noimage.png') }}"
+                                                                alt="image">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -205,14 +212,15 @@
                                         </div>
                                         <!-- row -->
                                         <div class="form-layout-footer mg-t-15">
-                                            <a href="{{ route('producto.index') }}" class="btn btn-secondary waves-effect">Cancelar</a>
+                                            <a href="{{ route('producto.index') }}"
+                                                class="btn btn-secondary waves-effect">Cancelar</a>
                                             <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
                                         </div>
                                         <!-- form-layout-footer -->
                                     </div>
                                     <!-- form-layout -->
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -226,9 +234,12 @@
 @endsection
 
 @push('js')
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
     <script>
         $(document).ready(function() {
+            $('#selecCategoria').select2();
+
             // Verificar si hay una preferencia almacenada en el localStorage
             var autoGenerarCodigo = localStorage.getItem('autoGenerarCodigo');
 

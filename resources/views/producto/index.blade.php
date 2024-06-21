@@ -64,9 +64,9 @@
                             <table class="table table-bordered">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>Codigo</th>
-                                        <th>Codigo</th>
+                                        
                                         <th>Nombre</th>
+                                        <th>Codigo</th>
                                         <th>Descripción</th>
                                         <th>Precio de Compra</th>
                                         <th>Costo de Venta</th>
@@ -95,8 +95,7 @@
                                                     id="producto-link">{{ strlen($producto->nombre) > 20 ? substr($producto->nombre, 0, 20) . '...' : $producto->nombre }}</a>
         
                                             </td>
-                                            <td>{{ $producto->codigo }}</td>
-                                            <td>{{ $producto->nombre }}</td>
+                                            <td>{{ $producto->codigo }}</td>                                            
                                             <td>{{ $producto->descripcion }}</td>
                                             <td><span>S/.</span>&nbsp;{{ $producto->precio_compra }}</td>
                                             <td><span>S/.</span>&nbsp;{{ $producto->costo_venta }}</td>

@@ -80,7 +80,6 @@ class ProductoController extends Controller
         //echo $codigo;
     }
 
-
     public function store(ProductoRequest  $request)
     {
 
@@ -169,6 +168,64 @@ class ProductoController extends Controller
 
         return redirect()->route('producto.index')->with('success', 'Producto creado exitosamente.');
     }
+
+
+    public function show(string $id)
+    {
+        $producto = Producto::findOrFail($id);
+        return view('producto.detalleproducto', ['producto' => $producto]);
+    }
+
+    public function edit(string $id)
+    {
+        //
+        // Obtener el producto que se va a editar
+        $producto = Producto::findOrFail($id);
+
+        // Obtener las categorías, monedas y medidas para los selectores en el formulario
+        $categorias = Categoria::all();
+
+        // Retornar la vista de edición con los datos del producto y las opciones de selección
+        return view('producto.edit', compact('producto', 'categorias'));
+    }
+
+    public function update(ProductoRequest $request, string $id)
+    {
+        // Buscar el producto a actualizar
+        $producto = Producto::findOrFail($id);
+
+        // Convertir la fecha al formato adecuado (año-mes-día)
+        if ($request->filled('fechaven')) {
+            $fechaven = Carbon::createFromFormat('d-m-Y', $request->fechaven)->format('Y-m-d');
+            $request->merge(['fechaven' => $fechaven]);
+        }
+
+        // Verificar si el código ha cambiado
+        if ($request->codigo !== $producto->codigo) {
+            // El código ha cambiado, actualiza el código en el producto
+            $producto->codigo = $request->codigo;
+        }
+
+        // Verificar si se ha cargado una nueva imagen
+        if ($request->hasFile('imagen') && $request->file('imagen')->isValid()) {
+            // Eliminar la imagen anterior si existe
+            if ($producto->imagen && Storage::exists('public/product/' . $producto->imagen)) {
+                Storage::delete('public/product/' . $producto->imagen);
+            }
+            // Guardar la nueva imagen
+            $fileName = hexdec(uniqid()) . '.' . $request->file('imagen')->getClientOriginalExtension();
+            $path = 'public/product/';
+            $request->file('imagen')->storeAs($path, $fileName);
+            $producto->imagen = $fileName;
+        }
+
+        // Actualizar el producto con los nuevos valores del formulario
+        $producto->update($request->except(['codigo', 'imagen']));
+
+        // Redireccionar con un mensaje de éxito
+        return redirect()->route('productos.index')->with('success', 'El producto se ha actualizado correctamente.');
+    }
+
 
 
     public function generarEtiquetaProducto(Request $request)
