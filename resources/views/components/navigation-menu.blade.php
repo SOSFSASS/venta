@@ -32,7 +32,7 @@
             <li class="submenu-open">
                 <h6 class="submenu-hdr">Ventas</h6>
                 <ul>
-                    <li><a class="{{ setActive('pos') }}" href="{{ route('pos') }}"><i
+                    <li><a class="{{ setActive('Pos') }}" href="{{ route('pos') }}"><i
                                 data-feather="hard-drive"></i><span>POS</span></a></li>
                     <li><a href=""><i data-feather="shopping-cart"></i><span>Registro de ventas</span></a></li>
                     <li><a href=""><i data-feather="file-text"></i><span>Facturas</span></a></li>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre',50);
             $table->string('apellido',50);
-            $table->string('documento', 50)->unique();
+            $table->string('documento', 50);
             $table->enum('tipo_identificacion', ['RUC', 'DNI']);
             $table->string('correo',100)->nullable();
             $table->string('telefono', 15)->nullable();

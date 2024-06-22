@@ -24,6 +24,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_categoria');
             $table->boolean('estado')->default(1);
             $table->timestamps();
+            // Definir la clave foránea
+            // $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
         });
     }
 

@@ -4,13 +4,14 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PosController;
 use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('template');
 // });
 
 Route::view('panel', 'panel.index')->name('panel');
-Route::view('pos', 'pos.index')->name('pos');
+// Route::view('pos', 'pos.index')->name('pos');
 
 // Route::get('/', function () {
 //     return view('panel.index');
@@ -20,7 +21,7 @@ Route::view('pos', 'pos.index')->name('pos');
 // Route::view('categoria', 'categoria.index')->name('categoria');
 
 // Route::view('panel', 'panel.index')->name('panel');
-// Route::view('pos', 'pos.index')->name('pos');
+
 
 // Route::controller(CategoriaController::class)->group(function (){
 //     Route::post('/categoria', 'all');
@@ -82,3 +83,41 @@ Route::controller(ClienteController::class)->group(function () {
 // Route::get('/clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
 // Route::put('/clientes/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');
 // Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+
+
+// Route::get('/pos', [PosController::class, 'categoriaproductos']);
+// Route::get('/productos-por-categoria', [CategoriaController::class, 'mostrarProductosPorCategoria'])->name('productos.por.categoria');
+// Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+
+// Route::get('/categoria/{id}/productos', [PosController::class, 'getProductos'])->name('categoria.productos');
+// Route::get('/productos/{categoriaId}', [PosController::class, 'productos']);
+
+Route::controller(PosController::class)->group(function () {
+    // Route::get('pos', 'pos.index')->name('pos');
+    Route::get('pos', 'categoriaproductos')->name('pos');
+    Route::get('/productos/categoria/{id}', 'getProductsByCategory');
+    // Ruta para obtener todos los productos
+    Route::get('/productos/todos', 'todosLosProductos');
+
+
+
+
+    // Route::post('pos/ProdCategorias', 'listar_productosxCategorias')->name('listar.ProdCategorias');
+    // Route::get('/categoria/{id}/productos', [PosController::class, 'getProductsByCategory'])->name('categoria.productos');
+
+
+
+
+
+    // Route::get('productos/create', 'create')->name('productos.create');
+    // Route::post('productos', 'store')->name('productos.store');
+    // Route::get('productos/{id}', 'show')->name('productos.show');
+    // Route::get('productos/{id}/edit', 'edit')->name('productos.edit');
+    // Route::put('productos/{id}', 'update')->name('productos.update');
+    // Route::delete('productos/{id}', 'destroy')->name('productos.destroy');
+    // Route::get('/generar-etiqueta-producto', 'generarEtiquetaProducto')->name('generar-etiqueta-producto');
+    // Route::get('/products/{id}/barcode', 'generateBarcode')->name('productos.barcode');
+    // Route::post('/generar-codigo-unico', 'generarCodigoUnico')->name('generarCodigoUnico');
+    // Route::get('/generar-etiqueta-producto', 'generarEtiquetaProducto')->name('generar-etiqueta-producto');
+});
+// Route::view('pos', 'pos.index')->name('pos');

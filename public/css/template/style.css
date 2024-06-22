@@ -27,7 +27,8 @@ body {
 }
 
 img {
-  max-width: 100%;
+  /* Aca imagen del pos */
+  max-width: 100%;  
   height: auto;
   vertical-align: inherit;
 }

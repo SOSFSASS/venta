@@ -12,16 +12,16 @@ class ClienteController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        
+
         // Consulta los clientes ordenados por lo más reciente
         $clientesQuery = Cliente::orderBy('created_at', 'desc');
 
         // Aplica el filtro de búsqueda si hay término de búsqueda
         if (!empty($search)) {
             $clientesQuery->where('nombre', 'like', '%' . $search . '%')
-                          ->orWhere('apellido', 'like', '%' . $search . '%')
-                          ->orWhere('documento', 'like', '%' . $search . '%')
-                          ->orWhere('correo', 'like', '%' . $search . '%');
+                ->orWhere('apellido', 'like', '%' . $search . '%')
+                ->orWhere('documento', 'like', '%' . $search . '%')
+                ->orWhere('correo', 'like', '%' . $search . '%');
         }
 
         // Obtiene los clientes paginados
@@ -39,37 +39,46 @@ class ClienteController extends Controller
 
     public function store(ClienteRequest $request)
     {
-        // Crea un nuevo cliente en la base de datos
-        Cliente::create($request->validated());
+        // Guardamos los datos del cliente
+        Cliente::create([
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'tipo_identificacion' => $request->tipo_identificacion,
+            'documento' => $request->documento,
+            'correo' => $request->correo,
+            'telefono' => $request->telefono,
+            'direccion' => $request->direccion,
+            'estado' => 1,
+        ]);
 
-        // Redirecciona a la ruta deseada con un mensaje de éxito
-        return redirect()->route('cliente.index')
-                         ->with('success', 'Cliente creado correctamente.');
+        // Redireccionamos a la lista de clientes con un mensaje de éxito
+        return redirect()->route('cliente.index')->with('success', 'Cliente creado correctamente.');
     }
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-         // Retorna la vista para editar un cliente existente
-         return view('cliente.edit', compact('cliente'));
+        $cliente = Cliente::findOrFail($id);
+        return view('cliente.edit', compact('cliente'));
     }
 
-    public function update(ClienteRequest $request, Cliente $cliente)
+    public function update(ClienteRequest $request, $id)
     {
         // Actualiza el cliente en la base de datos
-        $cliente->update($request->validated());
+        $cliente = Cliente::findOrFail($id);
+        $cliente->update($request->all());
 
         // Redirecciona a la ruta deseada con un mensaje de éxito
         return redirect()->route('cliente.index')
-                         ->with('success', 'Cliente actualizado correctamente.');
+            ->with('success', 'Cliente actualizado correctamente.');
     }
 
-    public function destroy(Cliente $cliente)
+    public function destroy($id)
     {
-        // Elimina el cliente de la base de datos
-        $cliente->delete();
-
-        // Redirecciona a la ruta deseada con un mensaje de éxito
-        return redirect()->route('cliente.index')
-                         ->with('success', 'Cliente eliminado correctamente.');
+        $cliente = Cliente::findOrFail($id);
+    
+        // Cambiar el estado del cliente a inactivo (por ejemplo, cambiar a 0 para eliminar)
+        $cliente->estado = 0;
+        $cliente->save();
+    
+        return redirect()->route('cliente.index')->with('success', 'Cliente inactivado correctamente.');
     }
-
 }
