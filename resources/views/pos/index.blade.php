@@ -59,14 +59,17 @@
         <div class="header">
 
             <div class="header-left active">
-                <a href="https://dreamspos.dreamstechnologies.com/html/template/index.html" class="logo logo-normal">
-                    <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/logo.png" alt>
+                <a href="{{ route('panel') }}" class="logo logo-normal">
+                    <img src="{{ asset('css/img/logo.png') }}" alt>
                 </a>
-                <a href="https://dreamspos.dreamstechnologies.com/html/template/index.html" class="logo logo-white">
-                    <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/logo-white.png" alt>
+                <a href="{{ route('panel') }}" class="logo logo-white">
+                    <img src="{{ asset('css/img/logo3.png') }}" alt>
                 </a>
-                <a href="https://dreamspos.dreamstechnologies.com/html/template/index.html" class="logo-small">
-                    <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/logo-small.png" alt>
+                <a href="{{ route('panel') }}" class="logo-small">
+                    <img src="{{ asset('css/img/logo-small.png') }}" alt>
+                </a>
+                <a id="toggle_btn" href="javascript:void(0);">
+                    <i data-feather="chevrons-left" class="feather-16"></i>
                 </a>
             </div>
 
@@ -112,13 +115,13 @@
                                     <h6><span><i data-feather="user" class="feather-16"></i></span>Customers</h6>
                                     <ul class="customers">
                                         <li><a href="javascript:void(0);">Aron Varu<img
-                                                    src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/profiles/avator1.jpg"
+                                                    src="https://elisay-code.netlify.app/assets/img/profile.jpg"
                                                     alt class="img-fluid"></a></li>
                                         <li><a href="javascript:void(0);">Jonita<img
-                                                    src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/profiles/avator1.jpg"
+                                                    src="https://elisay-code.netlify.app/assets/img/profile.jpg"
                                                     alt class="img-fluid"></a></li>
                                         <li><a href="javascript:void(0);">Aaron<img
-                                                    src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/profiles/avator1.jpg"
+                                                    src="https://elisay-code.netlify.app/assets/img/profile.jpg"
                                                     alt class="img-fluid"></a></li>
                                     </ul>
                                 </div>
@@ -316,12 +319,12 @@
                     <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
                         <span class="user-info">
                             <span class="user-letter">
-                                <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/profiles/avator1.jpg"
+                                <img src="https://elisay-code.netlify.app/assets/img/profile.jpg"
                                     alt class="img-fluid">
                             </span>
                             <span class="user-detail">
-                                <span class="user-name">John Smilga</span>
-                                <span class="user-role">Super Admin</span>
+                                <span class="user-name">Eli Sayes</span>
+                                <span class="user-role"> Admin</span>
                             </span>
                         </span>
                     </a>
@@ -329,12 +332,12 @@
                         <div class="profilename">
                             <div class="profileset">
                                 <span class="user-img"><img
-                                        src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/profiles/avator1.jpg"
+                                        src="https://elisay-code.netlify.app/assets/img/profile.jpg"
                                         alt>
                                     <span class="status online"></span></span>
                                 <div class="profilesets">
-                                    <h6>John Smilga</h6>
-                                    <h5>Super Admin</h5>
+                                    <h6>Eli Sayes</h6>
+                                    <h5> Admin</h5>
                                 </div>
                             </div>
                             <hr class="m-0">
@@ -372,60 +375,27 @@
 
         <div class="page-wrapper pos-pg-wrapper ms-0">
             <div class="content pos-design p-0">
-                <div class="btn-row d-sm-flex align-items-center">
+                {{-- <div class="btn-row d-sm-flex align-items-center">
                     <a href="javascript:void(0);" class="btn btn-secondary mb-xs-3" data-bs-toggle="modal"
                         data-bs-target="#orders"><span class="me-1 d-flex align-items-center"><i
-                                data-feather="shopping-cart" class="feather-16"></i></span>View Orders</a>
+                                data-feather="shopping-cart" class="feather-16"></i></span>Todas Las Ventas</a>
                     <a href="javascript:void(0);" class="btn btn-info"><span
                             class="me-1 d-flex align-items-center"><i data-feather="rotate-cw"
-                                class="feather-16"></i></span>Reset</a>
+                                class="feather-16"></i></span>Recargar</a>
                     <a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#recents"><span class="me-1 d-flex align-items-center"><i
-                                data-feather="refresh-ccw" class="feather-16"></i></span>Transaction</a>
-                </div>
+                                data-feather="refresh-ccw" class="feather-16"></i></span>Transacciones</a>
+                </div> --}}
                 <div class="row align-items-start pos-wrapper">
                     <div class="col-md-12 col-lg-8">
                         <div class="pos-categories tabs_wrapper">
                             <h5>Categorias</h5>
                             <p>Selecciona tus productos</p>
-
-                            {{-- <ul class="tabs owl-carousel pos-category">
-                                @foreach ($categorias as $categoria)
-                                    <li id="all">
-                                        <a href="javascript:void(0);">
-                                            <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/categories/category-04.png" alt="Categories">
-                                        </a>
-                                        <h6><a href="javascript:void(0);">All Categories</a></h6>
-                                        <span>80 Items</span>
-                                    </li>
-                                    <li id="categoria-{{ $categoria->id }}">
-                                        <a href="javascript:void(0);">
-                                            <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/categories/category-01.png"
-                                                alt="Categories">
-                                        </a>
-                                        <h6><a href="javascript:void(0);">{{ $categoria->nombre }}</a></h6>
-                                        <span>{{ $categoria->productos_count }} Productos</span>
-                                    </li>
-                                @endforeach
-                            </ul> --}}
-
-                            {{-- <ul class="tabs owl-carousel pos-category">
-                                @foreach ($categorias as $categoria)
-                                    <li id="categoria-{{ $categoria->id }}" class="categoria-item"
-                                        data-id="{{ $categoria->id }}">
-                                        <a onclick="loadProducts({{ $categoria->id }})">
-                                            <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/categories/category-01.png"
-                                                alt="Categories">
-                                        </a>
-                                        <h6><a href="javascript:void(0);">{{ $categoria->nombre }}</a></h6>
-                                        <span>{{ $categoria->productos_count }} Productos</span>
-                                    </li>
-                                @endforeach
-                            </ul> --}}
                             <ul class="tabs owl-carousel pos-category">
                                 <li id="all">
                                     <a href="javascript:void(0);">
-                                        <img src="assets/img/categories/category-01.png" alt="Categories">
+                                        <img src="https://png.pngtree.com/png-clipart/20230916/original/pngtree-some-icons-in-a-square-format-with-colors-of-different-kinds-png-image_12268981.png"
+                                            alt="Categories">
                                     </a>
                                     <h6><a href="javascript:void(0);">Todas las Categorías</a></h6>
                                     <span id="totalProductos">0 Productos</span>
@@ -451,36 +421,20 @@
                             <div class="pos-products">
                                 <div class="tab_content" data-tab="headphones">
                                     <div class="row">
-                                        {{-- <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
-                                            <div class="product-info default-cover card">
-                                                <a href="javascript:void(0);" class="img-bg">
-                                                    <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-05.png"
-                                                        alt="Products">
-                                                    <span><i data-feather="check" class="feather-16"></i></span>
-                                                </a>
-                                                <h6 class="cat-name"><a href="javascript:void(0);">Headphones</a>
-                                                </h6>
-                                                <h6 class="product-name"><a href="javascript:void(0);">Airpod
-                                                        2</a></h6>
-                                                <div class="d-flex align-items-center justify-content-between price">
-                                                    <span>47 Pcs</span>
-                                                    <p>$5478</p>
-                                                </div>
-                                            </div>
-                                        </div> --}}
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-md-12 col-lg-4 ps-0">
                         <aside class="product-order-list">
                             <div class="head d-flex align-items-center justify-content-between w-100">
-                                <div class>
-                                    <h5>Order List</h5>
-                                    <span>Transaction ID : #65565</span>
+                                <div class="d-flex align-items-center">
+                                    {{-- <h5 class="me-4">Crear Nueva Venta</h5> --}}
+                                    <span class="badge bg-info d-inline-block mb-0" style="color: #fff">Venta N°:
+                                        #000001</span>
                                 </div>
                                 <div class>
                                     <a class="confirm-text" href="javascript:void(0);"><i data-feather="trash-2"
@@ -490,40 +444,33 @@
                                 </div>
                             </div>
                             <div class="customer-info block-section">
-                                <h6>Customer Information</h6>
+                                <h6>Agregar Cliente</h6>
                                 <div class="input-block d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <select class="select">
-                                            <option>Walk in Customer</option>
-                                            <option>John</option>
-                                            <option>Smith</option>
-                                            <option>Ana</option>
-                                            <option>Elza</option>
-                                        </select>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-icon" data-bs-toggle="modal"
-                                        data-bs-target="#create"><i data-feather="user-plus"
-                                            class="feather-16"></i></a>
+                                    <form  class="mb-4" id="searchForm">
+                                        <div class="flex-grow-1">
+                                            <div class="input-group">
+                                                <input type="text" id="searchInput" class="form-control" name="search" placeholder="Buscar cliente...">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="submit">Buscar</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="input-block">
-                                    <select class="select">
-                                        <option>Search Products</option>
-                                        <option>IPhone 14 64GB</option>
-                                        <option>MacBook Pro</option>
-                                        <option>Rolex Tribute V3</option>
-                                        <option>Red Nike Angelo</option>
-                                        <option>Airpod 2</option>
-                                        <option>Oldest</option>
-                                    </select>
+                                <div id="resultsContainer" class="customer-info block-section">
+                                    
+                                </div>
                                 </div>
                             </div>
                             <div class="product-added block-section">
                                 <div class="head-text d-flex align-items-center justify-content-between">
-                                    <h6 class="d-flex align-items-center mb-0">Product Added<span
+                                    <h6 class="d-flex align-items-center mb-0">Productos Agregados<span
                                             class="count">2</span></h6>
                                     <a href="javascript:void(0);" class="d-flex align-items-center text-danger"><span
-                                            class="me-1"><i data-feather="x" class="feather-16"></i></span>Clear
-                                        all</a>
+                                            class="me-1"><i data-feather="x"
+                                                class="feather-16"></i></span>Limpiar</a>
                                 </div>
                                 <div class="product-wrap">
                                     <div class="product-list d-flex align-items-center justify-content-between">
@@ -2224,7 +2171,91 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-          $(document).ready(function() {
+        // $(document).ready(function() {
+        //     // Cargar todos los productos al inicio
+        //     loadAllProducts();
+
+        //     // Agregar un controlador de eventos de clic a los elementos <li> con la clase .categoria-item
+        //     $('.categoria-item').on('click', function() {
+        //         var categoriaId = $(this).data('id');
+        //         loadProducts(categoriaId);
+        //     });
+
+        //     // Controlador de evento para el elemento "Todas las Categorías"
+        //     $('#all').on('click', function() {
+        //         loadAllProducts();
+        //     });
+
+        //     // Función para cargar todos los productos
+        //     function loadAllProducts() {
+        //         $.ajax({
+        //             type: 'GET',
+        //             url: '/productos/todos', // Ruta a tu endpoint para obtener todos los productos
+        //             dataType: 'json',
+        //             success: function(data) {
+        //                 console.log(data);
+        //                 displayProducts(data);
+        //                 updateTotalProductos(data.length); // Actualizar el número total de productos
+        //             },
+        //             error: function(error) {
+        //                 console.error("Error al obtener todos los productos:", error);
+        //             }
+        //         });
+        //     }
+
+        //     // Función para cargar productos por categoría
+        //     function loadProducts(categoriaId) {
+        //         $.ajax({
+        //             type: 'GET',
+        //             url: '/productos/categoria/' + categoriaId,
+        //             dataType: 'json',
+        //             success: function(data) {
+        //                 console.log(data);
+        //                 displayProducts(data);
+        //                 updateTotalProductos(data.length); // Actualizar el número total de productos
+        //             },
+        //             error: function(error) {
+        //                 console.error("Error al obtener productos por categoría:", error);
+        //             }
+        //         });
+        //     }
+
+        //     // Función para mostrar productos en la interfaz
+        //     function displayProducts(products) {
+        //         var productsHtml = '';
+
+        //         products.forEach(function(product) {
+        //             productsHtml += `
+        //             <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
+        //                 <div class="product-info default-cover card">
+        //                     <a href="javascript:void(0);" class="img-bg">
+        //                         <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
+        //                         <span><i data-feather="check" class="feather-16"></i></span>
+        //                     </a>
+        //                     <h6 class="cat-name"><a href="javascript:void(0);">${product.categoria.nombre}</a></h6>
+        //                     <h6 class="product-name"><a href="javascript:void(0);">${product.nombre}</a></h6>
+        //                     <div class="d-flex align-items-center justify-content-between price">
+        //                         <span>${product.stock} UND</span>
+        //                         <p>S/.${product.costo_venta}</p>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         `;
+        //         });
+
+        //         $('.pos-products .row').html(productsHtml);
+        //     }
+        //     // Función para actualizar el número total de productos mostrado
+        //     function updateTotalProductos(total) {
+        //         $('#totalProductos').text(total + ' Productos');
+        //     }
+
+           
+        // });
+        
+    </script>
+   <script>
+    $(document).ready(function() {
         // Cargar todos los productos al inicio
         loadAllProducts();
 
@@ -2234,10 +2265,101 @@
             loadProducts(categoriaId);
         });
 
-          // Controlador de evento para el elemento "Todas las Categorías"
-    $('#all').on('click', function() {
-        loadAllProducts();
-    });
+        // Controlador de evento para el elemento "Todas las Categorías"
+        $('#all').on('click', function() {
+            loadAllProducts();
+        });
+
+        // Controlador de evento para el formulario de búsqueda de clientes
+        $('#searchForm').on('submit', function(event) {
+            event.preventDefault();
+            var search = $('#searchInput').val();
+            
+            // Validar que se haya ingresado algo en el campo de búsqueda
+            if (search.trim() !== '') {
+                searchClientes(search);
+            } else {
+                // Mostrar mensaje de error o manejar según sea necesario
+                $('#resultsContainer').empty(); // Vaciar resultados anteriores
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor ingresa un término de búsqueda válido.'
+                });
+            }
+        });
+
+        // Función para buscar clientes
+        function searchClientes(search) {
+            $.ajax({
+                url: '{{ route("buscarCliente") }}', // Ruta Laravel para buscar clientes
+                method: 'GET',
+                data: { search: search },
+                success: function(response) {
+                    $('#resultsContainer').empty();
+                    if (response && response.length > 0) {
+                        // Tomar solo el primer cliente (el más relevante)
+                        var cliente = response[0]; 
+                        if (cliente && cliente.nombre && cliente.apellido && cliente.documento && cliente.correo) {
+                            // Concatenamos nombre y apellido
+                            var nombreCompleto = cliente.nombre + ' ' + cliente.apellido;
+                            $('#resultsContainer').append(
+                            '<div class="form-group">' +
+                                '<label for="client-nombre-completo">Nombre Completo:</label>' +
+                                '<input type="text" id="client-nombre-completo" class="form-control" value="' + nombreCompleto + '" readonly>' +
+                                '</div>' +
+                                '<div class="form-group">' +
+                                    '<label for="client-tipo_identificacion">Tipo de Documento:</label>' +
+                                    '<input type="text" id="client-tipo_identificacion" class="form-control" value="' + cliente.tipo_identificacion + '" readonly>' +
+                                '</div>' +
+                                '<div class="form-group">' +
+                                    '<label for="client-documento">Documento:</label>' +
+                                    '<input type="text" id="client-documento" class="form-control" value="' + cliente.documento + '" readonly>' +
+                                '</div>' +
+                                '<div class="form-group">' +
+                                    '<label for="client-correo">Correo:</label>' +
+                                    '<input type="email" id="client-correo" class="form-control" value="' + cliente.correo + '" readonly>' +
+                                '</div>'
+                            );
+                        } else {
+                            // Mostrar mensaje de error si el cliente encontrado no tiene todas las propiedades requeridas
+                            // $('#resultsContainer').append('<p>Cliente encontrado no tiene datos válidos.</p>');
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'No se encontraron clientes',
+                            html: '<div style="text-align: center;">' +
+                                    '<p>Por favor agrega uno.</p>' +
+                                    '<a style="text-align: center; width: 130px; height: 40px; "  href="{{ route("cliente.create") }}" class="btn btn-primary">' +
+                                        ' Crear Cliente' +
+                                    '</a>' +
+                                '</div>',
+                            showCloseButton: true,
+                            showConfirmButton: false
+                        });
+                        }
+                    } else {
+                        // Mostrar SweetAlert2 con mensaje y botón para crear un cliente
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'No se encontraron clientes',
+                            html: '<div style="text-align: center;">' +
+                                    '<p>Por favor agrega uno.</p>' +
+                                    '<a style="text-align: center; width: 130px; height: 40px; "  href="{{ route("cliente.create") }}" class="btn btn-primary">' +
+                                        ' Crear Cliente' +
+                                    '</a>' +
+                                '</div>',
+                            showCloseButton: true,
+                            showConfirmButton: false
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    $('#resultsContainer').empty();
+                    $('#resultsContainer').append('<p>Ocurrió un error al realizar la búsqueda.</p>');
+                }
+            });
+        }
+
 
         // Función para cargar todos los productos
         function loadAllProducts() {
@@ -2279,32 +2401,34 @@
 
             products.forEach(function(product) {
                 productsHtml += `
-                    <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
-                        <div class="product-info default-cover card">
-                            <a href="javascript:void(0);" class="img-bg">
-                                <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
-                                <span><i data-feather="check" class="feather-16"></i></span>
-                            </a>
-                            <h6 class="cat-name"><a href="javascript:void(0);">${product.categoria.nombre}</a></h6>
-                            <h6 class="product-name"><a href="javascript:void(0);">${product.nombre}</a></h6>
-                            <div class="d-flex align-items-center justify-content-between price">
-                                <span>${product.stock} UND</span>
-                                <p>S/.${product.costo_venta}</p>
-                            </div>
+                <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
+                    <div class="product-info default-cover card">
+                        <a href="javascript:void(0);" class="img-bg">
+                            <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
+                            <span><i data-feather="check" class="feather-16"></i></span>
+                        </a>
+                        <h6 class="cat-name"><a href="javascript:void(0);">${product.categoria.nombre}</a></h6>
+                        <h6 class="product-name"><a href="javascript:void(0);">${product.nombre}</a></h6>
+                        <div class="d-flex align-items-center justify-content-between price">
+                            <span>${product.stock} UND</span>
+                            <p>S/.${product.costo_venta}</p>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
             });
 
             $('.pos-products .row').html(productsHtml);
         }
-         // Función para actualizar el número total de productos mostrado
-    function updateTotalProductos(total) {
-        $('#totalProductos').text(total + ' Productos');
-    }
-    });
 
-    </script>
+        // Función para actualizar el número total de productos mostrado
+        function updateTotalProductos(total) {
+            $('#totalProductos').text(total + ' Productos');
+        }
+    });
+</script>
+
+    
 
 </body>
 
