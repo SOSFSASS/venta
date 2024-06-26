@@ -65,5 +65,6 @@ Route::controller(PosController::class)->group(function () {
     // Ruta para obtener todos los productos
     Route::get('/productos/todos', 'todosLosProductos');
     // Route::get('/buscarCliente','buscarCliente');
-    Route::get('/buscarCliente', 'buscarCliente')->name('buscarCliente');;
+    Route::get('/buscarCliente', 'buscarCliente')->name('buscarCliente');
+    Route::post('/buscarProductos', 'buscarProductos')->name('buscarProductos');
 });

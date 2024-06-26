@@ -10,6 +10,8 @@
     <meta name="author" content="Dreamguys - Bootstrap Admin Template">
     <meta name="robots" content="noindex, nofollow">
     <title>Dreams Pos Admin Template</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <link rel="shortcut icon" type="image/x-icon"
         href="https://dreamspos.dreamstechnologies.com/html/template/assets/img/favicon.png">
@@ -47,6 +49,1038 @@
             width: 70px;
         }
     </style>
+
+<style>
+     body {
+        background-color: #F2F7FB;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .text-blue {
+        color: #00548d;
+    }
+    
+    .card {
+        background-color: #ffffff !important;
+        border-radius: 15px;
+        box-shadow: 0px 9px 20px rgba(46, 35, 94, 0.07);
+        border: 1px solid transparent;
+    }
+    
+    .card.card-warning {
+        border-color: #fc8d00;
+    }
+    
+    .card.card-danger {
+        border-color: #EF4444;
+    }
+    
+    .card-header {
+        background-color: transparent;
+        padding: 1rem !important;
+    }
+    
+    .card-body {
+        background-color: transparent;
+    
+    }
+    
+    .card-footer {
+        background-color: transparent;
+    
+    }
+    
+    .cursor-pointer {
+        cursor: pointer !important;
+    }
+    
+    .card-header:first-child {
+        border-radius: 1rem 1rem 0 0 !important;
+    }
+    
+    .btn {
+        color: #ffffff;
+        position: relative;
+        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+    
+    .btn-outline-success {
+        color: #3ac47d;
+        border-color: #3ac47d
+    }
+    
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: #3ac47d;
+        border-color: #3ac47d
+    }
+    
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: #3ac47d;
+        border-color: #3ac47d
+    }
+    
+    .btn-primary {
+        color: #fff;
+        background-color: #081A51;
+        border-color: #3f6ad8
+    }
+    
+    .btn {
+        position: relative;
+        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+        outline: none !important
+    }
+    
+    
+    /** 7. Utilities **/
+    
+    
+    .btn-primary,
+    .btn-primary:hover {
+        background-color: #081A51;
+        border-color: #3B82F6;
+    }
+    
+    .btn-primary:focus {
+        background-color: #2563EB !important;
+        border-color: #2563EB !important;
+    }
+    
+    .btn-success,
+    .btn-success:hover {
+        background-color: #10B981;
+        border-color: #10B981;
+    }
+    
+    .btn-success:focus {
+        background-color: #059669 !important;
+        border-color: #059669 !important;
+    }
+    
+    .btn-info,
+    .btn-info:hover {
+        background-color: #36B9CC;
+        border-color: #36B9CC;
+    }
+    
+    .btn-info:focus {
+        background-color: #2EA5B6 !important;
+        border-color: #2EA5B6 !important;
+    }
+    
+    .btn-warning,
+    .btn-warning:hover {
+        background-color: #fc8d00 !important;
+        border-color: #fc8d00 !important;
+    }
+    
+    .btn-warning:focus {
+        background-color: #F59E0B !important;
+        border-color: #F59E0B !important;
+    }
+    
+    .btn-danger,
+    .btn-danger:hover {
+        background-color: #EF4444;
+        border-color: #EF4444;
+    }
+    
+    .btn-danger:focus {
+        background-color: #DC2626 !important;
+        border-color: #DC2626 !important;
+    }
+    
+    .btn-blue,
+    .btn-blue:hover {
+        background-color: #0093d9;
+        border-color: #0093d9;
+    }
+    
+    .btn-blue:focus {
+        background-color: #0093d9 !important;
+        border-color: #0093d9 !important;
+    }
+    
+    .btn-secondary,
+    .btn-secondary:hover {
+        background-color: #4B5563;
+        border-color: #4B5563;
+    }
+    
+    .btn-secondary:focus {
+        background-color: #374151 !important;
+        border-color: #374151 !important;
+    }
+    
+    
+    .btn:hover,
+    .btn:focus {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2) !important;
+        color: #fff !important;
+    }
+    
+    .btn-outline-danger {
+        color: #EF4444;
+    }
+    
+    .btn-outline-blue {
+        color: #0093d9;
+        border-color: #0093d9;
+    }
+    
+    .btn-outline-blue:hover {
+        color: #fff;
+        background-color: #0093d9;
+        border-color: #0093d9;
+    }
+    
+    .btn-outline-secondary.delete {
+        color: #6c757d;
+        border: 0;
+        opacity: 0.65 !important;
+    }
+    
+    .btn-outline-secondary.delete:hover,
+    .btn-outline-secondary.delete:focus {
+        border: 0 !important;
+        background-color: #6c757d !important;
+    }
+    
+    
+    .btn-warning:disabled,
+    .btn-warning.disabled {
+        color: #FFFFFF !important;
+    }
+    
+    .pedido-container .pedido-card {
+        /* height: calc(100vh - 59px); */
+        height: calc(100vh - 85px);
+    }
+    
+    .cards-products {
+        height: calc(100vh - 270px);
+        overflow: scroll;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+    
+    .fw-700 {
+        font-weight: 700;
+    }
+    
+    .fw-600 {
+        font-weight: 600 !important;
+    }
+    
+    .fw-500 {
+        font-weight: 500 !important;
+    }
+    
+    .fs-7 {
+        font-size: .90rem;
+    }
+    
+    .fs-17 {
+        font-size: 17spx !important;
+    }
+    
+    .fs-16 {
+        font-size: 16px !important;
+    }
+    
+    .fs-14 {
+        font-size: 14px !important;
+    }
+    
+    .fs-12 {
+        font-size: 12px !important;
+    }
+    
+    .quantity {
+        display: flex;
+        /* border: 2px solid #3498db; */
+        /* border-radius: 4px; */
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .quantity button {
+        /* background-color: #3498db; */
+        /* color: #fff; */
+        border: none;
+        cursor: pointer;
+        /* font-size: 20px; */
+        width: 28px;
+        /* height: auto; */
+        text-align: center;
+        transition: background-color 0.2s;
+    }
+    
+    .quantity button:hover {
+        /* background-color: #2980b9; */
+    }
+    
+    .input-box {
+        width: 40px;
+        text-align: center;
+        border: none;
+        padding: 2.5px 4px;
+        font-size: 16px;
+        outline: none;
+    }
+    
+    /* Hide the number input spin buttons */
+    .input-box::-webkit-inner-spin-button,
+    .input-box::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .input-box[type="number"] {
+        -moz-appearance: textfield;
+    }
+    
+    
+    .slider-item {
+        display: inline-block;
+        background: #F2F7FB;
+        padding: 10px;
+        width: auto;
+        border: 1px solid #F2F7FB;
+        position: relative;
+        white-space: nowrap;
+    }
+    
+    .slider-item .cantidad {
+        display: none;
+    }
+    
+    .slider-item.select {
+        border-color: #00548d;
+    }
+    
+    .slider-item.select .category {
+        color: #00548d;
+    }
+    
+    .slider-item.select .cantidad {
+        position: absolute;
+        display: block;
+        bottom: -10px;
+        left: 40%;
+        color: #FFFFFF;
+        padding: 1px 10px;
+        border-radius: 50rem !important;
+        background: #00548d;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    .slider-item:hover {
+        border-color: #00548d;
+        cursor: pointer;
+    }
+    
+    .slider-item:hover .category {
+        color: #00548d;
+    }
+    
+    .slider-item:hover .cantidad {
+        position: absolute;
+        display: block;
+        bottom: -10px;
+        left: 40%;
+        color: #FFFFFF;
+        padding: 1px 10px;
+        border-radius: 50rem !important;
+        background: #00548d;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    .swiper {
+        height: 62px;
+    }
+    
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px !important;
+        font-weight: 800;
+        padding: 1rem;
+        width: 2rem;
+        height: 2rem;
+        opacity: 0.75;
+        border-radius: 50%;
+        color: #FFFFFF;
+        background: #00548d;
+    }
+    
+    
+    /* Estilos para el estado activo de los botones (hover) */
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+    
+        opacity: 1;
+        /* Cambia la opacidad en hover */
+    }
+    
+    /* Estilos para los botones "prev" específicamente */
+    .swiper-button-prev {
+        left: 3px !important;
+        /* Alinea el botón "prev" a la izquierda */
+        top: 27px !important;
+    }
+    
+    /* Estilos para los botones "next" específicamente */
+    .swiper-button-next {
+        right: 3px !important;
+        /* Alinea el botón "next" a la derecha */
+        top: 27px !important;
+    }
+    
+    .swiper-slide {
+        width: auto !important;
+    }
+    
+    .radius-bottom {
+        border-radius: 0 0 1rem 1rem !important;
+    }
+    
+    .me-3-5 {
+        margin-right: 2rem !important;
+    }
+    
+    .ms-3-5 {
+        margin-left: 2rem !important;
+    }
+    
+    .scroll-y {
+        overflow: scroll;
+        overflow-y: visible;
+    }
+    
+    
+    input[type=number].not-spin::-webkit-inner-spin-button,
+    input[type=number].not-spin::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    
+    /*-------------------------------------*/
+    /*             LOADER PRODUCT          */
+    
+    
+    :root {
+        --hue: 223;
+        --bg: #F2F7FB;
+        /* font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320)); */
+    }
+    
+    #loader_product {
+        /* background-color: var(--bg); */
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        background: rgb(242, 247, 251, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .lp {
+        width: 4em;
+        height: 8em;
+        /* width: 4em;
+        height: 10em; */
+    }
+    
+    .lp__drops,
+    .lp__fall-line,
+    .lp__worm {
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        transform-origin: 64px 64px;
+    }
+    
+    .lp__drops {
+        animation-name: drops;
+        animation-timing-function: ease-in-out;
+        stroke-dasharray: 22 307.85 22;
+        visibility: hidden;
+        transform: rotate(90deg);
+    }
+    
+    .lp__fall-line {
+        animation-name: fallLine1;
+        animation-timing-function: ease-in;
+        stroke-dasharray: 1 112;
+        stroke-dashoffset: 114;
+    }
+    
+    .lp__fall-line--delay1 {
+        animation-name: fallLine2;
+    }
+    
+    .lp__fall-line--delay2 {
+        animation-name: fallLine3;
+    }
+    
+    .lp__fall-line--delay3 {
+        animation-name: fallLine4;
+    }
+    
+    .lp__fall-line--delay4 {
+        animation-name: fallLine5;
+    }
+    
+    .lp__ring {
+        /* stroke:hsla(0, 0%, 100%, 0.1); */
+        /* stroke:hsla(0, 0%, 100%, 0.515); */
+        stroke: rgb(242, 247, 251);
+        transition: stroke 0.3s;
+    }
+    
+    .lp__worm {
+        animation-name: worm;
+        stroke-dasharray: 43.98 307.87;
+        stroke-dashoffset: -131.94;
+        transform: rotate(-90deg);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg: hsl(var(--hue), 90%, 5%);
+            --fg: hsl(var(--hue), 90%, 95%);
+        }
+    
+        .lp__ring {
+            stroke: hsla(var(--hue), 90%, 95%, 0.1);
+        }
+    }
+    
+    @keyframes drops {
+        from {
+            animation-timing-function: steps(1, end);
+            stroke-dasharray: 0 351.85 0;
+            visibility: hidden;
+        }
+    
+        25% {
+            animation-timing-function: ease-in-out;
+            stroke-dasharray: 0 351.85 0;
+            visibility: visible;
+        }
+    
+        26% {
+            stroke-dasharray: 4 343.85 4;
+        }
+    
+        27% {
+            stroke-dasharray: 8 335.85 8
+        }
+    
+        28% {
+            stroke-dasharray: 12 327.85 12;
+        }
+    
+        29% {
+            animation-timing-function: ease-in;
+            stroke-dasharray: 17 317.85 17;
+        }
+    
+        32% {
+            animation-timing-function: ease-out;
+            stroke-dasharray: 25 301.85 25;
+        }
+    
+        35%,
+        47.5% {
+            animation-timing-function: linear;
+            stroke-dasharray: 22 307.85 22;
+            visibility: visible;
+        }
+    
+        50% {
+            animation-timing-function: steps(1, end);
+            stroke-dasharray: 0 307.85 43.98;
+            visibility: hidden;
+        }
+    
+        75% {
+            animation-timing-function: ease-in-out;
+            stroke-dasharray: 0 351.85 0;
+            visibility: visible;
+        }
+    
+        76% {
+            stroke-dasharray: 4 343.85 4;
+        }
+    
+        77% {
+            stroke-dasharray: 8 335.85 8
+        }
+    
+        78% {
+            stroke-dasharray: 12 327.85 12;
+        }
+    
+        79% {
+            animation-timing-function: ease-in;
+            stroke-dasharray: 17 317.85 17;
+        }
+    
+        82% {
+            animation-timing-function: ease-out;
+            stroke-dasharray: 25 301.85 25;
+        }
+    
+        85%,
+        97.5% {
+            animation-timing-function: linear;
+            stroke-dasharray: 22 307.85 22;
+            visibility: visible;
+        }
+    
+        to {
+            stroke-dasharray: 43.98 307.85 0;
+            visibility: hidden;
+        }
+    }
+    
+    @keyframes fallLine1 {
+    
+        from,
+        15% {
+            stroke-dashoffset: 114;
+        }
+    
+        25%,
+        65% {
+            stroke-dashoffset: 1;
+        }
+    
+        75%,
+        to {
+            stroke-dashoffset: -112;
+        }
+    }
+    
+    @keyframes fallLine2 {
+    
+        from,
+        16% {
+            stroke-dashoffset: 114;
+        }
+    
+        26%,
+        66% {
+            stroke-dashoffset: 1;
+        }
+    
+        76%,
+        to {
+            stroke-dashoffset: -112;
+        }
+    }
+    
+    @keyframes fallLine3 {
+    
+        from,
+        17% {
+            stroke-dashoffset: 114;
+        }
+    
+        27%,
+        67% {
+            stroke-dashoffset: 1;
+        }
+    
+        77%,
+        to {
+            stroke-dashoffset: -112;
+        }
+    }
+    
+    @keyframes fallLine4 {
+    
+        from,
+        18% {
+            stroke-dashoffset: 114;
+        }
+    
+        28%,
+        68% {
+            stroke-dashoffset: 1;
+        }
+    
+        78%,
+        to {
+            stroke-dashoffset: -112;
+        }
+    }
+    
+    @keyframes fallLine5 {
+    
+        from,
+        19% {
+            stroke-dashoffset: 114;
+        }
+    
+        29%,
+        69% {
+            stroke-dashoffset: 1;
+        }
+    
+        79%,
+        to {
+            stroke-dashoffset: -112;
+        }
+    }
+    
+    @keyframes worm {
+        from {
+            animation-timing-function: ease-out;
+            stroke-dasharray: 87.96 307.87;
+            stroke-dashoffset: -131.94;
+        }
+    
+        25% {
+            animation-timing-function: steps(1);
+            stroke-dasharray: 87.96 307.87;
+            stroke-dashoffset: -307.86;
+        }
+    
+        25.01% {
+            animation-timing-function: ease-in;
+            stroke-dasharray: 43.98 307.87;
+            stroke-dashoffset: -307.86;
+        }
+    
+        50% {
+            animation-timing-function: steps(1);
+            stroke-dasharray: 43.98 307.87;
+            stroke-dashoffset: -175.92;
+        }
+    
+        50.01% {
+            animation-timing-function: ease-out;
+            stroke-dasharray: 87.96 307.87;
+            stroke-dashoffset: -131.94;
+        }
+    
+        75% {
+            animation-timing-function: steps(1);
+            stroke-dasharray: 87.96 307.87;
+            stroke-dashoffset: 43.98;
+        }
+    
+        75.01% {
+            animation-timing-function: ease-in;
+            stroke-dasharray: 43.98 307.87;
+            stroke-dashoffset: 0;
+        }
+    
+        to {
+            stroke-dasharray: 43.98 307.87;
+            stroke-dashoffset: -131.94;
+        }
+    }
+    
+    /* RADIO BUTTON */
+    /* html,body{
+        min-height: 100vh;
+        min-width: 100vw;
+    } */
+    /* .parent{
+        height: 100vh;
+    }*/
+    .parent>.row {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .col img {
+        height: 80px;
+        width: 100%;
+        cursor: pointer;
+        transition: transform 1s;
+        object-fit: cover;
+    }
+    
+    .col label {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .imgbgchk:checked+label>.tick_container {
+        opacity: 1;
+    }
+    
+    /* aNIMATION  */
+    .imgbgchk:checked+label>img {
+        /* transform: scale(1.25); */
+        opacity: 0.3;
+    }
+    
+    .tick_container {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .tick {
+        background-color: #0093d9;
+        color: white;
+        font-size: 16px;
+        padding: 6px 6px;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 100%;
+    }
+    
+    /*--------------SCROLL-------------*/
+    
+    .contenedor::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    .contenedor::-webkit-scrollbar:vertical {
+        width: 9px;
+    }
+    
+    .contenedor::-webkit-scrollbar-button:increment,
+    .contenedor::-webkit-scrollbar-button {
+        display: none;
+    }
+    
+    .contenedor::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+    
+    .contenedor::-webkit-scrollbar-thumb {
+        background-color: #0093d9;
+        border-radius: 20px;
+        border: 2px solid #f1f2f3;
+    }
+    
+    .contenedor::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    
+    .input-group-no-width {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    
+    .input-group-no-width:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),
+    .input-group-no-width:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .input-group-no-width>.form-control,
+    .input-group-no-width>.form-select {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+        min-width: 0;
+    }
+    
+    .input-group-no-width>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    .input-group-no-width .btn {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .form-control-plaintext {
+        outline: none;
+    }
+    
+    
+    /*-----------CALCULATOR----------*/
+    
+    .teclado {
+        /* background: #f2f2f2; */
+    }
+    
+    .teclado .row {
+        padding-left: 8px;
+    }
+    
+    .design {
+        box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
+        transition: .5s ease;
+        height: 2.6em;
+        font-size: 1.1em;
+        width: 3.2em;
+        margin: 0.3em;
+        background: #f2f2f2;
+        border-radius: 0.5rem;
+        line-height: 2.4em;
+        letter-spacing: 1px;
+        text-align: center;
+        border: 1px solid #e8e8e8;
+        transition: all 0.3s;
+        /* box-shadow: 6px 6px 12px #afafaf, -6px -6px 12px #e0e0e0; */
+    
+    }
+    
+    .design.not {
+        background: #0093d9;
+        color: #fff;
+    }
+    
+    .design.two {
+        width: 11.9em;
+        letter-spacing: 0;
+        font-size: 1em;
+    }
+    
+    .design:hover {
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        top: 3px;
+    }
+    
+    .design:active {
+        box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #fff;
+    }
+    
+    
+    .w-auto {
+        width: auto !important;
+    }
+    
+    .searchToggle {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0093d9;
+        border-radius: .25rem;
+    }
+    
+    .searchToggle i {
+        position: absolute;
+        color: #ffffff;
+        font-size: 22px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .searchToggle i.cancel {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .searchToggle.active i.cancel {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .searchToggle.active i.search {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .searchBox {
+        position: relative;
+    }
+    
+    .searchBox .search-field {
+        position: absolute;
+        bottom: -85px;
+        right: 5px;
+        height: 50px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 3px;
+        border-radius: 6px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+    
+    .searchToggle.active~.search-field {
+        bottom: -62px;
+        opacity: 1;
+        pointer-events: auto;
+    
+        right: -135px;
+    }
+    
+    .search-field::before {
+        content: '';
+        position: absolute;
+        /* right: 14px; */
+        right: 50%;
+        top: -4px;
+        height: 12px;
+        width: 12px;
+        background-color: rgba(0, 0, 0, 0.1);
+        transform: rotate(-45deg);
+        z-index: -1;
+    }
+    
+    .search-field input {
+        height: 100%;
+        width: 100%;
+        padding: 0 45px 0 15px;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        background-color: #3ac47d;
+    }
+    
+    
+    .search-field i {
+        position: absolute;
+        color: #00548d;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    
+    .label-data {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+</style>
 </head>
 
 <body>
@@ -386,27 +1420,48 @@
                         data-bs-target="#recents"><span class="me-1 d-flex align-items-center"><i
                                 data-feather="refresh-ccw" class="feather-16"></i></span>Transacciones</a>
                 </div> --}}
-                <div class="row align-items-start pos-wrapper">
+                <!-- HTML para el campo de búsqueda -->
+                <div class="row align-items-start pos-wrapper mt-2">
                     <div class="col-md-12 col-lg-8">
-                        <div class="pos-categories tabs_wrapper">
+                        <div class="row mb-4 align-items-center" style="margin: 10px">
+                            <div class="col-md-6">
+                                <!-- Campo de búsqueda estándar con botón -->
+                                <div class="input-group">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar por código o nombre">
+                                    <button id="buscarBtn" class="btn btn-primary" type="button">Buscar</button>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <!-- Switch para habilitar/deshabilitar el escáner de códigos de barras -->
+                                <div class="form-check form-switch d-flex align-items-center">
+                                    <input class="form-check-input" type="checkbox" id="barcodeSwitch">
+                                    <label class="form-check-label ms-2 mb-0" for="barcodeSwitch">Buscar por código de barras</label>
+                                </div>
+                            </div>
+                            <!-- Contenedor para el escáner de códigos de barras (reemplazado por un input) -->
+                            <div class="col-auto" id="barcodeScanner" style="display: none;">
+                                <input type="text" id="scannerInput" class="form-control" placeholder="Código Escaneado">
+                            </div>
+                        </div>
+                        <div class="pos-categories tabs_wrapper mb-12" style="margin-top: -5px">
                             <h5>Categorias</h5>
-                            <p>Selecciona tus productos</p>
+                            {{-- <p>Selecciona tus productos</p> --}}
                             <ul class="tabs owl-carousel pos-category">
                                 <li id="all">
-                                    <a href="javascript:void(0);">
+                                    {{-- <a href="javascript:void(0);">
                                         <img src="https://png.pngtree.com/png-clipart/20230916/original/pngtree-some-icons-in-a-square-format-with-colors-of-different-kinds-png-image_12268981.png"
                                             alt="Categories">
-                                    </a>
+                                    </a> --}}
                                     <h6><a href="javascript:void(0);">Todas las Categorías</a></h6>
                                     <span id="totalProductos">0 Productos</span>
                                 </li>
                                 @foreach ($categorias as $categoria)
                                     <li id="categoria-{{ $categoria->id }}" class="categoria-item"
                                         data-id="{{ $categoria->id }}">
-                                        <a href="javascript:void(0);">
+                                        {{-- <a href="javascript:void(0);">
                                             <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/categories/category-01.png"
                                                 alt="Categories">
-                                        </a>
+                                        </a> --}}
                                         <h6><a href="javascript:void(0);">{{ $categoria->nombre }}</a></h6>
                                         <span>{{ $categoria->productos_count }} Productos</span>
                                     </li>
@@ -421,6 +1476,9 @@
                             <div class="pos-products">
                                 <div class="tab_content" data-tab="headphones">
                                     <div class="row">
+                                        <div id="resultadoProductos">
+
+                                        </div>
 
                                     </div>
                                 </div>
@@ -449,7 +1507,7 @@
                                     <form  class="mb-4" id="searchForm">
                                         <div class="flex-grow-1">
                                             <div class="input-group">
-                                                <input type="text" id="searchInput" class="form-control" name="search" placeholder="Buscar cliente...">
+                                                <input type="text" id="searchInputcliente" class="form-control" name="search" placeholder="Buscar cliente...">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="submit">Buscar</button>
                                                 </div>
@@ -466,14 +1524,14 @@
                             </div>
                             <div class="product-added block-section">
                                 <div class="head-text d-flex align-items-center justify-content-between">
-                                    <h6 class="d-flex align-items-center mb-0">Productos Agregados<span
-                                            class="count">2</span></h6>
+                                    <h6 class="d-flex align-items-center mb-0">Productos Agregados <span class="count">0</span></h6>
+
                                     <a href="javascript:void(0);" class="d-flex align-items-center text-danger"><span
                                             class="me-1"><i data-feather="x"
                                                 class="feather-16"></i></span>Limpiar</a>
                                 </div>
                                 <div class="product-wrap">
-                                    <div class="product-list d-flex align-items-center justify-content-between">
+                                    {{-- <div class="product-list d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center product-info" data-bs-toggle="modal"
                                             data-bs-target="#products">
                                             <a href="javascript:void(0);" class="img-bg">
@@ -507,8 +1565,12 @@
                                                 <i data-feather="trash-2" class="feather-14"></i>
                                             </a>
                                         </div>
+                                    </div> --}}
+                                    <div class="carrito-container">
+                                        <!-- Aquí se añadirán dinámicamente los productos del carrito -->
                                     </div>
-                                    <div class="product-list d-flex align-items-center justify-content-between">
+                                    
+                                    {{-- <div class="product-list d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center product-info" data-bs-toggle="modal"
                                             data-bs-target="#products">
                                             <a href="javascript:void(0);" class="img-bg">
@@ -612,47 +1674,22 @@
                                                 <i data-feather="trash-2" class="feather-14"></i>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="block-section">
-                                <div class="selling-info">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-4">
-                                            <div class="input-block">
-                                                <label>Order Tax</label>
-                                                <select class="select">
-                                                    <option>GST 5%</option>
-                                                    <option>GST 10%</option>
-                                                    <option>GST 15%</option>
-                                                    <option>GST 20%</option>
-                                                    <option>GST 25%</option>
-                                                    <option>GST 30%</option>
-                                                </select>
+                                <div class="container mt-5">
+                                    <div class="selling-info">
+                                        <div class="row justify-content-end align-items-center">
+                                            <div class="col-auto">
+                                                <label class="text-light bg-secondary fw-semibold">Agregar Descuento</label>
                                             </div>
-                                        </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="input-block">
-                                                <label>Shipping</label>
-                                                <select class="select">
-                                                    <option>15</option>
-                                                    <option>20</option>
-                                                    <option>25</option>
-                                                    <option>30</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="input-block">
-                                                <label>Discount</label>
-                                                <select class="select">
-                                                    <option>10%</option>
-                                                    <option>10%</option>
-                                                    <option>15%</option>
-                                                    <option>20%</option>
-                                                    <option>25%</option>
-                                                    <option>30%</option>
-                                                </select>
+                                            <div class="col-auto">
+                                                <div class="qty-item d-flex align-items-center">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm mr-2" id="descuento-minus"  aria-label="minus">-</button>
+                                                    <input type="text" class="form-control form-control-sm text-center mx-2" id="descuento-input" name="qty" value="0" style="width: 60px;">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm ml-2" id="descuento-plus" aria-label="plus">+</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -661,32 +1698,20 @@
                                     <table class="table table-responsive table-borderless">
                                         <tr>
                                             <td>Sub Total</td>
-                                            <td class="text-end">$60,454</td>
+                                            <td class="text-end" id="subTotal">S/. 00.00</td>
                                         </tr>
                                         <tr>
-                                            <td>Tax (GST 5%)</td>
-                                            <td class="text-end">$40.21</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping</td>
-                                            <td class="text-end">$40.21</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sub Total</td>
-                                            <td class="text-end">$60,454</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="danger">Discount (10%)</td>
-                                            <td class="danger text-end">$15.21</td>
+                                            <td class="danger">Descuento</td>
+                                            <td class="danger text-end" id="descuento">S/. 00.00</td>
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td class="text-end">$64,024.5</td>
+                                            <td class="text-end" id="total">S/. 00,00</td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <div class="block-section payment-method">
+                            {{-- <div class="block-section payment-method">
                                 <h6>Payment Method</h6>
                                 <div class="row d-flex align-items-center justify-content-center methods">
                                     <div class="col-md-6 col-lg-4 item">
@@ -717,13 +1742,13 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="d-grid btn-block">
-                                <a class="btn btn-secondary" href="javascript:void(0);">
-                                    Grand Total : $64,024.5
+                                <a class="btn btn-secondary" id="total-button">
+                                    Seguir con la compra de : S/. 00.00
                                 </a>
                             </div>
-                            <div class="btn-row d-sm-flex align-items-center justify-content-between">
+                            {{-- <div class="btn-row d-sm-flex align-items-center justify-content-between">
                                 <a href="javascript:void(0);" class="btn btn-info btn-icon flex-fill"
                                     data-bs-toggle="modal" data-bs-target="#hold-order"><span
                                         class="me-1 d-flex align-items-center"><i data-feather="pause"
@@ -735,7 +1760,7 @@
                                     data-bs-toggle="modal" data-bs-target="#payment-completed"><span
                                         class="me-1 d-flex align-items-center"><i data-feather="credit-card"
                                             class="feather-16"></i></span>Payment</a>
-                            </div>
+                            </div> --}}
                         </aside>
                     </div>
                 </div>
@@ -743,7 +1768,189 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    {{-- <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCompraLabel">Detalles de la compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Detalles de la compra</h4>
+                    <p>Producto: <span id="producto">[Nombre del producto]</span></p>
+                    <p>Precio: <span id="precio">$ [Precio del producto]</span></p>
+                    <p>Total: <span id="total">$ [Total de la compra]</span></p>
+    
+                    <h4>Métodos de pago</h4>
+                    <form>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="efectivo" value="efectivo">
+                            <label class="form-check-label" for="efectivo">Efectivo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="tarjeta" value="tarjeta">
+                            <label class="form-check-label" for="tarjeta">Tarjeta de crédito</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="paypal" value="paypal">
+                            <label class="form-check-label" for="paypal">PayPal</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="transferencia" value="transferencia">
+                            <label class="form-check-label" for="transferencia">Transferencia bancaria</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="bitcoin" value="bitcoin">
+                            <label class="form-check-label" for="bitcoin">Bitcoin</label>
+                        </div>
+                    </form>
+    
+                    <h4>Introducir monto</h4>
+                    <input type="number" id="monto" placeholder="Introducir monto" min="0" step="0.01">
+    
+                    <p id="resultado">Resultado: <span id="vuelto">$ 0.00</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="pagar">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <!-- Modal -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Método de Pago</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="mb-3 row fw-600 fs-6">
+                    <label for="p_pedido" class="col-sm-4 col-form-label d-flex justify-content-between">Total Pedido
+                      <span>S/.</span></label>
+                    <div class="col-sm-4">
+                      <input type="text" readonly class="form-control-plaintext not-spin text-end fw-600 fs-6" id="p_pedido" value="0.00">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="efectivo" class="col-sm-4 col-form-label">Efectivo</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <!-- <input type="number" class="form-control" id="p_contado"> -->
+                      <input type="text" class="form-control calculator-input" name="efectivo" id="efectivo" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div hidden class="mb-3 row">
+                    <label for="p_credito" class="col-sm-4 col-form-label">Crédito</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input disabled type="text" class="form-control calculator-input" id="p_credito" value="0">
+                      <button disabled type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="visa" class="col-sm-4 col-form-label">Visa</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input type="text" class="form-control calculator-input" name="visa" id="visa" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="yape" class="col-sm-4 col-form-label">Yape</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input type="text" class="form-control calculator-input" name="yape" id="yape" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="plin" class="col-sm-4 col-form-label">Plin</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input type="text" class="form-control calculator-input" name="plin" id="plin" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="mastercard" class="col-sm-4 col-form-label">MasterCard</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input type="text" class="form-control calculator-input" name="mastercard" id="mastercard" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="deposito" class="col-sm-4 col-form-label">Depósito</label>
+                    <div class="input-group-no-width col-sm-5">
+                      <input type="text" class="form-control calculator-input" name="deposito" id="deposito" value="0">
+                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-5">
+                  <div class="teclado">
+
+                    <h6>TECLADO</h6>
+
+                    <div class="row">
+                      <button type="button" class="design">1</button>
+                      <button type="button" class="design">2</button>
+                      <button type="button" class="design">3</button>
+                      <button type="button" class="design not" id="backspace"><i class="fa-solid fa-delete-left"></i></button>
+                    </div>
+                    <div class="row">
+                      <button type="button" class="design">4</button>
+                      <button type="button" class="design">5</button>
+                      <button type="button" class="design">6</button>
+                    </div>
+                    <div class="row">
+                      <button type="button" class="design">7</button>
+                      <button type="button" class="design">8</button>
+                      <button type="button" class="design">9</button>
+                    </div>
+                    <div class="row">
+                      <button type="button" class="design">0</button>
+                      <button type="button" class="design">00</button>
+                      <button type="button" class="design">.</button>
+                    </div>
+                    <div class="row">
+                      <button type="button" class="design not two" id="allClear">BORRAR TODO</button>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-lg-7">
+                  <div class="mb-0 row fw-600 fs-6">
+                    <label for="p_tpagado" class="col-sm-4 col-form-label d-flex justify-content-between">Total Pagado
+                      <span>S/.</span></label>
+                    <div class="col-sm-4">
+                      <input type="text" readonly class="form-control-plaintext not-spin text-end fw-600 fs-6" name="ipagado" id="p_tpagado" value="0.00">
+                    </div>
+                  </div>
+                  <div class="row fw-600 fs-17">
+                    <label for="p_vuelto" id="text_vuelto" class="col-sm-4 col-form-label d-flex justify-content-between">Vuelto
+                      <span>S/.</span></label>
+                    <div class=" col-sm-4">
+                      <input type="text" readonly class="form-control-plaintext not-spin text-end fw-600 fs-17" id="p_vuelto" value="0.00">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-blue" id="btn_realizarpago">Realizar Pago</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{{-- 
     <div class="modal fade modal-default" id="payment-completed" aria-labelledby="payment-completed">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -2136,7 +3343,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> --}}
 
     <script data-cfasync="false"
         src="https://dreamspos.dreamstechnologies.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
@@ -2170,92 +3377,24 @@
         data-cf-settings="f9c26173027f4618d2102fe7-|49" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // $(document).ready(function() {
-        //     // Cargar todos los productos al inicio
-        //     loadAllProducts();
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
 
-        //     // Agregar un controlador de eventos de clic a los elementos <li> con la clase .categoria-item
-        //     $('.categoria-item').on('click', function() {
-        //         var categoriaId = $(this).data('id');
-        //         loadProducts(categoriaId);
-        //     });
-
-        //     // Controlador de evento para el elemento "Todas las Categorías"
-        //     $('#all').on('click', function() {
-        //         loadAllProducts();
-        //     });
-
-        //     // Función para cargar todos los productos
-        //     function loadAllProducts() {
-        //         $.ajax({
-        //             type: 'GET',
-        //             url: '/productos/todos', // Ruta a tu endpoint para obtener todos los productos
-        //             dataType: 'json',
-        //             success: function(data) {
-        //                 console.log(data);
-        //                 displayProducts(data);
-        //                 updateTotalProductos(data.length); // Actualizar el número total de productos
-        //             },
-        //             error: function(error) {
-        //                 console.error("Error al obtener todos los productos:", error);
-        //             }
-        //         });
-        //     }
-
-        //     // Función para cargar productos por categoría
-        //     function loadProducts(categoriaId) {
-        //         $.ajax({
-        //             type: 'GET',
-        //             url: '/productos/categoria/' + categoriaId,
-        //             dataType: 'json',
-        //             success: function(data) {
-        //                 console.log(data);
-        //                 displayProducts(data);
-        //                 updateTotalProductos(data.length); // Actualizar el número total de productos
-        //             },
-        //             error: function(error) {
-        //                 console.error("Error al obtener productos por categoría:", error);
-        //             }
-        //         });
-        //     }
-
-        //     // Función para mostrar productos en la interfaz
-        //     function displayProducts(products) {
-        //         var productsHtml = '';
-
-        //         products.forEach(function(product) {
-        //             productsHtml += `
-        //             <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
-        //                 <div class="product-info default-cover card">
-        //                     <a href="javascript:void(0);" class="img-bg">
-        //                         <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
-        //                         <span><i data-feather="check" class="feather-16"></i></span>
-        //                     </a>
-        //                     <h6 class="cat-name"><a href="javascript:void(0);">${product.categoria.nombre}</a></h6>
-        //                     <h6 class="product-name"><a href="javascript:void(0);">${product.nombre}</a></h6>
-        //                     <div class="d-flex align-items-center justify-content-between price">
-        //                         <span>${product.stock} UND</span>
-        //                         <p>S/.${product.costo_venta}</p>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         `;
-        //         });
-
-        //         $('.pos-products .row').html(productsHtml);
-        //     }
-        //     // Función para actualizar el número total de productos mostrado
-        //     function updateTotalProductos(total) {
-        //         $('#totalProductos').text(total + ' Productos');
-        //     }
-
-           
-        // });
-        
-    </script>
    <script>
     $(document).ready(function() {
+        // Variable global para mantener los productos cargados
+        var productos = [];
+
+        // Variable para mantener los productos en el carrito
+        var carrito = [];
+
+        // Inicializar el descuento desde el input
+        //var descuentoPorcentaje = parseFloat($('#descuento-input').val());
+
+        // var descuentoPorcentaje = parseFloat($('#descuento-input').val()) || 0;
+        // var descuento = (subTotal * descuentoPorcentaje) / 100;
+        // var total = subTotal - descuento;
+
+
         // Cargar todos los productos al inicio
         loadAllProducts();
 
@@ -2270,10 +3409,72 @@
             loadAllProducts();
         });
 
+        // Evento para el botón de búsqueda
+        $('#buscarBtn').on('click', function() {
+            realizarBusqueda();
+        });
+        // Evento para el decuento 
+        $('#descuento-input').on('input', function() {
+        calcularTotalCarrito();
+        });
+
+        // Evento para el switch de códigos de barras
+        $('#barcodeSwitch').on('change', function() {
+            if ($(this).is(':checked')) {
+                // Mostrar el contenedor del escáner de códigos de barras
+                $('#barcodeScanner').show();
+            } else {
+                // Ocultar el contenedor del escáner de códigos de barras
+                $('#barcodeScanner').hide();
+            }
+        });
+
+         // Función para realizar la búsqueda de productos
+        function realizarBusqueda() {
+            var query = $('#searchInput').val();
+            var barcodeSearch = $('#barcodeSwitch').is(':checked') ? 1 : 0;
+
+            $.ajax({
+                type: 'POST',
+                url: '{{ route("buscarProductos") }}', // Ruta a la que envías la solicitud POST
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    query: query,
+                    barcodeSearch: barcodeSearch
+                },
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response)
+                        displayProducts(response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Producto no encontrado',
+                        text: 'Registrar producto',
+                        html: '<div style="text-align: center;">' +
+                                    '<p>Por favor agrega uno.</p>' +
+                                    '<a style="text-align: center; width: 130px; height: 40px; "  href="{{ route("producto.create") }}" class="btn btn-primary">' +
+                                        'Registrar' +
+                                    '</a>' +
+                                '</div>',
+                        showCloseButton: true,
+                        showConfirmButton: false
+                    });
+                }
+            });
+        }
+
+    
+
         // Controlador de evento para el formulario de búsqueda de clientes
         $('#searchForm').on('submit', function(event) {
             event.preventDefault();
-            var search = $('#searchInput').val();
+            var search = $('#searchInputcliente').val();
             
             // Validar que se haya ingresado algo en el campo de búsqueda
             if (search.trim() !== '') {
@@ -2282,8 +3483,8 @@
                 // Mostrar mensaje de error o manejar según sea necesario
                 $('#resultsContainer').empty(); // Vaciar resultados anteriores
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
+                    icon: 'warning',
+                    title: 'Ingresa datos Válidos',
                     text: 'Por favor ingresa un término de búsqueda válido.'
                 });
             }
@@ -2369,8 +3570,10 @@
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    displayProducts(data);
-                    updateTotalProductos(data.length); // Actualizar el número total de productos
+                    productos = data; // Asigna los productos al array global
+                    displayProducts(productos);
+                    updateTotalProductos(productos.length); // Actualizar el número total de productos
+
                 },
                 error: function(error) {
                     console.error("Error al obtener todos los productos:", error);
@@ -2386,14 +3589,17 @@
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    displayProducts(data);
-                    updateTotalProductos(data.length); // Actualizar el número total de productos
+                    productos = data; // Asigna los productos al array global
+                    displayProducts(productos);
+                    updateTotalProductos(productos.length); // Actualizar el número total de productos
                 },
                 error: function(error) {
                     console.error("Error al obtener productos por categoría:", error);
                 }
             });
         }
+        
+
 
         // Función para mostrar productos en la interfaz
         function displayProducts(products) {
@@ -2403,30 +3609,345 @@
                 productsHtml += `
                 <div class="col-sm-2 col-md-6 col-lg-3 col-xl-3 pe-2">
                     <div class="product-info default-cover card">
-                        <a href="javascript:void(0);" class="img-bg">
+                        <a class="img-bg">
                             <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
                             <span><i data-feather="check" class="feather-16"></i></span>
                         </a>
-                        <h6 class="cat-name"><a href="javascript:void(0);">${product.categoria.nombre}</a></h6>
-                        <h6 class="product-name"><a href="javascript:void(0);">${product.nombre}</a></h6>
+                        <h6 class="cat-name"><a>${product.categoria.nombre}</a></h6>
+                        <h6 class="product-name"><a>${product.nombre}</a></h6>
                         <div class="d-flex align-items-center justify-content-between price">
                             <span>${product.stock} UND</span>
                             <p>S/.${product.costo_venta}</p>
                         </div>
+                        <button style="margin-top: 10px;" class="btn btn-primary btn-sm agregar-al-carrito" data-producto-id="${product.id}">
+                        Agregar al carrito
+                    </button>
                     </div>
                 </div>
             `;
             });
 
             $('.pos-products .row').html(productsHtml);
+
+             // Agregar evento para el botón "Agregar al carrito"
+             $('.agregar-al-carrito').on('click', function() {
+                    var productId = $(this).data('producto-id');
+                    // Reproducir sonido
+                    var audio = new Audio('{{ asset('sound/add.mp3') }}');
+                    audio.play();
+                    /**************************************************/
+                    agregarAlCarrito(productId);
+                });
+
+                 // Actualizar íconos de Feather
+                 //feather.replace();
+
+                // Re-inicializar tooltips de Bootstrap
+                //$('[data-bs-toggle="tooltip"]').tooltip();
+
+                 // Actualizar íconos de Feather
+                feather.replace();
+
+                // Re-inicializar tooltips de Bootstrap
+                $('[data-bs-toggle="tooltip"]').tooltip();
+                // Destruir tooltips existentes
+                $('[data-bs-toggle="tooltip"]').tooltip('dispose');
+
         }
 
-        // Función para actualizar el número total de productos mostrado
-        function updateTotalProductos(total) {
-            $('#totalProductos').text(total + ' Productos');
+        
+        function agregarAlCarrito(productId) {
+            // Buscar el producto en el array global de productos
+            var productToAdd = productos.find(function(product) {
+                return product.id === productId;
+            });
+
+            if (productToAdd) {
+                // Verificar si el producto ya está en el carrito
+                var existingProduct = carrito.find(function(item) {
+                    return item.id === productId;
+                });
+
+                if (existingProduct) {
+                    // Si el producto ya está en el carrito, incrementar la cantidad
+                    existingProduct.cantidad++;
+                } else {
+                    // Si el producto no está en el carrito, agregarlo con cantidad inicial 1
+                    productToAdd.cantidad = 1; // Agregar la propiedad cantidad al producto
+                    carrito.push(productToAdd);
+                }
+
+                console.log('Producto añadido al carrito:', productToAdd);
+
+                // Actualizar la interfaz del carrito
+                actualizarInterfazCarrito();
+            }
         }
+
+    // Función para actualizar la interfaz del carrito
+    function actualizarInterfazCarrito() {
+        // Vaciar el contenido anterior del contenedor del carrito
+        $('.carrito-container').empty();
+
+         // Contador de productos en el carrito
+        var totalProductos = 0;
+
+        // Recorrer el array de productos en el carrito
+        carrito.forEach(function(product) {
+            // Generar el HTML para cada producto del carrito
+            var productHtml = `
+            <div class="product-list d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center product-info" data-bs-toggle="modal" data-bs-target="#products">
+                    <a href="javascript:void(0);" class="img-bg">
+                        <img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}">
+                    </a>
+                    <div class="info">
+                        <span>${product.codigo}</span>
+                        <h6><a href="javascript:void(0);">${product.nombre}</a></h6>
+                        <p>S/.${product.costo_venta}</p>
+                    </div>
+                </div>
+                <div class="qty-item text-center">
+                    <a href="javascript:void(0);" class="dec d-flex justify-content-center align-items-center"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Disminuir" data-product-id="${product.id}">
+                        <i data-feather="minus-circle" class="feather-14"></i>
+                    </a>
+                    <input type="text" class="form-control text-center qty-input" name="qty" value="${product.cantidad}">
+                    <a href="javascript:void(0);" class="inc d-flex justify-content-center align-items-center"
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar" data-product-id="${product.id}">
+                        <i data-feather="plus-circle" class="feather-14"></i>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center action">
+                    <a class="btn-icon edit-icon me-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-product">
+                        <i data-feather="edit" class="feather-14"></i>
+                    </a>
+                    <a class="btn-icon delete-icon confirm-text" href="javascript:void(0);" data-product-id="${product.id}">
+                        <i data-feather="trash-2" class="feather-14"></i>
+                    </a>
+                </div>
+            </div>
+            `;
+
+            // Agregar el producto al contenedor del carrito
+            $('.carrito-container').append(productHtml);
+
+             // Incrementar el contador de productos visibles
+            totalProductos++;
+        });
+
+         // Actualizar íconos de Feather
+         feather.replace();         
+         // Re-inicializar tooltips de Bootstrap
+         $('[data-bs-toggle="tooltip"]').tooltip();
+         
+         // Destruir tooltips existentes
+        $('[data-bs-toggle="tooltip"]').tooltip('dispose');
+        // Actualizar el contador de productos en la interfaz
+        $('.count').text(totalProductos);
+
+        // Agregar eventos para modificar la cantidad desde el carrito
+        $('.qty-item .inc').on('click', function() {
+            var productId = $(this).data('product-id');
+            incrementarCantidad(productId);
+        });
+
+        $('.qty-item .dec').on('click', function() {
+            var productId = $(this).data('product-id');
+            decrementarCantidad(productId);
+        });
+
+        // Evento para eliminar un producto del carrito
+        $('.delete-icon').on('click', function() {
+            var productId = $(this).data('product-id');
+            eliminarProductoDelCarrito(productId);
+        });
+
+        // Calcular y actualizar el total del carrito
+        calcularTotalCarrito();
+    }
+
+    // Función para incrementar la cantidad de un producto en el carrito
+    function incrementarCantidad(productId) {
+        var product = carrito.find(function(item) {
+            return item.id === productId;
+        });
+
+        if (product) {
+            product.cantidad++;
+            actualizarInterfazCarrito();
+        }
+    }
+
+    // Función para decrementar la cantidad de un producto en el carrito
+    function decrementarCantidad(productId) {
+        var product = carrito.find(function(item) {
+            return item.id === productId;
+        });
+
+        if (product && product.cantidad > 1) {
+            product.cantidad--;
+            actualizarInterfazCarrito();
+        }
+    }
+
+    // Función para eliminar un producto del carrito
+    function eliminarProductoDelCarrito(productId) {
+        carrito = carrito.filter(function(product) {
+            return product.id !== productId;
+        });
+
+        actualizarInterfazCarrito();
+    }
+
+    
+    // Función para actualizar el número total de productos mostrado
+    function updateTotalProductos(total) {
+        $('#totalProductos').text(total + ' Productos');
+    }     
+    
+     // Función para calcular el total del carrito
+    //  function calcularTotalCarrito() {
+    //     var subTotal = 0;
+    //     carrito.forEach(function(product) {
+    //         subTotal += product.costo_venta * product.cantidad;
+    //     });
+
+    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
+    //     var total = subTotal - descuento;
+
+    //     // Actualizar la interfaz
+    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
+    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
+    //     $('#total').text('S/. ' + total.toFixed(2));
+    // }
+
+    // function calcularTotalCarrito() {
+    //     var subTotal = 0;
+    //     carrito.forEach(function(product) {
+    //         subTotal += product.costo_venta * product.cantidad;
+    //     });
+
+    //     // Obtener el descuento desde el input
+    //     var descuentoPorcentaje = parseFloat($('#descuento-input').val());
+    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
+    //     var total = subTotal - descuento;
+
+    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
+    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
+    //     $('#total').text('S/. ' + total.toFixed(2));
+    // }
+
+    // // Eventos para el input de descuento
+    // $('#descuento-plus').on('click', function() {
+    //     var descuentoInput = $('#descuento-input');
+    //     var descuento = parseFloat(descuentoInput.val());
+    //     descuentoInput.val(descuento + 1);
+    //     calcularTotalCarrito();
+    // });
+
+    // $('#descuento-minus').on('click', function() {
+    //     var descuentoInput = $('#descuento-input');
+    //     var descuento = parseFloat(descuentoInput.val());
+    //     if (descuento > 0) {
+    //         descuentoInput.val(descuento - 1);
+    //     }
+    //     calcularTotalCarrito();
+    // });
+
+    // $('#descuento-input').on('input', function() {
+    //     calcularTotalCarrito();
+    // });
+
+    // loadAllProducts();
+
+    // function calcularTotalCarrito() {
+    //     var subTotal = 0;
+    //     carrito.forEach(function(product) {
+    //         subTotal += product.costo_venta * product.cantidad;
+    //     });
+
+    //     // Obtener el descuento desde el input, asegurando que sea un número y no NaN
+    //     var descuentoPorcentaje = parseFloat($('#descuento-input').val()) || 0;
+    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
+    //     var total = subTotal - descuento;
+
+    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
+    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
+    //     $('#total').text('S/. ' + total.toFixed(2));
+    // }
+
+    // $('#descuento-plus').on('click', function() {
+    //     var descuentoInput = $('#descuento-input');
+    //     var descuento = parseFloat(descuentoInput.val()) || 0;
+    //     descuentoInput.val(descuento + 1);
+    //     calcularTotalCarrito();
+    // });
+
+    // $('#descuento-minus').on('click', function() {
+    //     var descuentoInput = $('#descuento-input');
+    //     var descuento = parseFloat(descuentoInput.val()) || 0;
+    //     if (descuento > 0) {
+    //         descuentoInput.val(descuento - 1);
+    //     }
+    //     calcularTotalCarrito();
+    // });
+
+    // $('#descuento-input').on('input', function() {
+    //     calcularTotalCarrito();
+    // });
+
+
+    // Función para mostrar el modal con los detalles de la compra
+    function mostrarModalCompra() {
+
+        $('#modalCompra').modal('show'); // Abre el modal usando Bootstrap modal
+    }
+
+    // Evento click en el botón total-button para mostrar el modal
+    $('#total-button').on('click', function() {
+        mostrarModalCompra();
     });
-</script>
+    
+    // Función para calcular el total del carrito
+    function calcularTotalCarrito() {
+        var subTotal = 0;
+        carrito.forEach(function(product) {
+            subTotal += product.costo_venta * product.cantidad;
+        });
+
+        // Obtener el descuento desde el input, asegurando que sea un número y manejando NaN
+        var descuentoPorcentaje = parseFloat($('#descuento-input').val()) || 0;
+        var descuento = (subTotal * descuentoPorcentaje) / 100;
+        var total = subTotal - descuento;
+
+        $('#subTotal').text('S/. ' + subTotal.toFixed(2));
+        $('#descuento').text('S/. ' + descuento.toFixed(2));
+        $('#total').text('S/. ' + total.toFixed(2));
+
+        // Actualizar el texto del botón con el total
+        $('#total-button').text('Seguir con la compra de : S/. ' + total.toFixed(2));
+    }
+
+    $('#descuento-plus').on('click', function() {
+        var descuentoInput = $('#descuento-input');
+        var descuento = parseFloat(descuentoInput.val()) || 0;
+        descuentoInput.val(descuento + 1);
+        calcularTotalCarrito();
+    });
+
+    $('#descuento-minus').on('click', function() {
+        var descuentoInput = $('#descuento-input');
+        var descuento = parseFloat(descuentoInput.val()) || 0;
+        if (descuento > 0) {
+            descuentoInput.val(descuento - 1);
+        }
+        calcularTotalCarrito();
+    });
+
+    });
+    
+   </script>
 
     
 

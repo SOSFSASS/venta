@@ -31,7 +31,7 @@ class ProductoRequest extends FormRequest
             'fechaven' => 'nullable|date',
             'id_categoria' => 'required|integer|exists:categorias,id',            
             'estado' => 'required|boolean',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
 
     }
@@ -56,7 +56,7 @@ class ProductoRequest extends FormRequest
             'stock.required' => 'Ingrese la cantidad de stock de su producto',
             'descripcion.required'=>'Ingrese La descripcion de su producto',
             'imagen.required' => 'Seleccione una imagen',
-            'imagen.mimes' => 'El campo :attribute debe ser un archivo de tipo: jpeg, png, jpg, gif, svg.',
+            'imagen.mimes' => 'El campo :attribute debe ser un archivo de tipo: jpeg, png, jpg, gif, svg, webp.',
             'imagen.max' => 'El campo :attribute no puede tener un tamaño mayor a 2048 KB.',            
         ];
     }
