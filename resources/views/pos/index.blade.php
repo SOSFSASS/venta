@@ -29,8 +29,9 @@
     <link rel="stylesheet"
         href="https://dreamspos.dreamstechnologies.com/html/template/assets/css/dataTables.bootstrap5.min.css">
 
-    <link rel="stylesheet"
-        href="https://dreamspos.dreamstechnologies.com/html/template/assets/plugins/fontawesome/css/fontawesome.min.css">
+    {{-- <link rel="stylesheet"
+        href="https://dreamspos.dreamstechnologies.com/html/template/assets/plugins/fontawesome/css/fontawesome.min.css"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet"
         href="https://dreamspos.dreamstechnologies.com/html/template/assets/plugins/fontawesome/css/all.min.css">
 
@@ -1942,7 +1943,7 @@
               </div>
 
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-end">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-blue" id="btn_realizarpago">Realizar Pago</button>
             </div>
@@ -3806,100 +3807,16 @@
         $('#totalProductos').text(total + ' Productos');
     }     
     
-     // Función para calcular el total del carrito
-    //  function calcularTotalCarrito() {
-    //     var subTotal = 0;
-    //     carrito.forEach(function(product) {
-    //         subTotal += product.costo_venta * product.cantidad;
-    //     });
-
-    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
-    //     var total = subTotal - descuento;
-
-    //     // Actualizar la interfaz
-    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
-    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
-    //     $('#total').text('S/. ' + total.toFixed(2));
-    // }
-
-    // function calcularTotalCarrito() {
-    //     var subTotal = 0;
-    //     carrito.forEach(function(product) {
-    //         subTotal += product.costo_venta * product.cantidad;
-    //     });
-
-    //     // Obtener el descuento desde el input
-    //     var descuentoPorcentaje = parseFloat($('#descuento-input').val());
-    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
-    //     var total = subTotal - descuento;
-
-    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
-    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
-    //     $('#total').text('S/. ' + total.toFixed(2));
-    // }
-
-    // // Eventos para el input de descuento
-    // $('#descuento-plus').on('click', function() {
-    //     var descuentoInput = $('#descuento-input');
-    //     var descuento = parseFloat(descuentoInput.val());
-    //     descuentoInput.val(descuento + 1);
-    //     calcularTotalCarrito();
-    // });
-
-    // $('#descuento-minus').on('click', function() {
-    //     var descuentoInput = $('#descuento-input');
-    //     var descuento = parseFloat(descuentoInput.val());
-    //     if (descuento > 0) {
-    //         descuentoInput.val(descuento - 1);
-    //     }
-    //     calcularTotalCarrito();
-    // });
-
-    // $('#descuento-input').on('input', function() {
-    //     calcularTotalCarrito();
-    // });
-
-    // loadAllProducts();
-
-    // function calcularTotalCarrito() {
-    //     var subTotal = 0;
-    //     carrito.forEach(function(product) {
-    //         subTotal += product.costo_venta * product.cantidad;
-    //     });
-
-    //     // Obtener el descuento desde el input, asegurando que sea un número y no NaN
-    //     var descuentoPorcentaje = parseFloat($('#descuento-input').val()) || 0;
-    //     var descuento = (subTotal * descuentoPorcentaje) / 100;
-    //     var total = subTotal - descuento;
-
-    //     $('#subTotal').text('S/. ' + subTotal.toFixed(2));
-    //     $('#descuento').text('S/. ' + descuento.toFixed(2));
-    //     $('#total').text('S/. ' + total.toFixed(2));
-    // }
-
-    // $('#descuento-plus').on('click', function() {
-    //     var descuentoInput = $('#descuento-input');
-    //     var descuento = parseFloat(descuentoInput.val()) || 0;
-    //     descuentoInput.val(descuento + 1);
-    //     calcularTotalCarrito();
-    // });
-
-    // $('#descuento-minus').on('click', function() {
-    //     var descuentoInput = $('#descuento-input');
-    //     var descuento = parseFloat(descuentoInput.val()) || 0;
-    //     if (descuento > 0) {
-    //         descuentoInput.val(descuento - 1);
-    //     }
-    //     calcularTotalCarrito();
-    // });
-
-    // $('#descuento-input').on('input', function() {
-    //     calcularTotalCarrito();
-    // });
-
 
     // Función para mostrar el modal con los detalles de la compra
     function mostrarModalCompra() {
+
+        // Obtener el valor del total desde el botón
+        var totalText = $('#total-button').text();
+        var total = totalText.match(/S\/\. (\d+(\.\d+)?)/)[1];
+
+        // Actualizar el valor del input en el modal
+        $('#p_pedido').val(total);
 
         $('#modalCompra').modal('show'); // Abre el modal usando Bootstrap modal
     }
@@ -3927,6 +3844,7 @@
 
         // Actualizar el texto del botón con el total
         $('#total-button').text('Seguir con la compra de : S/. ' + total.toFixed(2));
+        $('#totalpagar').val(total.toFixed(2)); 
     }
 
     $('#descuento-plus').on('click', function() {
@@ -3946,6 +3864,325 @@
     });
 
     });
+/* ---------------------------------------------------------------- */
+//                    FUNCION FORMATO NUMEROS
+
+function formatNumber(number) {
+  var parts = number.toFixed(2).split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+}
+
+/* ---------------------------------------------------------------- */
+//                   FUNCIONES INPUT METODO PAGO
+
+let currentInput = null;
+
+// Al hacer clic en un boton de la calculadora, se enfoca en el input correspondiente.
+$(".calculator-button").click(function () {
+  // Encuentra el input relacionado al botón clickeado.
+  const inputId = $(this).siblings(".calculator-input").attr("id");
+  currentInput = $("#" + inputId);
+
+  // Coloca el foco en el input.
+  currentInput.focus();
+});
+
+$(".calculator-input").click(function () {
+  currentInput = $(this);
+});
+
+/* ---------------------------------------------------------------- */
+//                       FUNCIONES TECLADO
+
+$(".design").click(function () {
+  // console.log('this', $(this).text());
+
+  // console.log('cuurr', currentInput.val());
+  if (currentInput) {
+    const buttonText = $(this).text();
+    const inputValue = currentInput.val();
+
+    if (inputValue == 0) {
+      currentInput.val(buttonText);
+
+    } else if (buttonText === "." && inputValue.includes(".")) {
+      // Evitar agregar más de un punto decimal.
+      currentInput.val(inputValue);
+
+    } else {
+      // currentInput.val(inputValue + buttonText);
+      // Controlar la cantidad de decimales permitidos.
+      const decimalIndex = inputValue.indexOf(".");
+      if (decimalIndex !== -1 && inputValue.length - decimalIndex > 2) {
+        // Si ya hay dos decimales, no permitir más.
+        currentInput.val(inputValue);
+      } else {
+        currentInput.val(inputValue + buttonText);
+      }
+    }
+
+    calcularPago();
+  }
+
+});
+
+//Backspace
+$('#backspace').click(function () {
+
+  if (currentInput) {
+    var value = currentInput.val();
+    if (!(parseInt(parseFloat(value)) == 0 && value.length == 1)) {
+      currentInput.val(value.slice(0, value.length - 1));
+    }
+    if (value.length == 1 || value.length == 0) {
+      currentInput.val("0");
+    }
+    calcularPago();
+  }
+
+});
+
+// All Clear
+$("#allClear").click(function () {
+  // $("#expression").val("0");
+  // $("#result").val("0");
+  if (currentInput) {
+    currentInput.val("0");
+
+    calcularPago();
+  }
+});
+
+/* ---------------------------------------------------------------- */
+//                    MOSTRAR MODAL METODO DE PAGO
+
+$('#btn_metodopago').click(function () {
+
+  if ($('.items-order .card').length === 0) {
+    swal.fire({
+      title: "Error",
+      text: 'Debe agregar al menos un producto al pedido antes de continuar.',
+      icon: "error",
+      timer: 2000,
+      showConfirmButton: false
+    });
+    return;
+  }
+
+  var totalpedido = $('#totalpagar').val().replace(',', '');
+  //Llena el tipo de pago
+  $('#p_pedido').val(totalpedido);
+  $('#efectivo').val(parseFloat(totalpedido).toFixed(2));
+    // var totalpedido = $('#totalpagar').val().replace(',', '');
+    // $('#p_pedido').val(parseFloat(totalpedido).toFixed(2));
+    // $('#efectivo').val(parseFloat(totalpedido).toFixed(2));
+
+  // Verificar que completaron datos
+
+  //HERE
+
+  var d_tipocomprobante = $('#d_tipocomprobante').val();
+
+  if ($('#d_tipocomprobante').val() == null) {
+    swal.fire({
+      title: "Error",
+      text: 'Complete los datos antes de continuar.',
+      icon: "error",
+      timer: 2000,
+      showConfirmButton: false
+    });
+
+    $('#btn_datos').focus();
+
+    return;
+
+  } else if (d_tipocomprobante == 0 || d_tipocomprobante == 2) {
+
+    if ($('#tipo_doc_ide').val() == '') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete el Tipo de Documento.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    } else if ($('#numero_documento').val() == '' || $('#numero_documento').val() == '-') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete el Número de Documento.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    } else if ($('#razon_social').val() == '' || $('#razon_social').val() == '-') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete los Nombres y Apellidos.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    }
+
+  } else if (d_tipocomprobante == 1) {
+
+    if ($('#tipo_doc_ide').val() == '') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete el Tipo de Documento.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    } else if ($('#numero_documento2').val() == '' || $('#numero_documento2').val() == '-') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete el Número de Documento.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    } else if ($('#razon_social2').val() == '' || $('#razon_social2').val() == '-') {
+
+      swal.fire({
+        title: "Error",
+        text: 'Complete los Nombres y Apellidos.',
+        icon: "error",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      $('#btn_datos').focus();
+      return;
+
+    }
+
+  }
+
+
+  //$('#modal_metodopago').modal('show');
+
+  setTimeout(function () {
+    $('#efectivo').focus();
+  }, 500);
+
+  currentInput = $('#efectivo');
+  calcularPago();
+
+
+
+})
+
+
+/* ---------------------------------------------------------------- */
+//                     CERRAR MODAL METODO DE PAGO
+
+$('#modalCompra').on('hidden.bs.modal', function () {
+
+  limpiarMetodoPago();
+});
+
+/* ---------------------------------------------------------------- */
+//                      FUNCION CALCULAR PAGO
+
+function calcularPago() {
+
+  var p_pedido = parseFloat($('#p_pedido').val());
+
+  var efectivo = parseFloat($('#efectivo').val());
+  // var p_credito = parseFloat( $('#p_credito').val() || 0 );
+  var visa = parseFloat($('#visa').val() || 0);
+  var yape = parseFloat($('#yape').val() || 0);
+  var plin = parseFloat($('#plin').val() || 0);
+  var mastercard = parseFloat($('#mastercard').val() || 0);
+  var deposito = parseFloat($('#deposito').val() || 0);
+
+  var totalpagado = efectivo + visa + yape + plin + mastercard + deposito;
+
+  $('#p_tpagado').val(formatNumber(totalpagado));
+
+  var totalvuelto = 0;
+
+  totalvuelto = totalpagado - p_pedido
+
+  if (totalpagado > p_pedido) {
+
+    $('#text_vuelto').html('Vuelto <span>S/.</span>');
+    $('#text_vuelto').css('color', 'green');
+    $('#p_vuelto').css('color', 'green');
+
+  } else if (totalpagado == p_pedido) {
+
+    $('#text_vuelto').html('Completo <span>S/.</span>');
+    $('#text_vuelto').css('color', 'blue');
+    $('#p_vuelto').css('color', 'blue');
+
+  } else {
+
+    totalvuelto = p_pedido - totalpagado
+
+    $('#text_vuelto').html('Falta <span>S/.</span>');
+    $('#text_vuelto').css('color', 'red');
+    $('#p_vuelto').css('color', 'red');
+  }
+
+  // console.log('vuelto1', totalvuelto);
+  $('#p_vuelto').val(formatNumber(totalvuelto));
+
+
+}
+
+/* ---------------------------------------------------------------- */
+//                   EVENTO INPUT CALCULAR PAGO
+
+$('.calculator-input').on('input', calcularPago);
+
+/* ---------------------------------------------------------------- */
+//                  LIMPIAR MODAL METODO DE PAGO
+
+function limpiarMetodoPago() {
+
+  $('#p_pedido').val(0);
+
+  $('#efectivo').val(0);
+  $('#visa').val(0);
+  $('#yape').val(0);
+  $('#plin').val(0);
+  $('#mastercard').val(0);
+  $('#deposito').val(0);
+
+  $('#p_tpagado').val(0);
+
+  $('#text_vuelto').html('Vuelto <span>S/.</span>');
+  $('#p_vuelto').val(0);
+
+}
     
    </script>
 
