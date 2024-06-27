@@ -51,57 +51,7 @@
         }
     </style>
 
-<style>
-     body {
-        background-color: #F2F7FB;
-    }
-    
-    .logo {
-        font-size: 22px;
-    }
-    
-    .text-blue {
-        color: #00548d;
-    }
-    
-    .card {
-        background-color: #ffffff !important;
-        border-radius: 15px;
-        box-shadow: 0px 9px 20px rgba(46, 35, 94, 0.07);
-        border: 1px solid transparent;
-    }
-    
-    .card.card-warning {
-        border-color: #fc8d00;
-    }
-    
-    .card.card-danger {
-        border-color: #EF4444;
-    }
-    
-    .card-header {
-        background-color: transparent;
-        padding: 1rem !important;
-    }
-    
-    .card-body {
-        background-color: transparent;
-    
-    }
-    
-    .card-footer {
-        background-color: transparent;
-    
-    }
-    
-    .cursor-pointer {
-        cursor: pointer !important;
-    }
-    
-    .card-header:first-child {
-        border-radius: 1rem 1rem 0 0 !important;
-    }
-    
+<style>    
     .btn {
         color: #ffffff;
         position: relative;
@@ -240,229 +190,8 @@
         border-color: #0093d9;
     }
     
-    .btn-outline-secondary.delete {
-        color: #6c757d;
-        border: 0;
-        opacity: 0.65 !important;
-    }
-    
-    .btn-outline-secondary.delete:hover,
-    .btn-outline-secondary.delete:focus {
-        border: 0 !important;
-        background-color: #6c757d !important;
-    }
-    
-    
-    .btn-warning:disabled,
-    .btn-warning.disabled {
-        color: #FFFFFF !important;
-    }
-    
-    .pedido-container .pedido-card {
-        /* height: calc(100vh - 59px); */
-        height: calc(100vh - 85px);
-    }
-    
-    .cards-products {
-        height: calc(100vh - 270px);
-        overflow: scroll;
-        overflow-y: visible;
-        overflow-x: hidden;
-    }
-    
-    .fw-700 {
-        font-weight: 700;
-    }
-    
-    .fw-600 {
-        font-weight: 600 !important;
-    }
-    
-    .fw-500 {
-        font-weight: 500 !important;
-    }
-    
-    .fs-7 {
-        font-size: .90rem;
-    }
-    
-    .fs-17 {
-        font-size: 17spx !important;
-    }
-    
-    .fs-16 {
-        font-size: 16px !important;
-    }
-    
-    .fs-14 {
-        font-size: 14px !important;
-    }
-    
-    .fs-12 {
-        font-size: 12px !important;
-    }
-    
-    .quantity {
-        display: flex;
-        /* border: 2px solid #3498db; */
-        /* border-radius: 4px; */
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    .quantity button {
-        /* background-color: #3498db; */
-        /* color: #fff; */
-        border: none;
-        cursor: pointer;
-        /* font-size: 20px; */
-        width: 28px;
-        /* height: auto; */
-        text-align: center;
-        transition: background-color 0.2s;
-    }
-    
-    .quantity button:hover {
-        /* background-color: #2980b9; */
-    }
-    
-    .input-box {
-        width: 40px;
-        text-align: center;
-        border: none;
-        padding: 2.5px 4px;
-        font-size: 16px;
-        outline: none;
-    }
-    
-    /* Hide the number input spin buttons */
-    .input-box::-webkit-inner-spin-button,
-    .input-box::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    
-    .input-box[type="number"] {
-        -moz-appearance: textfield;
-    }
-    
-    
-    .slider-item {
-        display: inline-block;
-        background: #F2F7FB;
-        padding: 10px;
-        width: auto;
-        border: 1px solid #F2F7FB;
-        position: relative;
-        white-space: nowrap;
-    }
-    
-    .slider-item .cantidad {
-        display: none;
-    }
-    
-    .slider-item.select {
-        border-color: #00548d;
-    }
-    
-    .slider-item.select .category {
-        color: #00548d;
-    }
-    
-    .slider-item.select .cantidad {
-        position: absolute;
-        display: block;
-        bottom: -10px;
-        left: 40%;
-        color: #FFFFFF;
-        padding: 1px 10px;
-        border-radius: 50rem !important;
-        background: #00548d;
-        font-size: 12px;
-        font-weight: 700;
-    }
-    
-    .slider-item:hover {
-        border-color: #00548d;
-        cursor: pointer;
-    }
-    
-    .slider-item:hover .category {
-        color: #00548d;
-    }
-    
-    .slider-item:hover .cantidad {
-        position: absolute;
-        display: block;
-        bottom: -10px;
-        left: 40%;
-        color: #FFFFFF;
-        padding: 1px 10px;
-        border-radius: 50rem !important;
-        background: #00548d;
-        font-size: 12px;
-        font-weight: 700;
-    }
-    
-    .swiper {
-        height: 62px;
-    }
-    
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px !important;
-        font-weight: 800;
-        padding: 1rem;
-        width: 2rem;
-        height: 2rem;
-        opacity: 0.75;
-        border-radius: 50%;
-        color: #FFFFFF;
-        background: #00548d;
-    }
-    
-    
-    /* Estilos para el estado activo de los botones (hover) */
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-    
-        opacity: 1;
-        /* Cambia la opacidad en hover */
-    }
-    
-    /* Estilos para los botones "prev" específicamente */
-    .swiper-button-prev {
-        left: 3px !important;
-        /* Alinea el botón "prev" a la izquierda */
-        top: 27px !important;
-    }
-    
-    /* Estilos para los botones "next" específicamente */
-    .swiper-button-next {
-        right: 3px !important;
-        /* Alinea el botón "next" a la derecha */
-        top: 27px !important;
-    }
-    
-    .swiper-slide {
-        width: auto !important;
-    }
-    
-    .radius-bottom {
-        border-radius: 0 0 1rem 1rem !important;
-    }
-    
-    .me-3-5 {
-        margin-right: 2rem !important;
-    }
-    
-    .ms-3-5 {
-        margin-left: 2rem !important;
-    }
+  
+
     
     .scroll-y {
         overflow: scroll;
@@ -470,12 +199,7 @@
     }
     
     
-    input[type=number].not-spin::-webkit-inner-spin-button,
-    input[type=number].not-spin::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    
+   
     
     /*-------------------------------------*/
     /*             LOADER PRODUCT          */
@@ -976,111 +700,8 @@
     
     .w-auto {
         width: auto !important;
-    }
-    
-    .searchToggle {
-        height: 40px;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #0093d9;
-        border-radius: .25rem;
-    }
-    
-    .searchToggle i {
-        position: absolute;
-        color: #ffffff;
-        font-size: 22px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .searchToggle i.cancel {
-        opacity: 0;
-        pointer-events: none;
-    }
-    
-    .searchToggle.active i.cancel {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    
-    .searchToggle.active i.search {
-        opacity: 0;
-        pointer-events: none;
-    }
-    
-    .searchBox {
-        position: relative;
-    }
-    
-    .searchBox .search-field {
-        position: absolute;
-        bottom: -85px;
-        right: 5px;
-        height: 50px;
-        width: 300px;
-        display: flex;
-        align-items: center;
-        background-color: #fff;
-        padding: 3px;
-        border-radius: 6px;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    
-    .searchToggle.active~.search-field {
-        bottom: -62px;
-        opacity: 1;
-        pointer-events: auto;
-    
-        right: -135px;
-    }
-    
-    .search-field::before {
-        content: '';
-        position: absolute;
-        /* right: 14px; */
-        right: 50%;
-        top: -4px;
-        height: 12px;
-        width: 12px;
-        background-color: rgba(0, 0, 0, 0.1);
-        transform: rotate(-45deg);
-        z-index: -1;
-    }
-    
-    .search-field input {
-        height: 100%;
-        width: 100%;
-        padding: 0 45px 0 15px;
-        outline: none;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 400;
-        color: #fff;
-        background-color: #3ac47d;
-    }
-    
-    
-    .search-field i {
-        position: absolute;
-        color: #00548d;
-        right: 15px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    
-    .label-data {
-        font-size: 14px;
-        line-height: 1.5;
-        font-weight: 600;
-        margin-bottom: 2px;
-    }
+    }    
+
 </style>
 </head>
 
@@ -1769,56 +1390,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    {{-- <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalCompraLabel">Detalles de la compra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h4>Detalles de la compra</h4>
-                    <p>Producto: <span id="producto">[Nombre del producto]</span></p>
-                    <p>Precio: <span id="precio">$ [Precio del producto]</span></p>
-                    <p>Total: <span id="total">$ [Total de la compra]</span></p>
-    
-                    <h4>Métodos de pago</h4>
-                    <form>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="efectivo" value="efectivo">
-                            <label class="form-check-label" for="efectivo">Efectivo</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="tarjeta" value="tarjeta">
-                            <label class="form-check-label" for="tarjeta">Tarjeta de crédito</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="paypal" value="paypal">
-                            <label class="form-check-label" for="paypal">PayPal</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="transferencia" value="transferencia">
-                            <label class="form-check-label" for="transferencia">Transferencia bancaria</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="bitcoin" value="bitcoin">
-                            <label class="form-check-label" for="bitcoin">Bitcoin</label>
-                        </div>
-                    </form>
-    
-                    <h4>Introducir monto</h4>
-                    <input type="number" id="monto" placeholder="Introducir monto" min="0" step="0.01">
-    
-                    <p id="resultado">Resultado: <span id="vuelto">$ 0.00</span></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="pagar">Pagar</button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+   
     <!-- Modal -->
     <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1854,13 +1426,7 @@
                       <button disabled type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <label for="visa" class="col-sm-4 col-form-label">Visa</label>
-                    <div class="input-group-no-width col-sm-5">
-                      <input type="text" class="form-control calculator-input" name="visa" id="visa" value="0">
-                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
-                    </div>
-                  </div>
+                  
                   <div class="mb-3 row">
                     <label for="yape" class="col-sm-4 col-form-label">Yape</label>
                     <div class="input-group-no-width col-sm-5">
@@ -1875,13 +1441,7 @@
                       <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <label for="mastercard" class="col-sm-4 col-form-label">MasterCard</label>
-                    <div class="input-group-no-width col-sm-5">
-                      <input type="text" class="form-control calculator-input" name="mastercard" id="mastercard" value="0">
-                      <button type="button" class="btn btn-blue calculator-button"><i class="fa-solid fa-calculator"></i></button>
-                    </div>
-                  </div>
+                 
                   <div class="mb-3 row">
                     <label for="deposito" class="col-sm-4 col-form-label">Depósito</label>
                     <div class="input-group-no-width col-sm-5">
@@ -1951,6 +1511,187 @@
         </div>
       </div>
 
+  
+
+<!-- Modal para mostrar la lista de productos del carrito -->
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCarritoLabel">Detalle de Venta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+                    <div class="card-body">
+                        <table class="table table-borderless table-nowrap align-middle mb-0 ms-auto">
+                            <thead class="thead-secondary">
+                                <tr >
+                                    <th>Num</th>
+                                    <th>Imagen</th>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal Unitario</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaProductosCarrito">
+                                <!-- Aquí se llenará dinámicamente con JavaScript -->                            
+                                {{-- <tr>
+                                    <td>Sub Total</td>
+                                    <td class="text-end" id="txtsubtotal">0</td>
+                                </tr>
+                                <tr>
+                                    <td>IGV (18%)</td>
+                                    <td class="text-end" id="txtigv">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sub Descuento</td>
+                                    <td class="text-end" id="txtDescuento">0</td>
+                                </tr>
+                                <tr class="border-top border-top-dashed fs-15">
+                                    <th scope="row">Total</th>
+                                    <th class="text-end" id="txttotal">0</th>
+                                </tr> --}}
+                            </tbody>
+                        </table>
+
+                        <div class="mt-4">
+                            <label for="vent_coment" class="form-label text-muted text-uppercase fw-semibold">Comentario</label>
+                            <textarea class="form-control alert alert-info" id="vent_coment" name="vent_coment" placeholder="Comentario" rows="4" required=""></textarea>
+                        </div>
+
+                        <div class="modal-footer justify-content-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-blue" id="btn_realizarCompra">Realizar Compra</button>
+                        </div>
+                    </div>              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-default" id="print-receipt" aria-labelledby="print-receipt">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end">
+                <button type="button" class="close p-0" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-head text-center">
+                    <a href="javascript:void(0);">
+                        <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/logo.png"
+                            width="100" height="30" alt="Receipt Logo">
+                    </a>
+                </div>
+                <div class="text-center info text-center">
+                    <h6>Dreamguys Technologies Pvt Ltd.,</h6>
+                    <p class="mb-0">Phone Number: +1 5656665656</p>
+                    <p class="mb-0">Email: <a
+                            href="https://dreamspos.dreamstechnologies.com/cdn-cgi/l/email-protection#a2c7dac3cfd2cec7e2c5cfc3cbce8cc1cdcf"><span
+                                class="__cf_email__"
+                                data-cfemail="dabfa2bbb7aab6bf9abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a>
+                    </p>
+                </div>
+                <div class="tax-invoice">
+                    <h6 class="text-center">Tax Invoice</h6>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="invoice-user-name"><span>Name: </span><span>John Doe</span></div>
+                            <div class="invoice-user-name"><span>Invoice No: </span><span>CS132453</span></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="invoice-user-name"><span>Customer Id: </span><span>#LL93784</span></div>
+                            <div class="invoice-user-name"><span>Date: </span><span>01.07.2022</span></div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table-borderless w-100 table-fit">
+                    <thead>
+                        <tr>
+                            <th># Item</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th class="text-end">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Red Nike Laser</td>
+                            <td>$50</td>
+                            <td>3</td>
+                            <td class="text-end">$150</td>
+                        </tr>
+                        <tr>
+                            <td>2. Iphone 14</td>
+                            <td>$50</td>
+                            <td>2</td>
+                            <td class="text-end">$100</td>
+                        </tr>
+                        <tr>
+                            <td>3. Apple Series 8</td>
+                            <td>$50</td>
+                            <td>3</td>
+                            <td class="text-end">$150</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <table class="table-borderless w-100 table-fit">
+                                    <tr>
+                                        <td>Sub Total :</td>
+                                        <td class="text-end">$700.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Discount :</td>
+                                        <td class="text-end">-$50.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping :</td>
+                                        <td class="text-end">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax (5%) :</td>
+                                        <td class="text-end">$5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Bill :</td>
+                                        <td class="text-end">$655.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Due :</td>
+                                        <td class="text-end">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Payable :</td>
+                                        <td class="text-end">$655.00</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center invoice-bar">
+                    <p>**VAT against this challan is payable through central registration. Thank you for your
+                        business!</p>
+                    <a href="javascript:void(0);">
+                        <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/barcode/barcode-03.jpg"
+                            alt="Barcode">
+                    </a>
+                    <p>Sale 31</p>
+                    <p>Thank You For Shopping With Us. Please Come Again</p>
+                    <a href="javascript:void(0);" class="btn btn-primary">Print Receipt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {{-- 
     <div class="modal fade modal-default" id="payment-completed" aria-labelledby="payment-completed">
         <div class="modal-dialog modal-dialog-centered">
@@ -1978,122 +1719,7 @@
     </div>
 
 
-    <div class="modal fade modal-default" id="print-receipt" aria-labelledby="print-receipt">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="close p-0" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="icon-head text-center">
-                        <a href="javascript:void(0);">
-                            <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/logo.png"
-                                width="100" height="30" alt="Receipt Logo">
-                        </a>
-                    </div>
-                    <div class="text-center info text-center">
-                        <h6>Dreamguys Technologies Pvt Ltd.,</h6>
-                        <p class="mb-0">Phone Number: +1 5656665656</p>
-                        <p class="mb-0">Email: <a
-                                href="https://dreamspos.dreamstechnologies.com/cdn-cgi/l/email-protection#a2c7dac3cfd2cec7e2c5cfc3cbce8cc1cdcf"><span
-                                    class="__cf_email__"
-                                    data-cfemail="dabfa2bbb7aab6bf9abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a>
-                        </p>
-                    </div>
-                    <div class="tax-invoice">
-                        <h6 class="text-center">Tax Invoice</h6>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-6">
-                                <div class="invoice-user-name"><span>Name: </span><span>John Doe</span></div>
-                                <div class="invoice-user-name"><span>Invoice No: </span><span>CS132453</span></div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="invoice-user-name"><span>Customer Id: </span><span>#LL93784</span></div>
-                                <div class="invoice-user-name"><span>Date: </span><span>01.07.2022</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table-borderless w-100 table-fit">
-                        <thead>
-                            <tr>
-                                <th># Item</th>
-                                <th>Price</th>
-                                <th>Qty</th>
-                                <th class="text-end">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1. Red Nike Laser</td>
-                                <td>$50</td>
-                                <td>3</td>
-                                <td class="text-end">$150</td>
-                            </tr>
-                            <tr>
-                                <td>2. Iphone 14</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <td class="text-end">$100</td>
-                            </tr>
-                            <tr>
-                                <td>3. Apple Series 8</td>
-                                <td>$50</td>
-                                <td>3</td>
-                                <td class="text-end">$150</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">
-                                    <table class="table-borderless w-100 table-fit">
-                                        <tr>
-                                            <td>Sub Total :</td>
-                                            <td class="text-end">$700.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Discount :</td>
-                                            <td class="text-end">-$50.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping :</td>
-                                            <td class="text-end">0.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tax (5%) :</td>
-                                            <td class="text-end">$5.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Total Bill :</td>
-                                            <td class="text-end">$655.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Due :</td>
-                                            <td class="text-end">$0.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Total Payable :</td>
-                                            <td class="text-end">$655.00</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-center invoice-bar">
-                        <p>**VAT against this challan is payable through central registration. Thank you for your
-                            business!</p>
-                        <a href="javascript:void(0);">
-                            <img src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/barcode/barcode-03.jpg"
-                                alt="Barcode">
-                        </a>
-                        <p>Sale 31</p>
-                        <p>Thank You For Shopping With Us. Please Come Again</p>
-                        <a href="javascript:void(0);" class="btn btn-primary">Print Receipt</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
 
     <div class="modal fade modal-default pos-modal" id="products" aria-labelledby="products">
@@ -3810,19 +3436,54 @@
 
     // Función para mostrar el modal con los detalles de la compra
     function mostrarModalCompra() {
-
         // Obtener el valor del total desde el botón
         var totalText = $('#total-button').text();
-        var total = totalText.match(/S\/\. (\d+(\.\d+)?)/)[1];
+        var match = totalText.match(/S\/\. ((?:\d+\.\d+)|(?:0\.00))/);
+       //VERIFICA SI HAY PRODUCTOS RECIEN TE MUESTRA EL MODAL
+        if (!match) {
+             // Reproducir sonido
+              var audio = new Audio('{{ asset('sound/error.mp3') }}');
+              audio.play();
+              /**************************************************/
+            Swal.fire({
+                title: "Error",
+                text: 'No se pudo obtener el total de la compra.',
+                icon: "error",
+                timer: 2000,
+                showConfirmButton: false
+            });
+            return;
+        }
+
+        var total = match[1];
+
+        // Verificar si el total es "0.00"
+        if (parseFloat(total) === 0) {
+             // Reproducir sonido
+             var audio = new Audio('{{ asset('sound/error.mp3') }}');
+             audio.play();
+            /**************************************************/
+            Swal.fire({
+                title: "No Tienes productos agregados",
+                text: 'La Venta no puede ser 0.',
+                icon: "warning",
+                timer: 2000,
+                showConfirmButton: false
+            });
+            return;
+        }
 
         // Actualizar el valor del input en el modal
         $('#p_pedido').val(total);
 
-        $('#modalCompra').modal('show'); // Abre el modal usando Bootstrap modal
+        // Abrir el modal de compra si todo está correcto
+        $('#modalCompra').modal('show');
     }
+
 
     // Evento click en el botón total-button para mostrar el modal
     $('#total-button').on('click', function() {
+       
         mostrarModalCompra();
     });
     
@@ -3847,342 +3508,347 @@
         $('#totalpagar').val(total.toFixed(2)); 
     }
 
-    $('#descuento-plus').on('click', function() {
-        var descuentoInput = $('#descuento-input');
-        var descuento = parseFloat(descuentoInput.val()) || 0;
-        descuentoInput.val(descuento + 1);
-        calcularTotalCarrito();
-    });
+        $('#descuento-plus').on('click', function() {
+            var descuentoInput = $('#descuento-input');
+            var descuento = parseFloat(descuentoInput.val()) || 0;
+            descuentoInput.val(descuento + 1);
+            calcularTotalCarrito();
+        });
 
-    $('#descuento-minus').on('click', function() {
-        var descuentoInput = $('#descuento-input');
-        var descuento = parseFloat(descuentoInput.val()) || 0;
-        if (descuento > 0) {
-            descuentoInput.val(descuento - 1);
+        $('#descuento-minus').on('click', function() {
+            var descuentoInput = $('#descuento-input');
+            var descuento = parseFloat(descuentoInput.val()) || 0;
+            if (descuento > 0) {
+                descuentoInput.val(descuento - 1);
+            }
+            calcularTotalCarrito();
+        });
+
+
+   
+        /* ---------------------------------------------------------------- */
+        //                    FUNCION FORMATO NUMEROS
+
+        function formatNumber(number) {
+        var parts = number.toFixed(2).split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
         }
-        calcularTotalCarrito();
+
+        /* ---------------------------------------------------------------- */
+        //                   FUNCIONES INPUT METODO PAGO
+
+        let currentInput = null;
+
+        // Al hacer clic en un boton de la calculadora, se enfoca en el input correspondiente.
+        $(".calculator-button").click(function () {
+        // Encuentra el input relacionado al botón clickeado.
+        const inputId = $(this).siblings(".calculator-input").attr("id");
+        currentInput = $("#" + inputId);
+
+        // Coloca el foco en el input.
+        currentInput.focus();
+        });
+
+        $(".calculator-input").click(function () {
+        currentInput = $(this);
+        });
+
+        /* ---------------------------------------------------------------- */
+        //                       FUNCIONES TECLADO
+
+        $(".design").click(function () {
+        // console.log('this', $(this).text());
+
+        // console.log('cuurr', currentInput.val());
+        if (currentInput) {
+            const buttonText = $(this).text();
+            const inputValue = currentInput.val();
+
+            if (inputValue == 0) {
+            currentInput.val(buttonText);
+
+            } else if (buttonText === "." && inputValue.includes(".")) {
+            // Evitar agregar más de un punto decimal.
+            currentInput.val(inputValue);
+
+            } else {
+            // currentInput.val(inputValue + buttonText);
+            // Controlar la cantidad de decimales permitidos.
+            const decimalIndex = inputValue.indexOf(".");
+            if (decimalIndex !== -1 && inputValue.length - decimalIndex > 2) {
+                // Si ya hay dos decimales, no permitir más.
+                currentInput.val(inputValue);
+            } else {
+                currentInput.val(inputValue + buttonText);
+            }
+            }
+
+            calcularPago();
+        }
+
+        });
+
+        //Backspace
+        $('#backspace').click(function () {
+
+        if (currentInput) {
+            var value = currentInput.val();
+            if (!(parseInt(parseFloat(value)) == 0 && value.length == 1)) {
+            currentInput.val(value.slice(0, value.length - 1));
+            }
+            if (value.length == 1 || value.length == 0) {
+            currentInput.val("0");
+            }
+            calcularPago();
+        }
+
+        });
+
+        // All Clear
+        $("#allClear").click(function () {
+        // $("#expression").val("0");
+        // $("#result").val("0");
+        if (currentInput) {
+            currentInput.val("0");
+
+            calcularPago();
+        }
+        });
+
+        /* ---------------------------------------------------------------- */
+        //                    MOSTRAR MODAL METODO DE PAGO
+
+        $('#btn_metodopago').click(function () {
+
+        var totalpedido = $('#totalpagar').val().replace(',', '');
+        //Llena el tipo de pago
+        $('#p_pedido').val(totalpedido);
+        $('#efectivo').val(parseFloat(totalpedido).toFixed(2));
+
+        setTimeout(function () {
+            $('#efectivo').focus();
+        }, 500);
+
+        currentInput = $('#efectivo');
+        calcularPago();
+
+        })
+
+
+        /* ---------------------------------------------------------------- */
+        //                      FUNCION CALCULAR PAGO
+
+        function calcularPago() {
+
+            var p_pedido = parseFloat($('#p_pedido').val());
+
+            var efectivo = parseFloat($('#efectivo').val());
+            // var p_credito = parseFloat( $('#p_credito').val() || 0 );
+            
+            var yape = parseFloat($('#yape').val() || 0);
+            var plin = parseFloat($('#plin').val() || 0);
+            
+            var deposito = parseFloat($('#deposito').val() || 0);
+
+            var totalpagado = efectivo + yape + plin  + deposito;
+
+            $('#p_tpagado').val(formatNumber(totalpagado));
+
+            var totalvuelto = 0;
+
+            totalvuelto = totalpagado - p_pedido
+
+            if (totalpagado > p_pedido) {
+
+                $('#text_vuelto').html('Vuelto <span>S/.</span>');
+                $('#text_vuelto').css('color', 'green');
+                $('#p_vuelto').css('color', 'green');
+
+            } else if (totalpagado == p_pedido) {
+
+                $('#text_vuelto').html('Completo <span>S/.</span>');
+                $('#text_vuelto').css('color', 'blue');
+                $('#p_vuelto').css('color', 'blue');
+
+            } else {
+
+                totalvuelto = p_pedido - totalpagado
+
+                $('#text_vuelto').html('Falta <span>S/.</span>');
+                $('#text_vuelto').css('color', 'red');
+                $('#p_vuelto').css('color', 'red');
+            }
+
+            // console.log('vuelto1', totalvuelto);
+            $('#p_vuelto').val(formatNumber(totalvuelto));
+
+            // Retornar true si el pago es suficiente, false si falta o es incorrecto
+            return totalpagado >= p_pedido;
+
+
+        }
+
+        /* ---------------------------------------------------------------- */
+        //                   EVENTO INPUT CALCULAR PAGO
+
+        $('.calculator-input').on('input', calcularPago);
+
+        /* ---------------------------------------------------------------- */
+        //                  LIMPIAR MODAL METODO DE PAGO
+        //// Limpia el método de pago cuando el modal se oculta
+        function limpiarMetodoPago() {
+
+        $('#p_pedido').val(0);
+
+        $('#efectivo').val(0);
+        $('#yape').val(0);
+        $('#plin').val(0);
+        $('#deposito').val(0);
+
+        $('#p_tpagado').val(0);
+
+        $('#text_vuelto').html('Vuelto <span>S/.</span>');
+        $('#p_vuelto').val(0);
+
+        }
+        /* ---------------------------------------------------------------- */
+        //                     CERRAR MODAL METODO DE PAGO
+
+        $('#modalCompra').on('hidden.bs.modal', function () {
+            limpiarMetodoPago();
+        });
+
+
+    $('#btn_realizarpago').on('click', function() {
+
+        
+        // Calcular el pago y verificar si es suficiente
+        var pagoSuficiente = calcularPago();
+
+        // Si el pago es suficiente, mostrar el modal de carrito
+        if (pagoSuficiente) {
+            //Se Cierra el modal anterior
+            $('#modalCompra').modal('hide');
+            // Limpiar tabla de productos en el modal de carrito
+            $('#tablaProductosCarrito').empty();
+
+            var subtotal = 0;
+            var descuento = 0; // Inicializar el descuento en 0
+            var igv = 0; // Inicializar el IGV en 0
+            var total = 0;
+
+            // Recorrer el carrito para construir las filas de la tabla
+            carrito.forEach(function(product, index) {
+                var costoVenta = parseFloat(product.costo_venta);
+                if (!isNaN(costoVenta)) {
+                    costoVenta = costoVenta.toFixed(2);
+                } else {
+                    costoVenta = '0.00'; // O un valor por defecto
+                }
+                var subtotalUnitario = (costoVenta * product.cantidad).toFixed(2);
+                subtotal += parseFloat(subtotalUnitario);
+
+                var filaHtml = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><img src="{{ asset('storage/product/') }}/${product.imagen}" alt="${product.nombre}" style="width: 50px;"></td>
+                        <td>${product.codigo}</td>
+                        <td style="max-width: 500px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${product.nombre}</td>
+                        <td>S/. ${costoVenta}</td>
+                        <td class="text-center">${product.cantidad}</td>
+                        <td class="text-end">S/. ${subtotalUnitario}</td>
+                    </tr>
+                `;
+                $('#tablaProductosCarrito').append(filaHtml);
+            });
+
+            // Obtener el descuento desde el input, asegurando que sea un número y manejando NaN
+            var descuentoPorcentaje = parseFloat($('#descuento-input').val()) || 0;
+            descuento = (subtotal * descuentoPorcentaje) / 100;
+
+            // Subtotal antes de aplicar descuento (costo_venta * cantidad de cada producto)
+            var subtotalSinDescuento = 0;
+            carrito.forEach(function(product) {
+                var costoVenta = parseFloat(product.costo_venta);
+                subtotalSinDescuento += costoVenta * product.cantidad;
+            });
+
+            // Aplicar el descuento al subtotal calculado con costo_venta
+            subtotal -= descuento;
+
+            // Calcular el IGV (18% del subtotal antes de aplicar el descuento)
+            igv = subtotal * 0.18;
+
+            // Calcular el total (subtotal + IGV)
+            total = subtotal;
+
+            // Agregar filas de subtotal, descuento, IGV y total al final de la tabla
+            $('#tablaProductosCarrito').append(`
+                <tr>
+                    <td colspan="6" class="text-end">Sub Total</td>
+                    <td class="text-end">S/. ${subtotalSinDescuento.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-end text-danger">Descuento</td>
+                    <td class="text-end text-danger">S/. ${descuento.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-end">IGV (18%)</td>
+                    <td class="text-end">S/. ${igv.toFixed(2)}</td>
+                </tr>
+                <tr class="border-top border-top-dashed fs-15">
+                    <th scope="row" colspan="6" class="text-end"><h3>Total</h3></th>
+                    <th class="text-end"><h1>S/. ${total.toFixed(2)}</h1></th>
+                </tr>
+            `);
+
+            // Mostrar el modal de carrito
+            $('#modalCarrito').modal('show');
+        } else {
+             // Reproducir sonido
+             var audio = new Audio('{{ asset('sound/error.mp3') }}');
+             audio.play();
+            /**************************************************/
+            // Calcular cuánto falta para completar el pago
+            var totalPedido = parseFloat($('#p_pedido').val());
+            var efectivo = parseFloat($('#efectivo').val() || 0);
+            var yape = parseFloat($('#yape').val() || 0);
+            var plin = parseFloat($('#plin').val() || 0);
+            var deposito = parseFloat($('#deposito').val() || 0);
+            var totalPagado = efectivo + yape + plin + deposito;
+            var falta = totalPedido - totalPagado;
+
+            // Mostrar mensaje de error con cantidad que falta
+            Swal.fire({
+                title: "Ingresa el monto del PEDIDO",
+                text: `Falta S/. ${falta.toFixed(2)} para completar el pago.`,
+                icon: "warning",
+                timer: 2000,
+                showConfirmButton: false
+            });
+        }
     });
 
-    });
-/* ---------------------------------------------------------------- */
-//                    FUNCION FORMATO NUMEROS
 
-function formatNumber(number) {
-  var parts = number.toFixed(2).split(".");
-  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return parts.join(".");
-}
 
-/* ---------------------------------------------------------------- */
-//                   FUNCIONES INPUT METODO PAGO
 
-let currentInput = null;
+    // Evento para realizar la compra
+    $('#btn_realizarCompra').on('click', function() {
+        // Aquí puedes agregar la lógica para procesar la compra
+        // Por ejemplo, enviar los datos del pedido al servidor
+        console.log('Compra realizada');
 
-// Al hacer clic en un boton de la calculadora, se enfoca en el input correspondiente.
-$(".calculator-button").click(function () {
-  // Encuentra el input relacionado al botón clickeado.
-  const inputId = $(this).siblings(".calculator-input").attr("id");
-  currentInput = $("#" + inputId);
+        // Cerrar modal de carrito después de realizar la compra
+        $('#modalCarrito').modal('hide');
 
-  // Coloca el foco en el input.
-  currentInput.focus();
-});
-
-$(".calculator-input").click(function () {
-  currentInput = $(this);
-});
-
-/* ---------------------------------------------------------------- */
-//                       FUNCIONES TECLADO
-
-$(".design").click(function () {
-  // console.log('this', $(this).text());
-
-  // console.log('cuurr', currentInput.val());
-  if (currentInput) {
-    const buttonText = $(this).text();
-    const inputValue = currentInput.val();
-
-    if (inputValue == 0) {
-      currentInput.val(buttonText);
-
-    } else if (buttonText === "." && inputValue.includes(".")) {
-      // Evitar agregar más de un punto decimal.
-      currentInput.val(inputValue);
-
-    } else {
-      // currentInput.val(inputValue + buttonText);
-      // Controlar la cantidad de decimales permitidos.
-      const decimalIndex = inputValue.indexOf(".");
-      if (decimalIndex !== -1 && inputValue.length - decimalIndex > 2) {
-        // Si ya hay dos decimales, no permitir más.
-        currentInput.val(inputValue);
-      } else {
-        currentInput.val(inputValue + buttonText);
-      }
-    }
-
-    calcularPago();
-  }
-
-});
-
-//Backspace
-$('#backspace').click(function () {
-
-  if (currentInput) {
-    var value = currentInput.val();
-    if (!(parseInt(parseFloat(value)) == 0 && value.length == 1)) {
-      currentInput.val(value.slice(0, value.length - 1));
-    }
-    if (value.length == 1 || value.length == 0) {
-      currentInput.val("0");
-    }
-    calcularPago();
-  }
-
-});
-
-// All Clear
-$("#allClear").click(function () {
-  // $("#expression").val("0");
-  // $("#result").val("0");
-  if (currentInput) {
-    currentInput.val("0");
-
-    calcularPago();
-  }
-});
-
-/* ---------------------------------------------------------------- */
-//                    MOSTRAR MODAL METODO DE PAGO
-
-$('#btn_metodopago').click(function () {
-
-  if ($('.items-order .card').length === 0) {
-    swal.fire({
-      title: "Error",
-      text: 'Debe agregar al menos un producto al pedido antes de continuar.',
-      icon: "error",
-      timer: 2000,
-      showConfirmButton: false
-    });
-    return;
-  }
-
-  var totalpedido = $('#totalpagar').val().replace(',', '');
-  //Llena el tipo de pago
-  $('#p_pedido').val(totalpedido);
-  $('#efectivo').val(parseFloat(totalpedido).toFixed(2));
-    // var totalpedido = $('#totalpagar').val().replace(',', '');
-    // $('#p_pedido').val(parseFloat(totalpedido).toFixed(2));
-    // $('#efectivo').val(parseFloat(totalpedido).toFixed(2));
-
-  // Verificar que completaron datos
-
-  //HERE
-
-  var d_tipocomprobante = $('#d_tipocomprobante').val();
-
-  if ($('#d_tipocomprobante').val() == null) {
-    swal.fire({
-      title: "Error",
-      text: 'Complete los datos antes de continuar.',
-      icon: "error",
-      timer: 2000,
-      showConfirmButton: false
+        // Mostrar modal para imprimir el recibo
+        $('#print-receipt').modal('show');
     });
 
-    $('#btn_datos').focus();
 
-    return;
-
-  } else if (d_tipocomprobante == 0 || d_tipocomprobante == 2) {
-
-    if ($('#tipo_doc_ide').val() == '') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete el Tipo de Documento.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    } else if ($('#numero_documento').val() == '' || $('#numero_documento').val() == '-') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete el Número de Documento.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    } else if ($('#razon_social').val() == '' || $('#razon_social').val() == '-') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete los Nombres y Apellidos.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    }
-
-  } else if (d_tipocomprobante == 1) {
-
-    if ($('#tipo_doc_ide').val() == '') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete el Tipo de Documento.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    } else if ($('#numero_documento2').val() == '' || $('#numero_documento2').val() == '-') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete el Número de Documento.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    } else if ($('#razon_social2').val() == '' || $('#razon_social2').val() == '-') {
-
-      swal.fire({
-        title: "Error",
-        text: 'Complete los Nombres y Apellidos.',
-        icon: "error",
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      $('#btn_datos').focus();
-      return;
-
-    }
-
-  }
-
-
-  //$('#modal_metodopago').modal('show');
-
-  setTimeout(function () {
-    $('#efectivo').focus();
-  }, 500);
-
-  currentInput = $('#efectivo');
-  calcularPago();
-
-
-
-})
-
-
-/* ---------------------------------------------------------------- */
-//                     CERRAR MODAL METODO DE PAGO
-
-$('#modalCompra').on('hidden.bs.modal', function () {
-
-  limpiarMetodoPago();
 });
 
-/* ---------------------------------------------------------------- */
-//                      FUNCION CALCULAR PAGO
-
-function calcularPago() {
-
-  var p_pedido = parseFloat($('#p_pedido').val());
-
-  var efectivo = parseFloat($('#efectivo').val());
-  // var p_credito = parseFloat( $('#p_credito').val() || 0 );
-  var visa = parseFloat($('#visa').val() || 0);
-  var yape = parseFloat($('#yape').val() || 0);
-  var plin = parseFloat($('#plin').val() || 0);
-  var mastercard = parseFloat($('#mastercard').val() || 0);
-  var deposito = parseFloat($('#deposito').val() || 0);
-
-  var totalpagado = efectivo + visa + yape + plin + mastercard + deposito;
-
-  $('#p_tpagado').val(formatNumber(totalpagado));
-
-  var totalvuelto = 0;
-
-  totalvuelto = totalpagado - p_pedido
-
-  if (totalpagado > p_pedido) {
-
-    $('#text_vuelto').html('Vuelto <span>S/.</span>');
-    $('#text_vuelto').css('color', 'green');
-    $('#p_vuelto').css('color', 'green');
-
-  } else if (totalpagado == p_pedido) {
-
-    $('#text_vuelto').html('Completo <span>S/.</span>');
-    $('#text_vuelto').css('color', 'blue');
-    $('#p_vuelto').css('color', 'blue');
-
-  } else {
-
-    totalvuelto = p_pedido - totalpagado
-
-    $('#text_vuelto').html('Falta <span>S/.</span>');
-    $('#text_vuelto').css('color', 'red');
-    $('#p_vuelto').css('color', 'red');
-  }
-
-  // console.log('vuelto1', totalvuelto);
-  $('#p_vuelto').val(formatNumber(totalvuelto));
-
-
-}
-
-/* ---------------------------------------------------------------- */
-//                   EVENTO INPUT CALCULAR PAGO
-
-$('.calculator-input').on('input', calcularPago);
-
-/* ---------------------------------------------------------------- */
-//                  LIMPIAR MODAL METODO DE PAGO
-
-function limpiarMetodoPago() {
-
-  $('#p_pedido').val(0);
-
-  $('#efectivo').val(0);
-  $('#visa').val(0);
-  $('#yape').val(0);
-  $('#plin').val(0);
-  $('#mastercard').val(0);
-  $('#deposito').val(0);
-
-  $('#p_tpagado').val(0);
-
-  $('#text_vuelto').html('Vuelto <span>S/.</span>');
-  $('#p_vuelto').val(0);
-
-}
     
    </script>
 
