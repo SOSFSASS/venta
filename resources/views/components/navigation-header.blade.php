@@ -2,13 +2,13 @@
 
     <div class="header-left active">
         <a href="{{ route('panel') }}" class="logo logo-normal">
-            <img src="{{ asset('css/img/logo.png')}}" alt>
+            <img src="{{ asset('css/img/logo.png') }}" alt>
         </a>
         <a href="{{ route('panel') }}" class="logo logo-white">
-            <img src="{{ asset('css/img/logo3.png')}}" alt>
+            <img src="{{ asset('css/img/logo3.png') }}" alt>
         </a>
         <a href="{{ route('panel') }}" class="logo-small">
-            <img src="{{ asset('css/img/logo-small.png')}}" alt>
+            <img src="{{ asset('css/img/logo-small.png') }}" alt>
         </a>
         <a id="toggle_btn" href="javascript:void(0);">
             <i data-feather="chevrons-left" class="feather-16"></i>
@@ -31,8 +31,8 @@
                     <i class="fa fa-search"></i>
                 </a>
                 <form action="#" class="dropdown">
-                    <div class="searchinputs dropdown-toggle" id="dropdownMenuClickable"
-                        data-bs-toggle="dropdown" data-bs-auto-close="false">
+                    <div class="searchinputs dropdown-toggle" id="dropdownMenuClickable" data-bs-toggle="dropdown"
+                        data-bs-auto-close="false">
                         <input type="text" placeholder="Search">
                         <div class="search-addon">
                             <span><i data-feather="x-circle" class="feather-14"></i></span>
@@ -163,7 +163,7 @@
                 <div class="noti-content">
                     <ul class="notification-list">
                         <li class="notification-message">
-                            <a href="{{ asset('css/img/profiles/avator1.jpg')}}">
+                            <a href="{{ asset('css/img/profiles/avator1.jpg') }}">
                                 <div class="media d-flex">
                                     <span class="avatar flex-shrink-0">
                                         <img alt
@@ -180,7 +180,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="{{ asset('css/img/profiles/avator1.jpg')}}">
+                            <a href="{{ asset('css/img/profiles/avator1.jpg') }}">
                                 <div class="media d-flex">
                                     <span class="avatar flex-shrink-0">
                                         <img alt
@@ -198,7 +198,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="{{ asset('css/img/profiles/avator1.jpg')}}">
+                            <a href="{{ asset('css/img/profiles/avator1.jpg') }}">
                                 <div class="media d-flex">
                                     <span class="avatar flex-shrink-0">
                                         <img alt
@@ -217,7 +217,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="{{ asset('css/img/profiles/avator1.jpg')}}">
+                            <a href="{{ asset('css/img/profiles/avator1.jpg') }}">
                                 <div class="media d-flex">
                                     <span class="avatar flex-shrink-0">
                                         <img alt
@@ -235,7 +235,7 @@
                             </a>
                         </li>
                         <li class="notification-message">
-                            <a href="{{ asset('css/img/profiles/avator1.jpg')}}">
+                            <a href="{{ asset('css/img/profiles/avator1.jpg') }}">
                                 <div class="media d-flex">
                                     <span class="avatar flex-shrink-0">
                                         <img alt
@@ -254,7 +254,7 @@
                     </ul>
                 </div>
                 <div class="topnav-dropdown-footer">
-                    <a href="{{ asset('css/img/profiles/avator1.jpg')}}">View all
+                    <a href="{{ asset('css/img/profiles/avator1.jpg') }}">View all
                         Notifications</a>
                 </div>
             </div>
@@ -324,39 +324,34 @@
             <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
                 <span class="user-info">
                     <span class="user-letter">
-                        <img src="{{ asset('css/img/profiles/avator1.jpg')}}"
+                        <img src="{{ Auth::user()->imagen ? Storage::url('public/user/' . Auth::user()->imagen) : asset('css/img/profiles/avator1.jpg') }}"
                             alt class="img-fluid">
                     </span>
                     <span class="user-detail">
-                        <span class="user-name">Eli Sayes</span>
-                        <span class="user-role">Super Admin</span>
+                        <span class="user-name">{{ Auth::user()->name }}</span>
+                        <span class="user-role">{{ Auth::user()->getRoleNames()->first() }}</span>
                     </span>
                 </span>
             </a>
             <div class="dropdown-menu menu-drop-user">
                 <div class="profilename">
                     <div class="profileset">
-                        <span class="user-img"><img
-                                src="{{ asset('css/img/profiles/avator1.jpg')}}"
-                                alt>
-                            <span class="status online"></span></span>
+                        <span class="user-img"><img src="{{ Auth::user()->imagen ? Storage::url('public/user/' . Auth::user()->imagen) : asset('css/img/profiles/avator1.jpg')}}" alt>
+                            <span class="status online"></span>
+                        </span>
                         <div class="profilesets">
-                            <h6>Eli Sayes</h6>
-                            <h5>Super Admin</h5>
+                            <h6>{{ Auth::user()->name }}</h6>
+                            <h5>{{ Auth::user()->getRoleNames()->first() }}</h5>
                         </div>
                     </div>
                     <hr class="m-0">
-                    <a class="dropdown-item"
-                        href=""> <i
-                            class="me-2" data-feather="user"></i> Mi Perfil</a>
-                    <a class="dropdown-item"
-                        href=""><i
-                            class="me-2" data-feather="settings"></i>Configuraciones</a>
+                    <a class="dropdown-item" href="{{ route('profile.index') }}"> <i class="me-2"
+                            data-feather="user"></i> Mi Perfil</a>
+                    <a class="dropdown-item" href=""><i class="me-2"
+                            data-feather="settings"></i>Configuraciones</a>
                     <hr class="m-0">
-                    <a class="dropdown-item logout pb-0"
-                        href=""><img
-                            src="{{ asset('css/img/icons/log-out.svg')}}"
-                            class="me-2" alt="img">Salir</a>
+                    <a class="dropdown-item logout pb-0" href="{{ route('logout') }}"><img
+                            src="{{ asset('css/img/icons/log-out.svg') }}" class="me-2" alt="img">Salir</a>
                 </div>
             </div>
         </li>
@@ -367,12 +362,9 @@
         <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
             aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item"
-                href="">Mi Perfil</a>
-            <a class="dropdown-item"
-                href="">Configuraciones</a>
-            <a class="dropdown-item"
-                href="">Salir</a>
+            <a class="dropdown-item" href="{{ route('profile.index') }}">Mi Perfil</a>
+            <a class="dropdown-item" href="">Configuraciones</a>
+            <a class="dropdown-item" href="{{ route('logout') }}">Salir</a>
         </div>
     </div>
 

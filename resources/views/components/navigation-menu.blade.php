@@ -64,8 +64,9 @@
         <li class="submenu-open">
             <h6 class="submenu-hdr">Administración</h6>
             <ul>
-                <li><a href=""><i data-feather="user-check"></i><span>Usuarios</span></a></li>
-                <li><a href=""><i data-feather="shield"></i><span>Roles</span></a></li>
+                {{-- <li><a href=""><i data-feather="user-check"></i><span>Usuarios</span></a></li> --}}
+                <li><a class="{{ setActive('User') }}" href="{{ route('user.index') }}"><i data-feather="user-check"></i><span>Usuarios</span></a></li>
+                <li><a class="{{ setActive('Roles') }}" href="{{ route('roles.index') }}"><i data-feather="shield"></i><span>Roles</span></a></li>
                 <li><a href=""><i data-feather="lock"></i><span>Configuración</span></a></li>
             </ul>
         </li>

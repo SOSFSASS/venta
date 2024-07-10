@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('precio_compra', 10, 2);
             $table->decimal('costo_venta', 10, 2);
             $table->integer('stock');
-            $table->dateTime('fechaven');
+            $table->dateTime('fechaven')->nullable();
             $table->unsignedBigInteger('id_categoria');
             $table->boolean('estado')->default(1);
             $table->timestamps();

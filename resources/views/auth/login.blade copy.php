@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
     <title>Acceso al sistema</title>
     <meta name="description" content="#" />
     <meta name="keywords" content="#">
     <meta name="author" content="DEVSTEC">
-
 
     <meta property="og:title" content="#" />
     <meta property="og:description" content="#" />
@@ -26,9 +22,8 @@
 
     <meta name="twitter:description" content="#">
 
-    <link rel="icon" type="image/png" href="{{ asset('estilos/logo.png')}}">
-    {{-- <link rel="stylesheet" href="estilos/css/login.css" /> --}}
-    <link rel="stylesheet" href="{{ asset('estilos/css/login.css')}}">
+    <link rel="icon" type="image/png" href="{{ asset('estilos/logo.png') }}">
+    <link rel="stylesheet" href="{{ asset('estilos/css/login.css') }}">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
@@ -36,21 +31,30 @@
     <div class="wrapper">
         <span class="bg-animate"></span>
         <span class="bg-animate2"></span>
+
         <div class="form-box login">
             <h2 class="animation" style="--i:0; --j:21;">Bienvenido</h2>
-           
-            <form action="" autocomplete="off" method="post" role="form">
+            <form action="{{ route('login.user') }}" autocomplete="off" method="post">
+                @csrf
                 <div class="input-box animation" style="--i:1; --j:22;">
-                    <input type="text" name="correo" value="" autocomplete="off" class="form-control" required />
+                    <input type="email" name="email" value="{{ old('email') }}" autocomplete="off" class="form-control" required />
                     <label>Usuario</label>
                     <i class="bx bxs-user"></i>
                 </div>
+                @error('email')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+
                 <div class="input-box animation" style="--i:2; --j:23;">
-                    <input type="password" required="true" name="contra" value="" class="form-control" required />
+                    <input type="password" name="password" required class="form-control" required />
                     <label>Contraseña</label>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <button id="btnIngresar" name='login' type="submit" class="btn animation" style="--i:3; --j:24;">Entrar</button>
+                @error('password')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+
+                <button id="btnIngresar" name="login" type="submit" class="btn animation" style="--i:3; --j:24;">Entrar</button>
                 <div class="logreg-link animation" style="--i:4; --j:25;">
                     <p>
                         Olvidaste tu clave? <a href="#" class="register-link">Clic aqui</a>
@@ -66,12 +70,17 @@
 
         <div class="form-box register">
             <h2 class="animation" style="--i:17; --j:0;">Recuperar Contraseña</h2>
-            <form action="https://formspree.io/f/mqkvoyda" method="post">
+            <form action="{{ route('password.email') }}" method="post">
+                @csrf
                 <div class="input-box animation" style="--i:18; --j:1;">
-                    <input type="text" required />
+                    <input type="email" name="email" value="{{ old('email') }}" required class="form-control" required />
                     <label>Correo Electrónico</label>
                     <i class="bx bxs-user"></i>
                 </div>
+                @error('email')
+                <div class="error-message">{{ $message }}</div>
+                @enderror
+
                 <button type="submit" class="btn animation" style="--i:20; --j:3;">Enviar</button>
                 <div class="logreg-link animation" style="--i:21; --j:4;">
                     <p>
@@ -87,10 +96,8 @@
         </div>
     </div>
 
-    {{-- <script src="estilos/js/evento.js"></script> --}}
-    <script src="{{ asset('estilos/js/evento.js')}}"></script>
-    {{-- <script type="text/javascript" src="estilos/js/login.js"></script> --}}
-    <script src="{{ asset('estilos/js/login.js')}}"></script>
+    <script src="{{ asset('estilos/js/evento.js') }}"></script>
+    <script src="{{ asset('estilos/js/login.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 </body>
