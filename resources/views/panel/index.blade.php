@@ -100,13 +100,13 @@
                 <div class="col-xl-6 col-sm-12 col-12">
                     <div class="card d-flex align-items-center justify-content-between default-cover mb-4">
                         <div>
-                            <h6>Weekly Earning</h6>
-                            <h3>$<span class="counters" data-count="95000.45">95000.45</span></h3>
+                            <h6>Ganancias Mensuales</h6>
+                            <h3>S/. <span class="counters" id="monthly-earning">{{ number_format($monthlyEarnings, 2) }}</span></h3>
                             <p class="sales-range">
                                 <span class="text-success">
                                     <i class="fas fa-chevron-up feather-16"></i> 48%&nbsp;
                                 </span>
-                                increase compare to last week
+                                aumento en comparación con el mes pasado
                             </p>
                         </div>
                         <i class="fas fa-dollar-sign fa-3x"></i>
@@ -132,6 +132,123 @@
                 </div>
             </div>
             <!-- Resto del contenido -->
+            <div class="row">
+                <!-- Mejor Vendedor -->
+                <div class="col-sm-12 col-md-12 col-xl-4 d-flex">
+                    <div class="card flex-fill default-cover w-100 mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h4 class="card-title mb-0">Mejor Vendedor</h4>
+                            <div class="dropdown">
+                                <a href="javascript:void(0);" class="view-all d-flex align-items-center">
+                                    Ver Todo<span class="ps-2 d-flex align-items-center"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless best-seller">
+                                    <tbody>
+                                        @foreach ($bestSellers as $seller)
+                                        <tr>
+                                            <td>{{ $seller['producto'] }}</td>
+                                            <td>{{ $seller['cantidad'] }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Transacciones Recientes -->
+                <div class="col-sm-12 col-md-12 col-xl-8 d-flex">
+                    <div class="card flex-fill default-cover w-100 mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h4 class="card-title mb-0">Ventas Recientes</h4>
+                            <div class="dropdown">
+                                <a href="javascript:void(0);" class="view-all d-flex align-items-center">
+                                    Ver Todo<span class="ps-2 d-flex align-items-center"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless recent-transactions">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Detalles del Pedido</th>
+                                            <th>Pago</th>
+                                            <th>Estado</th>
+                                            <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($recentTransactions as $transaction)
+                                        <tr>
+                                            <td>{{ $transaction->id }}</td>
+                                            <td>{{ $transaction->cliente }}</td>
+                                            <td>{{ $transaction->metodo_pago }}</td>
+                                            <td>{{ $transaction->estado }}</td>
+                                            <td>S/. {{ number_format($transaction->total, 2) }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row sales-board">
+                <!-- Análisis de Ventas -->
+                <div class="col-md-12 col-lg-7 col-sm-12 col-12">
+                    <div class="card flex-fill default-cover">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Análisis de Ventas</h5>
+                            <div class="graph-sets">
+                                <div class="dropdown dropdown-wraper">
+                                    <button class="btn btn-white btn-sm dropdown-toggle d-flex align-items-center"
+                                        type="button" id="dropdown-sales" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-calendar-alt"></i>2023
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown-sales">
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">2023</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">2022</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">2021</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Información Adicional -->
+                <div class="col-md-12 col-lg-5 col-sm-12 col-12">
+                    <div class="card default-cover">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Información Adicional</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="additionalChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
         </div>
     @endauth
     @guest
@@ -169,6 +286,59 @@
 
             setInterval(updateTime, 1000); // Actualizar cada segundo
             updateTime(); // Llamar inmediatamente para mostrar la hora actual al cargar la página
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Obtener datos de ventas y graficar
+            var salesData = @json($salesData);
+            var ctx = document.getElementById('salesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: salesData.months,
+                    datasets: [{
+                        label: 'Ventas',
+                        data: salesData.totals,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico adicional
+            var ctx2 = document.getElementById('additionalChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto',
+                        'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+                    ],
+                    datasets: [{
+                        label: 'Ventas Mensuales',
+                        data: [12, 19, 3, 5, 2, 3, 8, 5, 3, 12, 5, 6],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         });
     </script>
 @endpush

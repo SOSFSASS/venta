@@ -34,7 +34,7 @@
                 <ul>
                     <li><a class="{{ setActive('Pos') }}" href="{{ route('pos') }}"><i
                                 data-feather="hard-drive"></i><span>POS</span></a></li>
-                    <li><a href=""><i data-feather="shopping-cart"></i><span>Registro de ventas</span></a></li>
+                    <li><a class="{{ setActive('Ventas') }}" href="{{ route('ventas.index') }}"><i data-feather="shopping-cart"></i><span>Registro de ventas</span></a></li>
                     <li><a href=""><i data-feather="file-text"></i><span>Facturas</span></a></li>
                 </ul>
             </li>

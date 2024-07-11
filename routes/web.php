@@ -75,4 +75,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('profile', profileController::class);
 
     Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
+    Route::get('/ventas', [VentaController::class, 'index'])->name('ventas.index');
+    Route::get('/ventas/{id}', [VentaController::class, 'show'])->name('ventas.show');
 });

@@ -17,21 +17,6 @@
         href="https://dreamspos.dreamstechnologies.com/html/template/assets/plugins/owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('css/template/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/template/pos.css') }}">
-    <style>
-
-    @media print {
-        #print-receipt-button {
-            display: none;
-        }
-
-        /* Opcional: Ocultar otros elementos que no quieras imprimir */
-        .no-print {
-            display: none;
-        }
-    }
-
-
-    </style>
 @endpush
 
 @section('content')
@@ -535,12 +520,12 @@
 <div class="modal fade modal-default" id="print-receipt" aria-labelledby="print-receipt">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="d-flex justify-content-end no-print">
+            <div class="d-flex justify-content-end">
                 <button type="button" class="close p-0" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body" id="modal-body-content-receipt">
+            <div class="modal-body">
                 <div class="icon-head text-center">
                     <a href="javascript:void(0);">
                         <img src="{{ asset('css/img/logo3.png') }}" width="100" height="30" alt="Sofsas tec">
@@ -601,7 +586,7 @@
                     </a>
                     <p class="codigo-barras">{{ $numeroVenta }}</p>
                     <p>Gracias por comprar con nosotros, Por favor, vuelva otra vez</p>
-                    <a href="javascript:void(0);" class="btn btn-primary no-print" id="print-receipt-button"> Imprimir Recibo</a>
+                    <a href="javascript:void(0);" class="btn btn-primary"> Imprimir Recibo</a>
                 </div>
             </div>
         </div>
@@ -827,11 +812,9 @@
                     success: function(data) {
                         console.log(data);
                         productos = data; // Asigna los productos al array global
-                        var filteredProducts = productos.filter(function(product) {
-                            return product.stock > 0;
-                        });
-                        displayProducts(filteredProducts);
-                        updateTotalProductos(filteredProducts.length); // Actualizar el número total de productos
+                        displayProducts(productos);
+                        updateTotalProductos(productos
+                        .length); // Actualizar el número total de productos
 
                     },
                     error: function(error) {
@@ -849,11 +832,8 @@
                     success: function(data) {
                         console.log(data);
                         productos = data; // Asigna los productos al array global
-                            var filteredProducts = productos.filter(function(product) {
-                                return product.stock > 0;
-                            });
-                        displayProducts(filteredProducts);
-                        updateTotalProductos(filteredProducts
+                        displayProducts(productos);
+                        updateTotalProductos(productos
                         .length); // Actualizar el número total de productos
                     },
                     error: function(error) {
@@ -867,10 +847,6 @@
             // Función para mostrar productos en la interfaz
             function displayProducts(products) {
                 var productsHtml = '';
-                // Filtrar productos con stock mayor que cero
-                var filteredProducts = products.filter(function(product) {
-                    return product.stock > 0;
-                });
 
                 products.forEach(function(product) {
                     productsHtml += `
@@ -1608,32 +1584,6 @@
                $('#receipt-comentario').text(pedido.comentario);
              
             }
-
-            function printReceipt() {
-                // Cierra el modal
-                $('#print-receipt').modal('hide');
-
-                // Espera un breve período de tiempo antes de imprimir para asegurarse de que el modal se haya cerrado
-                setTimeout(function() {
-                    // Obtén el contenido del modal con el recibo
-                    var contenido = document.getElementById('modal-body-content-receipt').innerHTML;
-
-                    // Copia el contenido al cuerpo del documento
-                    var contenidoOriginal = document.body.innerHTML;
-                    document.body.innerHTML = contenido;
-
-                    // Imprime el documento
-                    window.print();
-
-                    // Restaura el contenido original del cuerpo del documento
-                    document.body.innerHTML = contenidoOriginal;
-                }, 500); // Espera 500 milisegundos (medio segundo) antes de imprimir
-            }
-
-            document.getElementById('print-receipt-button').addEventListener('click', function() {
-                printReceipt();
-            });
-
 
         });
     </script>
