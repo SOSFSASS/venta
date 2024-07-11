@@ -100,7 +100,7 @@
                 <div class="col-xl-6 col-sm-12 col-12">
                     <div class="card d-flex align-items-center justify-content-between default-cover mb-4">
                         <div>
-                            <h6>Ganancias Mensuales</h6>
+                            <h6>Monto total venta</h6>
                             <h3>S/. <span class="counters" id="monthly-earning">{{ number_format($monthlyEarnings, 2) }}</span></h3>
                             <p class="sales-range">
                                 <span class="text-success">
@@ -137,7 +137,7 @@
                 <div class="col-sm-12 col-md-12 col-xl-4 d-flex">
                     <div class="card flex-fill default-cover w-100 mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h4 class="card-title mb-0">Mejor Vendedor</h4>
+                            <h4 class="card-title mb-0">Productos Vendidos</h4>
                             <div class="dropdown">
                                 <a href="javascript:void(0);" class="view-all d-flex align-items-center">
                                     Ver Todo<span class="ps-2 d-flex align-items-center"><i class="fas fa-arrow-right"></i></span>
@@ -190,7 +190,7 @@
                                             <td>{{ $transaction->id }}</td>
                                             <td>{{ $transaction->cliente }}</td>
                                             <td>{{ $transaction->metodo_pago }}</td>
-                                            <td>{{ $transaction->estado }}</td>
+                                            {{-- <td>{{ $transaction->estado }}</td> --}}
                                             <td>S/. {{ number_format($transaction->total, 2) }}</td>
                                         </tr>
                                         @endforeach
@@ -236,7 +236,7 @@
                 </div>
             
                 <!-- Información Adicional -->
-                <div class="col-md-12 col-lg-5 col-sm-12 col-12">
+                {{-- <div class="col-md-12 col-lg-5 col-sm-12 col-12">
                     <div class="card default-cover">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="card-title mb-0">Información Adicional</h5>
@@ -245,7 +245,7 @@
                             <canvas id="additionalChart"></canvas>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             
         

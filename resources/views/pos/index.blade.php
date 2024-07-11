@@ -18,19 +18,16 @@
     <link rel="stylesheet" href="{{ asset('css/template/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/template/pos.css') }}">
     <style>
+        @media print {
+            #print-receipt-button {
+                display: none;
+            }
 
-    @media print {
-        #print-receipt-button {
-            display: none;
+            /* Opcional: Ocultar otros elementos que no quieras imprimir */
+            .no-print {
+                display: none;
+            }
         }
-
-        /* Opcional: Ocultar otros elementos que no quieras imprimir */
-        .no-print {
-            display: none;
-        }
-    }
-
-
     </style>
 @endpush
 
@@ -113,20 +110,22 @@
                     <aside class="product-order-list">
                         <div class="head d-flex align-items-center justify-content-between w-100">
                             <?php
-                             use App\Models\Venta;
-                             //use Milon\Barcode\DNS1D; 
-
-                                // Contar el número total de ventas
-                                $ventasCount = Venta::count();
-
-                                // Generar el número de venta formateado
-                                $numeroVenta = str_pad($ventasCount + 1, 6, '0', STR_PAD_LEFT);
-
-                                // Generar el código de barras para la venta
-                                //$barcode = DNS1D::getBarcodePNG($numeroVenta, 'C128', 2, 50);
+                            use App\Models\Venta;
+                            //use Milon\Barcode\DNS1D;
+                            
+                            // Contar el número total de ventas
+                            $ventasCount = Venta::count();
+                            
+                            // Generar el número de venta formateado
+                            $numeroVenta = str_pad($ventasCount + 1, 6, '0', STR_PAD_LEFT);
+                            
+                            // Generar el código de barras para la venta
+                            //$barcode = DNS1D::getBarcodePNG($numeroVenta, 'C128', 2, 50);
+                            
                             ?>
                             <div class="d-flex align-items-center">
-                                <span class="badge bg-info d-inline-block mb-0" style="color: #fff">Venta N°: #{{ $numeroVenta }}</span>
+                                <span class="badge bg-info d-inline-block mb-0" style="color: #fff">Venta N°:
+                                    #{{ $numeroVenta }}</span>
                             </div>
                             <div class>
                                 <a class="confirm-text" href="javascript:void(0);"><i data-feather="trash-2"
@@ -532,52 +531,54 @@
         </div>
     </div>
 </div> --}}
-<div class="modal fade modal-default" id="print-receipt" aria-labelledby="print-receipt">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="d-flex justify-content-end no-print">
-                <button type="button" class="close p-0" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body" id="modal-body-content-receipt">
-                <div class="icon-head text-center">
-                    <a href="javascript:void(0);">
-                        <img src="{{ asset('css/img/logo3.png') }}" width="100" height="30" alt="Sofsas tec">
-                    </a>
+    <div class="modal fade modal-default" id="print-receipt" aria-labelledby="print-receipt">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end no-print">
+                    <button type="button" class="close p-0" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-                <div class="text-center info">
-                    <h6>Dreamguys Technologies Pvt Ltd.,</h6>
-                    <p class="mb-0">Phone Number: +1 5656665656</p>
-                    <p class="mb-0">Email: <a href="mailto:sofsas@example.com">sofsas@example.com</a></p>
-                </div>
-                <div class="tax-invoice">
-                    <h6 class="text-center">Ticket de venta</h6>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="invoice-user-name"><span>Cliente: </span><span id="receipt-cliente"></span></div>
-                            <div class="invoice-user-name"><span>Documento: </span><span id="receipt-documento"></span></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="invoice-user-name"><span>Email: </span><span id="receipt-email"></span></div>
-                            <div class="invoice-user-name"><span>Fecha: </span><span id="receipt-fecha"></span></div>
+                <div class="modal-body" id="modal-body-content-receipt">
+                    <div class="icon-head text-center">
+                        <a href="javascript:void(0);">
+                            <img src="{{ asset('css/img/logo3.png') }}" width="100" height="30" alt="Sofsas tec">
+                        </a>
+                    </div>
+                    <div class="text-center info">
+                        <h6>Dreamguys Technologies Pvt Ltd.,</h6>
+                        <p class="mb-0">Phone Number: +1 5656665656</p>
+                        <p class="mb-0">Email: <a href="mailto:sofsas@example.com">sofsas@example.com</a></p>
+                    </div>
+                    <div class="tax-invoice">
+                        <h6 class="text-center">Ticket de venta</h6>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="invoice-user-name"><span>Cliente: </span><span id="receipt-cliente"></span>
+                                </div>
+                                <div class="invoice-user-name"><span>Documento: </span><span
+                                        id="receipt-documento"></span></div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="invoice-user-name"><span>Email: </span><span id="receipt-email"></span></div>
+                                <div class="invoice-user-name"><span>Fecha: </span><span id="receipt-fecha"></span></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <table class="table-borderless w-100 table-fit">
-                    <thead>
-                        <tr>
-                            <th># Productos</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th class="text-end">SubTotal</th>
-                        </tr>
-                    </thead>
-                    <tbody id="receipt-items">
-                        <!-- Aquí se llenan los productos -->
-                    </tbody>
-                    <tfoot>
-                        <td colspan="4">
+                    <table class="table-borderless w-100 table-fit">
+                        <thead>
+                            <tr>
+                                <th># Productos</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th class="text-end">SubTotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="receipt-items">
+                            <!-- Aquí se llenan los productos -->
+                        </tbody>
+                        <tfoot>
+                            <td colspan="4">
                                 <tr>
                                     <td colspan="3" class="text-end">Sub Total :</td>
                                     <td class="text-end" id="receipt-subtotal">S/. 0.00</td>
@@ -590,23 +591,24 @@
                                     <td colspan="3" class="text-end">Total :</td>
                                     <td class="text-end" id="receipt-total">S/. 0.00</td>
                                 </tr>
-                        </td>
-                    </tfoot>
-                </table>
-                <div class="text-center invoice-bar">
-                    <p id="receipt-comentario"></p> 
-                    <a href="javascript:void(0);">
-                        <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($numeroVenta, 'C128', 2, 50) }}"
-                        alt="${$numeroVenta}">
-                    </a>
-                    <p class="codigo-barras">{{ $numeroVenta }}</p>
-                    <p>Gracias por comprar con nosotros, Por favor, vuelva otra vez</p>
-                    <a href="javascript:void(0);" class="btn btn-primary no-print" id="print-receipt-button"> Imprimir Recibo</a>
+                            </td>
+                        </tfoot>
+                    </table>
+                    <div class="text-center invoice-bar">
+                        <p id="receipt-comentario"></p>
+                        <a href="javascript:void(0);">
+                            <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($numeroVenta, 'C128', 2, 50) }}"
+                                alt="${$numeroVenta}">
+                        </a>
+                        <p class="codigo-barras">{{ $numeroVenta }}</p>
+                        <p>Gracias por comprar con nosotros, Por favor, vuelva otra vez</p>
+                        <a href="javascript:void(0);" class="btn btn-primary no-print" id="print-receipt-button">
+                            Imprimir Recibo</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -831,7 +833,8 @@
                             return product.stock > 0;
                         });
                         displayProducts(filteredProducts);
-                        updateTotalProductos(filteredProducts.length); // Actualizar el número total de productos
+                        updateTotalProductos(filteredProducts
+                        .length); // Actualizar el número total de productos
 
                     },
                     error: function(error) {
@@ -849,12 +852,12 @@
                     success: function(data) {
                         console.log(data);
                         productos = data; // Asigna los productos al array global
-                            var filteredProducts = productos.filter(function(product) {
-                                return product.stock > 0;
-                            });
+                        var filteredProducts = productos.filter(function(product) {
+                            return product.stock > 0;
+                        });
                         displayProducts(filteredProducts);
                         updateTotalProductos(filteredProducts
-                        .length); // Actualizar el número total de productos
+                            .length); // Actualizar el número total de productos
                     },
                     error: function(error) {
                         console.error("Error al obtener productos por categoría:", error);
@@ -1556,7 +1559,7 @@
                         // Cerrar modal de carrito después de realizar la compra
                         $('#modalCarrito').modal('hide');
 
-                         // Actualizar el modal de impresión del recibo con los datos del pedido
+                        // Actualizar el modal de impresión del recibo con los datos del pedido
                         actualizarModalRecibo(pedido);
 
 
@@ -1577,8 +1580,8 @@
                 });
             });
 
-               // Función para actualizar el modal de impresión del recibo
-               function actualizarModalRecibo(pedido) {
+            // Función para actualizar el modal de impresión del recibo
+            function actualizarModalRecibo(pedido) {
                 $('#receipt-cliente').text(pedido.cliente);
                 $('#receipt-documento').text(pedido.documento);
                 $('#receipt-email').text(pedido.correo);
@@ -1603,10 +1606,10 @@
 
                 $('#receipt-subtotal').text(`S/. ${pedido.subtotal.toFixed(2)}`);
                 $('#receipt-igv').text(`S/. ${igv}`);
-                $('#receipt-total').text(`S/. ${total}`); 
-                 // Mostrar el comentario
-               $('#receipt-comentario').text(pedido.comentario);
-             
+                $('#receipt-total').text(`S/. ${total}`);
+                // Mostrar el comentario
+                $('#receipt-comentario').text(pedido.comentario);
+
             }
 
             function printReceipt() {
