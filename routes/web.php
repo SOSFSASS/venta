@@ -8,6 +8,7 @@ use App\Http\Controllers\logoutController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\roleController;
 
@@ -72,4 +73,6 @@ Route::middleware(['auth'])->group(function () {
 
     // Rutas de perfil
     Route::resource('profile', profileController::class);
+
+    Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
 });
